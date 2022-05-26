@@ -1,0 +1,597 @@
+<p>
+    <style type="text/css">
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .breadcrumbs,
+        #talkToUs {
+            display: none !important;
+        }
+
+        main.wrap {
+            padding: 0;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            max-width: none;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .csrVideoHeader {
+            margin: 0 0 20px;
+            position: relative;
+            z-index: 1;
+            background: #000;
+        }
+
+        .csrVideoHeader h1 {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            font: 28px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000000;
+            text-align: center;
+            width: 100%;
+        }
+
+        .ytVideoContainer {
+            position: relative;
+            padding-bottom: 56%;
+            padding-top: 0px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .ytVideoContainer iframe,
+        object,
+        embed {
+            position: absolute;
+            top: 0;
+            left: -1%;
+            width: 102%;
+            height: 102%;
+        }
+
+        .csrMainArea {
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1140px;
+        }
+
+        .csrMainIntroArea {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0 20px;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .csrMainIntroArea h2 {
+            margin: 0 0 10px;
+            padding: 0;
+            font: 26px/140% "Mark My Words Clean", sans-serif;
+            width: 100%;
+        }
+
+        .csrMainIntroArea p {
+            position: relative;
+            width: 100%;
+        }
+
+        .csrMainIntroArea ul.pillarIcons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 0 20px;
+            padding: 0;
+            font: 4.7vw/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            list-style: none;
+            width: 100%;
+        }
+
+        .csrMainIntroArea ul.pillarIcons li {
+            width: calc(100% / 4 - 20px);
+        }
+
+        .csrMainIntroArea ul.pillarIcons li img {
+            display: block;
+            margin: 0 auto 10px;
+            height: 60px;
+        }
+
+        .scentWithLove {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            width: 100%;
+            background-color: rgba(244, 0, 52, 0.2);
+        }
+
+        .scentWithLove li {
+            width: 100%;
+        }
+
+        .scentWithLove li.sectionImage {
+            margin: 0 0 20px;
+            text-align: center;
+        }
+
+        .scentWithLove li img {
+            width: 50%;
+        }
+
+        .scentWithLove h2 {
+            margin: 0 0 10px;
+            padding: 0;
+            font: 26px/140% "Mark My Words Clean", sans-serif;
+            width: 100%;
+        }
+
+        .scentWithLove li .gillSignature {
+            margin: 0;
+            font: 18px/140% "Mark My Words Clean", sans-serif;
+        }
+
+        .csrMainCategories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 0 30px;
+        }
+
+        .csrMainCategories li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+        }
+
+        .csrMainCategories li.sectionCopy {
+            padding: 0 20px;
+        }
+
+        .csrMainCategories img {
+            width: 100%;
+        }
+
+        .csrMainCategories h2 {
+            margin: 20px 0 10px;
+            padding: 0;
+            font: 26px/140% "Mark My Words Clean", sans-serif;
+        }
+
+        .csrMainCategories a,
+        .csrMainCategories a:hover,
+        .csrMainCategories a:focus,
+        .csrMainCategories a:active {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .csrMainCategories .callToAction {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 10px 30px;
+            font: 14px/100% "Muli", Arial, sans-serif;
+            color: #ffffff;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.2s ease-in-out;
+            width: auto;
+            border: solid 1px #000000;
+            background: #000000;
+        }
+
+        .csrMainCategories .callToAction:hover {
+            color: #000000;
+            background: #ffffff;
+        }
+
+        .ourPromise h2 {
+            margin: 0 0 10px;
+            padding: 0;
+            font: 26px/140% "Mark My Words Clean", sans-serif;
+            text-align: center;
+        }
+
+        .ourPromise ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 20px 10px;
+            font: 18px/140% "Muli", Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ourPromise ul li {
+            margin: 0 0 30px;
+            padding: 20px 0;
+            list-style: none;
+            border-top: solid 4px #e00034;
+            border-bottom: solid 4px #e00034;
+            width: calc(100% / 2 - 15px);
+        }
+
+        .ourPromise ul li:last-child {
+            margin: 0;
+            width: 100%;
+        }
+
+        .birthdayPledge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            list-style: none;
+            font: 15px/170% "Muli", Arial, Helvetica, sans-serif;
+            width: 100%;
+            background-color: rgba(244, 0, 52, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .csrVideoHeader {
+                margin: 0 0 40px;
+            }
+
+            .csrVideoHeader h1 {
+                font: 60px/100% "DIN Condensed Bold", sans-serif;
+            }
+
+            .csrMainIntroArea h2 {
+                font: 30px/140% "Mark My Words Clean", sans-serif;
+            }
+
+            .csrMainIntroArea ul.pillarIcons {
+                margin: 0 0 40px;
+                font: 22px/100% "DIN Condensed Bold", sans-serif;
+            }
+
+            .csrMainIntroArea ul.pillarIcons li img {
+                display: block;
+                margin: 0 auto 20px;
+                height: 120px;
+            }
+
+            .scentWithLove {
+                margin: 0 0 40px;
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .scentWithLove li.sectionImage {
+                width: 20%;
+            }
+
+            .scentWithLove li.sectionImage img {
+                width: 100%;
+            }
+
+            .scentWithLove li.sectionCopy {
+                width: 76%;
+            }
+
+            .csrMainCategories {
+                margin: 0 0 40px;
+                padding: 0 20px;
+            }
+
+            .csrMainCategories li {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+
+            #our-planet li.sectionImage,
+            #our-community li.sectionImage {
+                order: 1;
+            }
+
+            .csrMainCategories li.sectionCopy {
+                padding: 0;
+            }
+
+            .csrMainCategories li.sectionCopy p:last-child {
+                margin: 0;
+            }
+
+            .csrMainCategories h2 {
+                margin: 0 0 10px;
+            }
+
+            .ourPromise h2 {
+                margin: 0 0 20px;
+            }
+
+            .ourPromise ul {
+                margin: 0;
+                padding: 0 20px 10px;
+                font: 16px/140% "Muli", Arial, sans-serif;
+            }
+
+            .ourPromise ul li,
+            .ourPromise ul li:last-child {
+                margin: 0 0 30px;
+                width: calc(100% / 5 - 40px);
+            }
+
+            .birthdayPledge {
+                margin: 0 0 40px;
+                font: 18px/180% "Muli", Arial, Helvetica, sans-serif;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main.wrap {
+            }
+
+            .csrMainCategories {
+                margin: 0 0 40px;
+                padding: 0 20px;
+                align-items: center;
+            }
+
+            .scentWithLove,
+            .csrMainCategories li {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .csrVideoHeader h1 {
+                font: 80px/100% "DIN Condensed Bold", sans-serif;
+                text-shadow: 4px 4px 0px #000000;
+            }
+
+            .ytVideoContainer {
+                padding-bottom: 33%;
+            }
+
+            .ytVideoContainer .yt-player {
+                pointer-events: none;
+            }
+
+            .csrMainCategories,
+            .ourPromise ul {
+                padding: 0;
+            }
+        }
+    </style>
+</p>
+<div class="csrVideoHeader">
+    <div class="ytVideoContainer">
+        <iframe
+            class="yt-player"
+            width="100%"
+            height="auto"
+            src="https://www.youtube.com/embed/U3ARvql1dGA?rel=0&amp;autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;controls=0&amp;loop=1&amp;playlist=U3ARvql1dGA"
+            frameborder="0"
+            allowfullscreen=""
+        ></iframe>
+    </div>
+</div>
+<div class="csrMainArea">
+    <div class="csrMainIntroArea">
+        <h2>Our Purpose &amp; Pledge</h2>
+        <p>
+            At The Perfume Shop, we’re working hard behind the scenes so
+            you can have confidence and trust in your perfume choices. We
+            are an inclusive company that cares about our communities,
+            people and planet as much as perfume. Join us on our conscious
+            journey so you can
+            <strong>#FeelGoodWhenYouSmellGood</strong>.
+        </p>
+        <ul class="pillarIcons">
+            <li>
+                <a href="/our-people" title="Our People"
+                    ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269636489246/csr-main-our-people-icon.png"
+                        alt="Our People"
+                        title="Our People"
+                    />Our People</a
+                >
+            </li>
+            <li>
+                <a href="/our-planet" title="Our Planet"
+                    ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269636751390/csr-main-our-planet-icon.png"
+                        alt="Our Planet"
+                        title="Our Planet"
+                    />Our Planet</a
+                >
+            </li>
+            <li>
+                <a href="/our-customer" title="Our Customer"
+                    ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269636030494/csr-main-our-customer-icon.png"
+                        alt="Our Customer"
+                        title="Our Customer"
+                    />Our Customer</a
+                >
+            </li>
+            <li>
+                <a href="/our-community" title="Our Community"
+                    ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269635899422/csr-main-our-community-icon.png"
+                        alt="Our Community"
+                        title="Our Community"
+                    />Our Community</a
+                >
+            </li>
+        </ul>
+    </div>
+    <ul class="scentWithLove">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269636980766/csr-main-gill.jpg"
+                alt="Gill Smith - Managing Director"
+                title="Gill Smith - Managing Director"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Scent With Love</h2>
+            <p>
+                With our social purpose pledges we are committed to raising
+                &#163;1million for our chosen charities by 2026. We will be
+                expanding our bottle recycling scheme to all stores and
+                online as well as giving you a 10% discount on your next
+                purchase when you recycle. Not only that, we’re now working
+                with Eden Reforestation Projects to plant a tree for every
+                bottle recycled. We've switched our energy provider to a
+                zero carbon 100% renewable source, and we are fully
+                committed to delivering even more sustainable products and
+                choices for the future.
+            </p>
+            <p>
+                We're passionate and excited to be on our Feel Good journey
+                and we'll be spritzing perfume along the way! With our
+                commitments, we can all
+                <strong>&ldquo;Feel Good When You Smell Good&rdquo;</strong
+                >!
+            </p>
+            <p class="gillSignature">Gill Smith - Managing Director</p>
+        </li>
+    </ul>
+    <div class="birthdayPledge">
+        <p style="margin: 0">
+            We’ve turned 30! Check out our 2030 pledges
+            <a
+                href="https://www.theperfumeshop.com/ie/30-years-of-perfume-passion"
+                style="text-decoration: underline"
+                >here</a
+            >
+        </p>
+    </div>
+    <a href="/our-people" title="Our People">
+        <ul class="csrMainCategories" id="our-people">
+            <li class="sectionImage">
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11272294105118/csr-main-our-people-tile.jpg"
+                    alt="Our People"
+                    title="Our People"
+                />
+            </li>
+            <li class="sectionCopy">
+                <h2>Our People</h2>
+                <p>
+                    We pride ourselves on being a family of passionate
+                    Perfume People. We embrace talent, passion and spark
+                    and celebrate diversity. We aim to educate and create a
+                    stimulating environment, where our teams can flourish
+                    and share their knowledge. We recognise and reward
+                    every individual for their contribution, no matter
+                    where they are in their journey.
+                </p>
+                <div class="callToAction">Discover More</div>
+            </li>
+        </ul>
+    </a>
+    <a href="/our-planet" title="Our Planet">
+        <ul class="csrMainCategories" id="our-planet">
+            <li class="sectionImage">
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269626298398/csr-main-our-planet-tile.jpg"
+                    alt="Our Planet"
+                    title="Our Planet"
+                />
+            </li>
+            <li class="sectionCopy">
+                <h2>Our Planet</h2>
+                <p>
+                    We’re already on our conscious journey to minimise our
+                    impact on the planet, and we’re fully committed to
+                    continuing to reduce our carbon footprint. We promise
+                    to be transparent about the changes we’re making and
+                    work with our partners to lead the way in making a
+                    difference.
+                </p>
+                <div class="callToAction">Discover More</div>
+            </li>
+        </ul>
+    </a>
+    <a href="/our-customer" title="Our Customer">
+        <ul class="csrMainCategories" id="our-customer">
+            <li class="sectionImage">
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269624430622/csr-main-our-customer-tile.jpg"
+                    alt="Our Customer"
+                    title="Our Customer"
+                />
+            </li>
+            <li class="sectionCopy">
+                <h2>Our Customer</h2>
+                <p>
+                    Our customers are at the heart of everything we do –
+                    their happiness and wellbeing is our main priority.
+                    We’re customer obsessed, and we’ll adapt to their
+                    changing needs to be the best no matter what. We pride
+                    ourselves on creating a strong connection with our
+                    customers, giving them a chance to indulge their
+                    perfume passion whilst supporting good causes.
+                </p>
+                <div class="callToAction">Discover More</div>
+            </li>
+        </ul>
+    </a>
+    <a href="/our-community" title="Our Community">
+        <ul class="csrMainCategories" id="our-community">
+            <li class="sectionImage">
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269624102942/csr-main-our-community-tile.jpg"
+                    alt="Our Community"
+                    title="Our Community"
+                />
+            </li>
+            <li class="sectionCopy">
+                <h2>Our Community</h2>
+                <p>
+                    We thrive on giving back to our community and using our
+                    platform for meaningful changes. We promise toe
+                    recognise and celebrate our local communities,
+                    rewarding them in creative and innovative ways. We’re
+                    passionate about supporting causes that are close to
+                    our hearts and using the connection to raise funds and
+                    awareness.
+                </p>
+                <div class="callToAction">Discover More</div>
+            </li>
+        </ul>
+    </a>
+    <div class="ourPromise">
+        <h2>Our Promise</h2>
+        <ul>
+            <li>We're driven by doing good</li>
+            <li>We'll always put customers first</li>
+            <li>We promise to support good causes</li>
+            <li>We promise to focus on what matters most</li>
+            <li>
+                We'll always make your happiness &amp; wellbeing our
+                priority
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    setTimeout(function () {
+        $("main.wrap h1").prependTo(".csrVideoHeader");
+    }, 1000);
+</script>

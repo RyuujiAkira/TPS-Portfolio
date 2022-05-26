@@ -1,0 +1,153 @@
+<p>
+    <style type="text/css">
+        .body-delivery-threshold {
+            grid-template: "header" auto "threshold-para" auto "progress-bar" auto "table" 1fr "footer" auto / 1fr;
+        }
+
+        #spend-text {
+            background: #ccdce9;
+            color: rgba(0, 82, 147, 0.7);
+            text-align: center;
+            width: 90%;
+            max-width: 1176px;
+            margin: 10px auto;
+            margin-bottom: 0;
+            padding: 10px;
+            font-family: "Muli";
+            font-size: 16px;
+        }
+
+        #spend-text a {
+            color: rgba(0, 82, 147, 0.7);
+            text-decoration: underline;
+        }
+
+        #leftover-cost {
+            font-weight: bold;
+        }
+
+        #progress-container {
+            background: #ccdce9;
+            color: rgba(0, 82, 147, 0.7);
+            text-align: center;
+            width: 90%;
+            max-width: 1176px;
+            margin: 10px auto;
+            margin-top: 0;
+            padding: 10px;
+            padding-top: 0;
+            font-family: "Muli";
+            font-size: 16px;
+        }
+
+        #Progress_Status {
+            width: 90%;
+            max-width: 550px;
+            background-color: #fff;
+            border-radius: 0.25rem;
+            margin: auto;
+        }
+
+        #cost-progress {
+            width: 0%;
+            height: 5px;
+            background-color: rgba(0, 82, 147, 0.7);
+            border-radius: 0.25rem;
+            -webkit-transition: 300ms linear;
+            -moz-transition: 300ms linear;
+            -o-transition: 300ms linear;
+            -ms-transition: 300ms linear;
+            transition: 300ms linear;
+            max-width: 100%;
+        }
+    </style>
+    <script>
+        if (
+            window.location.href ===
+                "https://www.theperfumeshop.com/cart" &&
+            document.querySelector("body").classList.contains("guest")
+        ) {
+            $(
+                "<div id='spend-text'>Spend <span id='leftover-cost'>£25</span> more for Free Standard Delivery or sign up as a VIP member for Free Standard Delivery on all orders.<br/>Existing VIP members can login during checkout.</div> <div id='progress-container'><div id='Progress_Status'> <div id='cost-progress'></div> </div> </div>"
+            ).insertAfter(".j-header");
+            document
+                .querySelector("body")
+                .classList.add("body-delivery-threshold");
+        }
+
+        let leftoverCost = 0;
+        const totalCost = 25.0;
+
+        function updateLeftoverCost() {
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2") + "e-2");
+            }
+            leftoverCost = roundToTwo(
+                totalCost - CartDataModule.attributes.subTotal.value
+            );
+            leftoverCost = leftoverCost.toFixed(2);
+            console.log(leftoverCost);
+        }
+
+        function progressBar() {
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2") + "e-2");
+            }
+
+            leftoverCost = roundToTwo(
+                totalCost - CartDataModule.attributes.subTotal.value
+            );
+
+            leftoverCost = leftoverCost.toFixed(2);
+
+            if (
+                window.location.href ===
+                    "https://www.theperfumeshop.com/cart" &&
+                document.querySelector("body").classList.contains("guest")
+            ) {
+                if (
+                    CartDataModule.attributes.subTotal.value >= totalCost
+                ) {
+                    document.getElementById("spend-text").textContent =
+                        "You've qualified for Free Standard Delivery.";
+                } else {
+                    document.getElementById("spend-text").innerHTML =
+                        "Spend <b>£" +
+                        leftoverCost +
+                        "</b>" +
+                        " more for <b>Free Standard Delivery</b> or <a href='/login#signup'>sign up</a> as a VIP member for " +
+                        "<b>Free Standard Delivery</b> on all orders.<br/>Existing VIP members can login during checkout.";
+                }
+            }
+
+            function percentage(partialValue, totalValue) {
+                let num = roundToTwo((100 * partialValue) / totalValue);
+                let text = num.toString();
+                return text + "%";
+            }
+
+            let percentageValue = percentage(
+                CartDataModule.attributes.subTotal.value,
+                totalCost
+            );
+
+            document.getElementById("cost-progress").style.width =
+                percentage(
+                    CartDataModule.attributes.subTotal.value,
+                    totalCost
+                );
+        }
+
+        if (
+            window.location.href ===
+                "https://www.theperfumeshop.com/cart" &&
+            document.querySelector("body").classList.contains("guest")
+        ) {
+            $(document).ajaxSuccess(function (event, xhr, settings, data) {
+                progressBar();
+            });
+
+            progressBar();
+        }
+    </script>
+</p>

@@ -1,0 +1,201 @@
+<style type="text/css">
+  main.wrap h1 {
+    display: none;
+  }
+
+  body > .wrap {
+    box-shadow: none;
+  }
+
+  .charityContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .charityContainer h2 {
+    margin: 10px 0 20px;
+    padding: 20px 0px 10px 0px;
+    font: 40px/100% "DIN-Cond-Bold", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer h2 {
+      font-size: 25px;
+    }
+  }
+
+  .charityContainer .alzheimersResearch {
+    background-image: url("https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/9514769645598/Alzheimers.png");
+    background-position: center;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .alzheimersResearch {
+      background-position: 70% 50%;
+    }
+  }
+
+  .charityContainer .lookGoodFeelBetter {
+    background-image: url("https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/9514771349534/LGFB.png");
+    background-position: center;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .lookGoodFeelBetter {
+      background-position: 20% 50%;
+    }
+  }
+
+  .charityContainer .operationSmile {
+    background-image: url("https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10034770378782/OperationSmile.jpg");
+    background-position: center;
+  }
+
+  .charityContainer .operationSmile .charityLogo {
+    margin-top: 125px;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .operationSmile .charityLogo {
+      margin-top: 60px;
+    }
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .operationSmile {
+      background-position: 20% 30%;
+    }
+  }
+
+  .charityContainer .charityLogo {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .charityLogo {
+      width: 300px;
+    }
+  }
+
+  .charityContainer .findOutMoreButton {
+    /*margin: 20px auto;
+    width: 30%;
+    border: none;*/
+    text-align: center;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .findOutMoreButton {
+      /*width: 45%;*/
+    }
+  }
+
+  .charityContainer .findOutMoreButton span {
+    display: inline-block;
+    margin: 0;
+    padding: 12px 30px;
+    font-family: "Muli", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    background-color: #000000;
+    color: #ffffff;
+    transition: background 0.2s ease;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .charityContainer .findOutMoreButton span:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .charityContainer .article {
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  @media screen and (max-width: 565px) {
+    .charityContainer .article {
+      height: 250px;
+    }
+  }
+
+  .charityContainer .overlay:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: 1s;
+  }
+
+  .charityContainer .overlay:hover:before {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .charityContainer .article * {
+    position: relative;
+  }
+</style>
+
+<div class="charityContainer">
+  <h2>Our Charity Partners</h2>
+  <a href="http://www.theperfumeshop.com/alzheimers-research-uk">
+    <div class="alzheimersResearch article overlay">
+      <img
+        class="charityLogo"
+        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/9514770071582/AlzheimerscharityLogo.png"
+        alt="Alzheimers Research UK"
+      />
+      <div class="findOutMoreButton"><span>Find Out More</span></div>
+    </div>
+  </a>
+  <a href="http://www.theperfumeshop.com/look-good-feel-better">
+    <div class="lookGoodFeelBetter article overlay">
+      <img
+        class="charityLogo"
+        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/9514771775518/LGFBcharityLogo.png"
+        alt="Look Good Feel Better"
+      />
+      <div class="findOutMoreButton"><span>Find Out More</span></div>
+    </div>
+  </a>
+  <a href="https://www.theperfumeshop.com/OperationSmile">
+    <div class="operationSmile article overlay">
+      <img
+        class="charityLogo"
+        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10034770542622/OperationSmileLogo.png"
+        alt="Operation Smile"
+      />
+      <div class="findOutMoreButton"><span>Find Out More</span></div>
+    </div>
+  </a>
+  <!-- <a href="https://www.theperfumeshop.com/MarieKeatingFoundation">
+    <div class="marieKeating article overlay">
+      <img
+        class="charityLogo"
+        src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10034770542622/OperationSmileLogo.png"
+        alt="Marie Keating Foundation"
+      />
+      <div class="findOutMoreButton"><span>Find Out More</span></div>
+    </div>
+  </a> -->
+</div>

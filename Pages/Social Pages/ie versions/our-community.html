@@ -1,0 +1,438 @@
+<p>
+    <style type="text/css">
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .breadcrumbs,
+        #talkToUs {
+            display: none !important;
+        }
+
+        main.wrap {
+            padding: 0;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            max-width: none;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .csrCommunityArea {
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1140px;
+        }
+
+        .csrCommunityHeaderMobile {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0;
+        }
+
+        .csrCommunityHeaderDesktop {
+            display: none;
+        }
+
+        .csrCommunityHeaderMobile h1,
+        .csrCommunityHeaderDesktop h1 {
+            position: absolute;
+            margin: 0;
+            padding: 0 20vw;
+            font: 48px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            color: #000000;
+            text-shadow: 2px 2px 0px #ffffff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .csrCommunityHeaderMobile img,
+        .csrCommunityHeaderDesktop img {
+            width: 100%;
+        }
+
+        .csrCommunityIntroArea {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin: 0;
+            padding: 30px 20px 0;
+            background-color: rgba(235, 126, 42, 0.3);
+        }
+
+        .csrCommunityIntroArea li {
+            margin: 0 0 30px;
+            padding: 0;
+            list-style: none;
+            font: 40px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            color: #e00034;
+            width: calc(100% / 2 - 20px);
+        }
+
+        .csrCommunityIntroArea li span.introSmallCopy {
+            display: block;
+            margin: 10px 0 0;
+            padding: 0;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            text-transform: none;
+            color: #000000;
+        }
+
+        .csrCommunityIntroArea li img {
+            margin: 0 0 20px;
+            width: 100%;
+        }
+
+        .csrCommunitySections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 0 10px;
+        }
+
+        .csrCommunitySections li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+        }
+
+        .csrCommunitySections li.sectionCopy {
+            padding: 0 20px;
+        }
+
+        .csrCommunitySections img {
+            width: 100%;
+        }
+
+        .csrCommunitySections h2 {
+            margin: 20px 0 10px;
+            padding: 0;
+            font: 28px/140% "Mark My Words Clean", sans-serif;
+        }
+
+        .csrCommunitySections a,
+        .csrCommunitySections a:hover,
+        .csrCommunitySections a:focus,
+        .csrCommunitySections a:active {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .backToSocialPurpose {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font: 28px/100% "DIN Condensed Bold", sans-serif;
+            color: #000000;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            text-shadow: 2px 2px 0px #ffffff;
+            width: 100%;
+        }
+
+        .backToSocialPurpose:hover {
+            color: #e00034;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .csrCommunityHeaderMobile {
+                display: none;
+            }
+
+            .csrCommunityHeaderDesktop {
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin: 0;
+            }
+
+            .csrCommunityIntroArea {
+                margin: 0 0 20px;
+            }
+
+            .csrCommunityIntroArea li {
+                width: calc(100% / 4 - 20px);
+            }
+
+            .csrCommunityIntroArea li span.introSmallCopy {
+                font: 11px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCommunitySections {
+                align-items: center;
+                margin: 0 0 20px;
+                padding: 0 20px;
+            }
+
+            .csrCommunitySections li {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+
+            .communityCovid {
+                align-items: normal;
+            }
+
+            .communityGivingBack li.sectionImage,
+            .communityCovid li.sectionImage {
+                order: 1;
+            }
+
+            .csrCommunitySections li.sectionCopy {
+                padding: 0;
+            }
+
+            .csrCommunitySections li.sectionCopy p:last-child {
+                margin: 0;
+            }
+
+            .csrCommunitySections h2 {
+                margin: 0 0 10px;
+            }
+
+            .backToSocialPurpose {
+                margin: 40px 0 20px;
+                font: 36px/100% "DIN Condensed Bold", sans-serif;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main.wrap {
+            }
+
+            .csrCommunityHeaderDesktop h1 {
+                font: 60px/100% "DIN Condensed Bold", sans-serif;
+                text-transform: uppercase;
+                text-align: center;
+                width: 100%;
+            }
+
+            .csrCommunityIntroArea {
+                justify-content: space-around;
+                margin: 0 0 40px;
+            }
+
+            .csrCommunityIntroArea li {
+                font: 48px/100% "DIN Condensed Bold", sans-serif;
+            }
+
+            .csrCommunityIntroArea li img {
+                margin: 0 0 10px;
+            }
+
+            .csrCommunityIntroArea li span.introSmallCopy {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCommunitySections {
+                margin: 0 0 40px;
+                padding: 0 20px;
+            }
+
+            .csrCommunitySections li {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .csrCommunityHeaderDesktop h1 {
+                padding: 0;
+            }
+
+            .csrCommunityIntroArea li {
+                font: 44px/100% "DIN Condensed Bold", sans-serif;
+                width: calc(100% / 5 - 20px);
+            }
+
+            .csrCommunityIntroArea li span.introSmallCopy {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCommunitySections {
+                padding: 0;
+            }
+
+            .communityCovid {
+                align-items: center;
+            }
+        }
+    </style>
+</p>
+<div class="csrCommunityArea">
+    <div class="csrCommunityHeaderMobile">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11271214137374/csr-community-header-mobile.jpg"
+            title="Our Community"
+            alt=""
+        />
+    </div>
+    <div class="csrCommunityHeaderDesktop">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11271214006302/csr-community-header-desktop.jpg"
+            title="Our Community"
+            alt=""
+        />
+    </div>
+    <ul class="csrCommunityIntroArea">
+        <li>
+            &pound;1m<br />
+            By 2026
+            <span class="introSmallCopy"
+                >Raising awareness for our charity partners</span
+            >
+        </li>
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11585939472414/smilingPeople.png"
+                title="Our Community"
+                alt=""
+                style="width: 90%"
+            />
+            <span class="introSmallCopy"
+                >Spreading joy in our community</span
+            >
+        </li>
+        <li>
+            6,500km<br />
+            walked
+            <span class="introSmallCopy"
+                >in 2021 for Operation Smile UK by 36 Perfume People</span
+            >
+        </li>
+        <li>
+            Over<br />
+            &pound;800k
+            <span class="introSmallCopy"
+                >raised for Alzheimer’s Research UK and counting</span
+            >
+        </li>
+    </ul>
+    <ul class="csrCommunitySections communityCharityPartners">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11264570359838/csr-community-charity-partners.jpg"
+                alt="Charity Partners"
+                title="Charity Partners"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Charity Partners</h2>
+            <p>
+                At The Perfume Shop we’re committed to supporting and
+                raising awareness for our charity partners. Our five year
+                charity target is to raise &pound;1million by 2026.
+            </p>
+            <p>
+                You can help by donating in store and online, to find out
+                more about our charity partners click
+                <a
+                    href="https://www.theperfumeshop.com/ie/our-chosen-charities"
+                    title="More about our Charity Partners"
+                    >here</a
+                >.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCommunitySections communityGivingBack">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11264572194846/csr-community-giving-back.jpg"
+                alt="Giving Back"
+                title="Giving Back"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Giving Back</h2>
+            <p>
+                Raising smiles in our community is really important to our
+                Perfume People. That's why, as well as raising awareness
+                and funds for our charity partners, we give back by
+                volunteering for good causes and inspiring colleagues
+                regionally to do the same. The One Can Trust, based near
+                our High Wycombe Scent Quarters, is just one of the
+                organisations we donate and give our time to.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCommunitySections communityGlobal">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11264571736094/csr-community-doing-good-globally.jpg"
+                alt="Doing Good Globally"
+                title="Doing Good Globally"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Doing Good Globally</h2>
+            <p>
+                We appreciate that the work we do can make a real impact
+                within our community and beyond. A.S Watson, our parent
+                company, runs an annual Global Volunteering Initiative
+                where our colleagues across the world give back to good
+                causes. The ongoing conflict in Ukraine has touched us all
+                and we’re proud to be supporting the Disasters Emergency
+                Committee (DEC) in their Ukraine Humanitarian Appeal by
+                collecting donations instore and online. As well as this,
+                we’re giving customers an opportunity to donate their
+                Rewards Club points to the charity and we’ve donated the
+                proceeds of personalised ribbon sales across key weekends
+                to show we care. So far, we’ve raised over £60k.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCommunitySections communityCovid">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11264570785822/csr-community-covid.jpg"
+                alt="Covid-19"
+                title="Covid-19"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>We Care</h2>
+            <p>
+                We’re proud to have CSR Champions across the business, who
+                bring their different skillsets to work together on our
+                Feel Good When You Smell Good CSR strategy. This is a great
+                forum to discuss the important issues and gain knowledge
+                and insight into what matters to our colleagues and
+                customers. We’re always looking for new ways to give back
+                and are excited to have partnered with one of our suppliers
+                on an amazing project, kicking off later this year… stay
+                tuned for more details.
+            </p>
+        </li>
+    </ul>
+    <a
+        href="https://www.theperfumeshop.com/ie/our-social-purpose"
+        title="Back To Our Social Purpose"
+        class="backToSocialPurpose"
+        >Back To Our Social Purpose</a
+    >
+</div>
+<script>
+    setTimeout(function () {
+        $("main.wrap h1").prependTo(
+            ".csrCommunityHeaderMobile, .csrCommunityHeaderDesktop"
+        );
+    }, 1000);
+</script>

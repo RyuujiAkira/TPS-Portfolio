@@ -1,0 +1,475 @@
+<p>
+    <style type="text/css">
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .breadcrumbs,
+        #talkToUs {
+            display: none !important;
+        }
+
+        main.wrap {
+            padding: 0;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            max-width: none;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .csrPlanetArea {
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1140px;
+        }
+
+        .csrPlanetHeaderMobile {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0;
+        }
+
+        .csrPlanetHeaderDesktop {
+            display: none;
+        }
+
+        .csrPlanetHeaderMobile h1,
+        .csrPlanetHeaderDesktop h1 {
+            position: absolute;
+            margin: 0;
+            padding: 0 20vw;
+            font: 48px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            color: #000000;
+            text-shadow: 2px 2px 0px #ffffff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .csrPlanetHeaderMobile img,
+        .csrPlanetHeaderDesktop img {
+            width: 100%;
+        }
+
+        .csrPlanetIntroArea {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 30px 20px 0;
+            background-color: rgba(108, 202, 78, 0.2);
+        }
+
+        .csrPlanetIntroArea li {
+            margin: 0 0 30px;
+            padding: 0;
+            list-style: none;
+            font: 68px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            color: #008566;
+            width: calc(100% / 2 - 20px);
+        }
+
+        .csrPlanetIntroArea li span.introSmallCopy {
+            display: block;
+            margin: 0;
+            padding: 0;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            text-transform: none;
+            color: #000000;
+        }
+
+        .csrPlanetIntroArea li img {
+            display: block;
+            margin: 0 auto;
+            width: 106px;
+        }
+
+        .csrPlanetSections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 0 10px;
+        }
+
+        .csrPlanetSections li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+        }
+
+        .csrPlanetSections li.sectionCopy {
+            padding: 0 20px;
+        }
+
+        .csrPlanetSections img {
+            width: 100%;
+        }
+
+        .csrPlanetSections h2 {
+            margin: 20px 0 10px;
+            padding: 0;
+            font: 28px/140% "Mark My Words Clean", sans-serif;
+        }
+
+        .csrPlanetSections a,
+        .csrPlanetSections a:hover,
+        .csrPlanetSections a:focus,
+        .csrPlanetSections a:active {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .backToSocialPurpose {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font: 28px/100% "DIN Condensed Bold", sans-serif;
+            color: #000000;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            text-shadow: 2px 2px 0px #ffffff;
+            width: 100%;
+        }
+
+        .backToSocialPurpose:hover {
+            color: #e00034;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .csrPlanetHeaderMobile {
+                display: none;
+            }
+
+            .csrPlanetHeaderDesktop {
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin: 0;
+            }
+
+            .csrPlanetIntroArea {
+                align-items: flex-end;
+                margin: 0 0 20px;
+                padding: 20px 20px 10px;
+            }
+
+            .csrPlanetIntroArea li {
+                margin: 0 0 20px;
+                font: 76px/70% "DIN Condensed Bold", sans-serif;
+                width: calc(100% / 4 - 20px);
+            }
+
+            .csrPlanetIntroArea li span.introSmallCopy {
+                margin: 0;
+                font: 11px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrPlanetIntroArea li img {
+                margin: 0 auto 10px;
+            }
+
+            .csrPlanetSections {
+                align-items: center;
+                margin: 0 0 20px;
+                padding: 0 20px;
+            }
+
+            .csrPlanetSections li {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+
+            .planetReduceReuse,
+            .planetOwnBrand,
+            .planetSuppliers,
+            .planetProduction {
+                align-items: normal;
+            }
+
+            .planetReduceReuse li.sectionImage,
+            .planetSuppliers li.sectionImage {
+                order: 1;
+            }
+
+            .csrPlanetSections li.sectionCopy {
+                padding: 0;
+            }
+
+            .csrPlanetSections li.sectionCopy p:last-child {
+                margin: 0;
+            }
+
+            .csrPlanetSections h2 {
+                margin: 0 0 10px;
+            }
+
+            .backToSocialPurpose {
+                margin: 40px 0 20px;
+                font: 36px/100% "DIN Condensed Bold", sans-serif;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main.wrap {
+            }
+
+            .csrPlanetHeaderDesktop h1 {
+                font: 60px/100% "DIN Condensed Bold", sans-serif;
+                text-transform: uppercase;
+                text-align: center;
+                width: 100%;
+            }
+
+            .csrPlanetIntroArea {
+                margin: 0 0 40px;
+            }
+
+            .csrPlanetIntroArea li img {
+                width: 96px;
+            }
+
+            .csrPlanetIntroArea li span.introSmallCopy {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrPlanetSections {
+                margin: 0 0 40px;
+                padding: 0 20px;
+            }
+
+            .planetReduceReuse,
+            .planetOwnBrand,
+            .planetSuppliers,
+            .planetProduction {
+                align-items: center;
+            }
+
+            .csrPlanetSections li {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .csrPlanetIntroArea li {
+                width: calc(100% / 4 - 20px);
+            }
+
+            .csrPlanetIntroArea li span.introSmallCopy {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrPlanetSections {
+                padding: 0;
+            }
+        }
+    </style>
+</p>
+<div class="csrPlanetArea">
+    <div class="csrPlanetHeaderMobile">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11270135513118/csr-planet-header-mobile.jpg"
+            title="Our Planet"
+            alt=""
+        />
+    </div>
+    <div class="csrPlanetHeaderDesktop">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269640716318/csr-planet-header-desktop.jpg"
+            title="Our Planet"
+            alt=""
+        />
+    </div>
+    <ul class="csrPlanetIntroArea">
+        <li>
+            62,140
+            <span class="introSmallCopy"
+                >trees planted in collaboration<br />with our suppliers.
+            </span>
+        </li>
+        <li>
+            100%
+            <span class="introSmallCopy"
+                >of the energy we use is<br />from renewable sources.</span
+            >
+        </li>
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265433698334/csr-planet-care-icons.png"
+                title="Cruelty Free &amp; Vegan Friendly"
+                alt=""
+            />
+            <span class="introSmallCopy"
+                >Our own brand is vegan friendly, cruelty free and
+                unisex.</span
+            >
+        </li>
+        <li>
+            100%
+            <span class="introSmallCopy"
+                >recyclable packaging for <br />online deliveries.</span
+            >
+        </li>
+    </ul>
+    <ul class="csrPlanetSections planetSgdg">
+        <li class="sectionImage">
+            <a
+                href="https://www.theperfumeshop.com/ie/recycling-service"
+                target="_blank"
+            >
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/root/11585897201694/Artboard-1.jpg"
+                    alt="Feel Good When You Smell Good"
+                    title="Feel Good When You Smell Good"
+                />
+            </a>
+        </li>
+        <li class="sectionCopy">
+            <h2>Feel Good When You Smell Good</h2>
+            <p>
+                We’ll reward you for joining us on our conscious journey.
+                Return your empty perfume bottles to any of our stores and
+                you'll get 10% off as a thank you from us to redeem in
+                store or online. Plus we’ll plant a tree for every bottle
+                recycled with us in partnership with Eden Reforestation
+                Projects. You can find out more about our bottle recycling
+                service
+                <a href="https://www.theperfumeshop.com/ie/recycling-service" title="Recycling Service"
+                    >here</a
+                >. If you would like to upcycle your perfume bottles find
+                tips over on
+                <a
+                    href="https://www.theperfumeshop.com/ie/blog/discover/how-to-upcycle-your-perfume-bottle"
+                    title="Our Blog"
+                    >our blog</a
+                >.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrPlanetSections planetReduceReuse">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269641895966/csr-planet-reduce-reuse.jpg"
+                alt="Reduce &amp; Reuse"
+                title="Reduce &amp; Reuse"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Reduce &amp; Reuse</h2>
+            <p>
+                One of our key aims is to reduce waste and the size of our
+                carbon footprint. Last year we recycled 80.3% of our waste
+                from our distribution centre with a target of 83% in 2022.
+                In 2019, we streamlined our deliveries, using 61,000 less
+                litres of diesel vs previous years. We continue to work
+                with our national fleet partner to reduce their mileage and
+                emissions. Our stores continue to move towards operating
+                digitally including customer facing screens and app-based
+                task management for colleagues. We are 100% zero carbon
+                with electricity generated wind, solar and hydro. All our
+                energy is renewable, and our lighting is LED.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrPlanetSections planetOwnBrand">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269640978462/csr-planet-own-brand.jpg"
+                alt="Own Brand"
+                title="Own Brand"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Own Brand</h2>
+            <p>
+                Our exclusive own brand ranges, The Perfume Edit and ME
+                have been created using 100% recyclable packaging. We are
+                pleased to have launched two ranges that have completely
+                recyclable packaging, use only vegan ingredients, are
+                cruelty free and genderless. Since the launch the ranges
+                have gone from strength to strength, gaining cut through in
+                the media with titles including Sunday Express, Daily
+                Mirror, New and Woman and Home. We were thrilled to also
+                announce The Perfume Edit as an award winner at the Pure
+                Beauty Awards, and the Lime & Basil scent won the Citrus
+                category at OK magazines Real Beauty Awards.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrPlanetSections planetSuppliers">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269642223646/csr-planet-suppliers.jpg"
+                alt="Working in partnership with our suppliers"
+                title="Working in partnership with our suppliers"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Working In Partnership With Our Suppliers</h2>
+            <p>
+                We were the first retailer to introduce the Thierry Mugler
+                refillable bottle and continue to work with our suppliers
+                to offer customers sustainable solutions. We strive to lead
+                the way and be an early adopter for brands introducing
+                sustainable options and refills, with last year seeing
+                fragrance powerhouse Lancôme launch the refillable Idôle
+                which has been a hit with our customers.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrPlanetSections planetProduction">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269641371678/csr-planet-production.jpg"
+                alt="Manufacturing &amp; Production"
+                title="Manufacturing &amp; Production"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Manufacturing &amp; Production</h2>
+            <p>
+                Our packaging for online deliveries is made from 80%
+                post-consumer waste and is 100% recyclable. We now provide
+                our stores with paper bags only, saving seven million
+                plastic bags from entering the UK market each year. We also
+                no longer produce plastic Rewards Club cards, asking you to
+                instead use our digital card on The Perfume Shop app. In
+                2019, we reduced the amount of printed paper by 66%
+                compared to previous years...that's 3.8 tonnes, almost the
+                weight of an elephant! We remain committed on reducing this
+                further and avoiding unnecessary print in favour of
+                digital.
+            </p>
+        </li>
+    </ul>
+    <a
+        href="https://www.theperfumeshop.com/ie/our-social-purpose"
+        title="Back To Our Social Purpose"
+        class="backToSocialPurpose"
+        >Back To Our Social Purpose</a
+    >
+</div>
+<script>
+    setTimeout(function () {
+        $("main.wrap h1").prependTo(
+            ".csrPlanetHeaderMobile, .csrPlanetHeaderDesktop"
+        );
+    }, 1000);
+</script>

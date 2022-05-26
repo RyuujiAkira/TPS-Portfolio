@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <style type="text/css">
+        /* CSS fix for accordian*/
+        .accordion-container {
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .img-responsive {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+          background-color: #ccc;
+        }
+
+        .accordion:after {
+          content: "\002B";
+          color: #777;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+        }
+
+        .active:after {
+          content: "\2212";
+        }
+
+        .panel {
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+          text-align: center;
+        }
+
+        .panel ul {
+          list-style: none;
+          list-style-position: inside;
+          text-align: center;
+          padding: 0;
+        }
+
+        dl {
+          margin: 0;
+          padding: 10px;
+        }
+
+        ::-webkit-scrollbar {
+          width: 10px;
+          height: 10px;
+          background-color: #000000;
+        }
+
+        #pageHeader {
+          width: 100%;
+          background-image: url("https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11363535355934/2021-5-5-TPS-MAY-Gucci-Guilty.png");
+          height: 200px;
+          background-position: -100;
+          background-size: cover;
+          position: relative;
+          margin-bottom: 40px;
+          background-position: top;
+        }
+
+        #content {
+          width: 100%;
+          text-align: center;
+        }
+
+        #content p {
+          font: 14px/140% "Muli", sans-serif;
+          margin-top: 20px;
+        }
+
+        #content p.list:before {
+          content: "• ";
+        }
+
+        p.list:before {
+          content: "• ";
+        }
+
+        .accordion ul {
+          list-style-type: none;
+        }
+
+        #content h4 {
+          font: 36px/140% "DIN Condensed", sans-serif;
+          margin: 10px 0px -10px 0px;
+        }
+
+        #content h5 {
+          font: 36px/140% "DIN Condensed", sans-serif;
+        }
+
+        #content h5 span {
+          font: 28px/100% "Mark My Words Clean", sans-serif;
+        }
+
+        #content a {
+          display: inline-block;
+          margin: 0;
+          padding: 12px 30px;
+          font-family: "Muli", Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: 0.7px;
+          text-transform: uppercase;
+          background-color: #000000;
+          color: #ffffff;
+          transition: background 0.2s ease;
+          border: 1px solid #000000;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          cursor: pointer;
+          width: 100%;
+          text-decoration: none;
+          text-align: center;
+        }
+
+        #content a:hover {
+          color: #000000;
+          background-color: #ffffff;
+        }
+
+        #pageHeader .titleTile h1 {
+          font: 60px/110% "DIN Condensed", sans-serif;
+          margin: 0;
+        }
+
+        #pageHeader .titleTile {
+          background-color: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 10px 30px 0px 15px;
+          border-radius: 0px 40px 0px 0px;
+        }
+
+        #content ul {
+          list-style-type: none;
+          padding: 0;
+          margin-top: 40px;
+          display: none;
+        }
+
+        #content ul#sss {
+          display: block;
+        }
+
+        #content ul li {
+          margin-bottom: 40px;
+        }
+
+        #content ul li img {
+          width: 100px;
+        }
+
+        .line {
+          width: 100%;
+          border-radius: 100px;
+          background-color: #e2e2e2;
+          height: 5px;
+          margin-bottom: 40px;
+        }
+
+        /* Test Carousel CSS */
+        * {
+          box-sizing: border-box;
+        }
+        .mySlides1,
+        .mySlides2,
+        .mySlides3 {
+          display: none;
+        }
+
+        img {
+          vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: black;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        .prev {
+          left: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a grey background color */
+        .prev:hover,
+        .next:hover {
+          background-color: #f1f1f1;
+          color: black;
+        }
+
+        @media screen and (min-width: 768px) {
+          #pageHeader {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          #content ul#sss {
+            display: flex;
+          }
+
+          .accordion {
+            display: none;
+          }
+
+          #content {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          #pageHeader {
+            background-position: center;
+          }
+
+          #content a {
+            width: auto;
+          }
+
+          #content ul {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          #content ul li {
+            width: calc(100% / 3 - 40px);
+          }
+        }
+      </style>
+    </p>
+    <div id="pageHeader">
+      <div class="titleTile">
+        <h1>A LIST EXTRAS</h1>
+      </div>
+    </div>
+    <div id="content">
+      <p>
+        Introducing our NEW VIP Rewards scheme, in which you will have access to
+        bigger and better rewards, and great savings on your favourite brands.
+      </p>
+      <ul>
+        <li>
+          <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11363030335518/money-icon.png"
+            border="0"
+            alt="The Perfume Shop - A List Rewards Club 3 Step Guide"
+          />
+          <h4>SPEND</h4>
+          <p>
+            Each time you make a purchase at The Perfume Shop we&rsquo;ll top up
+            your balance for you, so you can work towards your next reward. The
+            more you spend the more you will save!
+          </p>
+        </li>
+        <li>
+          <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11363030728734/wallet-icon.png"
+            border="0"
+            alt="The Perfume Shop - A List Rewards Club 3 Step Guide"
+          />
+          <h4>SAVE</h4>
+          <p>
+            As a Rewards Club member, when you shop you&rsquo;ll get 10% off
+            your favourite brand every time you shop, Free Delivery on all your
+            orders, 15% off on your birthday month, 10% on your half birthday
+            month and free samples.
+          </p>
+        </li>
+        <li>
+          <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11363030630430/present-icon.png"
+            border="0"
+            alt="The Perfume Shop - A List Rewards Club 3 Step Guide"
+          />
+          <h4>REDEEM</h4>
+          <p>
+            It just got a whole lot bigger! You can redeem money off when you
+            purchase or make the most of our discounts of big brands within each
+            level. Wanting something different? Take a pick from our range of
+            free gifts or products with your purchase.
+          </p>
+        </li>
+      </ul>
+      <div class="line">&nbsp;</div>
+      <ul>
+        <li>
+          <h5>LEVEL 1 <span>Spend &pound;100</span></h5>
+          <p class="list">Savings off big brands</p>
+          <p class="list">Sample boxes</p>
+          <p class="list">Perfume miniatures</p>
+          <p class="list">&pound;5 off voucher</p>
+          <div class="carousel">
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512711446558/Level11.png"
+                border="0"
+                alt="Flowerbomb Body Lotion"
+              />
+              <p>Flowerbomb</p>
+              <p>Body Lotion</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512712658974/Level12.png"
+                border="0"
+                alt="Angel Body Lotion"
+              />
+              <p>Angel</p>
+              <p>Body Lotion</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512713216030/Level13.png"
+                border="0"
+                alt="Alien Body Lotion"
+              />
+              <p>Alien</p>
+              <p>Body Lotion</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h5>LEVEL 2 <span>Spend &pound;200</span></h5>
+          <p class="list">Savings off big brands</p>
+          <p class="list">Branded beauty products</p>
+          <p class="list">Cosmetic pouches</p>
+          <p class="list">&pound;10 off voucher</p>
+          <div class="carousel">
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512714559518/Level21.png"
+                border="0"
+                alt="Armani My Way"
+              />
+              <p>Armani</p>
+              <p>My Way</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512715051038/Level22.png"
+                border="0"
+                alt="Alien Pouch"
+              />
+              <p>Alien</p>
+              <p>Pouch</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512716918814/Level23.png"
+                border="0"
+                alt="Yves Saint Laurent Y"
+              />
+              <p>Yves Saint Laurent</p>
+              <p>Y</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h5>LEVEL 3 <span>Spend &pound;300</span></h5>
+          <p class="list">Savings off big brands</p>
+          <p class="list">Premium branded bags</p>
+          <!-- p class="list">Full size fragrances</p -->
+          <p class="list">&pound;15 off voucher</p>
+          <div class="carousel">
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512717541406/Level31.png"
+                border="0"
+                alt="Diesel Weekend Bag"
+              />
+              <p>Diesel</p>
+              <p>Weekend Bag</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512734679070/Level32.png"
+                border="0"
+                alt="Lancome Cosmetics"
+              />
+              <p>Lancome</p>
+              <p>Cosmetics</p>
+            </div>
+            <div class="tile">
+              <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11512735236126/Level33.png"
+                border="0"
+                alt="Armani Code"
+              />
+              <p>Armani</p>
+              <p>Code</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="accordion-container">
+      <button
+        class="accordion"
+        style="border-bottom: 1px solid rgba(80, 80, 80, 0.3)"
+      >
+        Level 1 - <span>Spend &pound;100</span>
+      </button>
+      <div class="panel">
+        <ul>
+          <li>
+            <p class="list">Savings off big brands</p>
+          </li>
+          <li>
+            <p class="list">Sample boxes</p>
+          </li>
+          <li>
+            <p class="list">Perfume miniatures</p>
+          </li>
+          <li>
+            <p class="list">&pound;5 off voucher</p>
+          </li>
+        </ul>
+        <div class="slideshow-container">
+          <div class="mySlides1">
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512711446558/Level11.png"
+              border="0"
+              alt="Flowerbomb Body Lotion"
+              style="width: 80%"
+            />
+            <p><b>Flowerbomb</b> - Body Lotion</p>
+          </div>
+
+          <div class="mySlides1">
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512712658974/Level12.png"
+              border="0"
+              alt="Angel Body Lotion"
+              style="width: 80%"
+            />
+            <p><b>Angel</b> - Body Lotion</p>
+          </div>
+
+          <div class="mySlides1">
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512713216030/Level13.png"
+              border="0"
+              alt="Alien Body Lotion"
+              style="width: 80%"
+            />
+            <p><b>Alien</b> - Body Lotion</p>
+          </div>
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+      </div>
+
+      <button
+        class="accordion"
+        style="border-bottom: 1px solid rgba(80, 80, 80, 0.3)"
+      >
+        Level 2 - <span>Spend &pound;200</span>
+      </button>
+      <div class="panel">
+        <ul>
+          <li>
+            <p class="list">Savings off big brands</p>
+          </li>
+          <li>
+            <p class="list">Branded beauty products</p>
+          </li>
+          <li>
+            <p class="list">Cosmetic pouches</p>
+          </li>
+          <li>
+            <p class="list">&pound;10 off voucher</p>
+          </li>
+        </ul>
+        <div class="slideshow-container">
+          <div class="mySlides2">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512714559518/Level21.png"
+              border="0"
+              alt="Armani My Way"
+              style="width: 80%"
+            />
+            <p><b>Armani</b> - My Way</p>
+          </div>
+
+          <div class="mySlides2">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512715051038/Level22.png"
+              border="0"
+              alt="Alien Pouch"
+              style="width: 80%"
+            />
+            <p><b>Alien</b> - Cosmetic Pouch</p>
+          </div>
+
+          <div class="mySlides2">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512716918814/Level23.png"
+              border="0"
+              alt="Yves Saint Laurent Y"
+              style="width: 80%"
+            />
+            <p><b>Yves Saint Laurent</b> - Y</p>
+          </div>
+          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+      </div>
+
+      <button
+        class="accordion"
+        style="border-bottom: 1px solid rgba(80, 80, 80, 0.3)"
+      >
+        Level 3 - <span>Spend over &pound;300</span>
+      </button>
+      <div class="panel">
+        <ul>
+          <li>
+            <p class="list">Savings off big brands</p>
+          </li>
+          <li>
+            <p class="list">Premium branded bags</p>
+          </li>
+          <li>
+            <p class="list">Full size fragrances</p>
+          </li>
+          <li>
+            <p class="list">&pound;15 off voucher</p>
+          </li>
+        </ul>
+        <div class="slideshow-container">
+          <div class="mySlides3 fade">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512717541406/Level31.png"
+              border="0"
+              alt="Diesel Weekend Bag"
+              style="width: 80%"
+            />
+            <p><b>Diesel</b> - Weekend Bag</p>
+          </div>
+
+          <div class="mySlides3 fade">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512734679070/Level32.png"
+              border="0"
+              alt="Lancome Cosmetics"
+              style="width: 80%"
+            />
+            <p><b>Lancome</b> - Cosmetics</p>
+          </div>
+
+          <div class="mySlides3 fade">
+            <img
+              class="img-responsive"
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11512735236126/Level33.png"
+              border="0"
+              alt="Armani Code"
+              style="width: 80%"
+            />
+            <p><b>Armani</b> - Code</p>
+          </div>
+          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+    <script>
+      var slideIndex = [1, 1, 1];
+      var slideId = ["mySlides1", "mySlides2", "mySlides3"];
+      showSlides(1, 0);
+      showSlides(1, 1);
+      showSlides(1, 2);
+
+      function plusSlides(n, no) {
+        showSlides((slideIndex[no] += n), no);
+      }
+
+      function currentSlide(n, no) {
+        showSlides((slideIndex[no] = n), no);
+      }
+
+      function showSlides(n, no) {
+        var i;
+        var x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {
+          slideIndex[no] = 1;
+        }
+        if (n < 1) {
+          slideIndex[no] = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex[no] - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,442 @@
+<style type="text/css">
+    /*OVERWRITE STYLES*/
+
+    ol.breadcrumbs {
+        display: none;
+    }
+
+    body {
+        background: #ffffff;
+    }
+
+    body > main.wrap {
+        max-width: 1200px;
+        box-shadow: 0 0 0;
+    }
+
+    body > main.wrap aside {
+        display: none;
+    }
+
+    main.wrap h1 {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+    }
+
+    main.wrap h1 span {
+        display: block;
+        margin-top: -21px;
+        margin-left: -6px;
+        color: #000000;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    main.wrap article {
+        width: 100%;
+    }
+
+    /*OVERWRITE STYLES END*/
+
+    /*PAGE SPECIFIC STYLES*/
+
+    .customCatBanner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .customCatBanner h1 {
+        font: 24px/200% "DIN Condensed Bold", sans-serif;
+        text-align: center;
+    }
+
+    .customCatBanner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ARUKHub p {
+        font: 16px/160% "Muli", sans-serif;
+        color: #000000;
+        text-align: center;
+        margin: 15px;
+    }
+
+    .ARUKHub #logo {
+        width: 70%;
+        display: block;
+        margin: 15px auto;
+    }
+
+    .ARUKHub ul.mainSections {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        padding: 0;
+    }
+
+    .ARUKHub ul.mainSections li {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .ARUKHub ul.mainSections li img {
+        display: block;
+        width: 100%;
+        border: solid 1px #cecece;
+    }
+
+    .ARUKHub ul.mainSections li h3 {
+        font: 2rem/100% "DIN Condensed Bold", sans-serif;
+        color: #000000;
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+    }
+
+    .ARUKHub ul.mainSections li p {
+        margin: 0 0 10px 0;
+    }
+
+    .ARUKHub ul.mainSections li span {
+        display: inline-block;
+        margin: 0;
+        padding: 12px 30px;
+        font-family: "Muli", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        background-color: #000000;
+        color: #ffffff;
+        transition: background 0.2s ease;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .ARUKHub ul.mainSections li span:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .ARUKHub .footer {
+        background-image: url(/medias/sys_master/charities/charities/10581655224350/mARUK19-FooterBackground.jpg);
+        background-size: cover;
+        padding: 35px 0;
+        background-position: -90px;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    .ARUKHub .footer h2 {
+        font: 22px/120% "DIN Condensed Bold", sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .ARUKHub .footer .CTAs {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .ARUKHub .footer span {
+        display: inline-block;
+        margin: 0;
+        padding: 12px 30px;
+        font-family: "Muli", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        background-color: #000000;
+        color: #ffffff;
+        transition: background 0.2s ease;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .ARUKHub .footer span:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    #fullWidthArukRibbonOffer {
+        margin: 0 auto;
+        padding: 10px 0 30px;
+        overflow: hidden;
+    }
+
+    #fullWidthArukRibbonOffer img {
+        display: block;
+        width: 180% !important;
+        margin-left: -38% !important;
+    }
+
+    /*PAGE SPECIFIC STYLES END*/
+
+    /*tablet*/
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        main.wrap h1 {
+            font-size: 90px;
+        }
+
+        main.wrap h1 span {
+            margin-top: -50px;
+            font-size: 3rem;
+        }
+
+        .ARUKHub #logo {
+            width: 350px;
+            margin: 15px auto 30px;
+        }
+
+        /* Code for Safari 6.1 to 8.0 */
+        #section1Image {
+            -webkit-order: 1;
+        }
+
+        #section1Copy {
+            -webkit-order: 2;
+        }
+
+        #section2Image {
+            -webkit-order: 4;
+        }
+
+        #section2Copy {
+            -webkit-order: 3;
+        }
+
+        #section3Image {
+            -webkit-order: 5;
+        }
+
+        #section3Copy {
+            -webkit-order: 6;
+        }
+
+        /* Standard syntax */
+        #section1Image {
+            order: 1;
+        }
+
+        #section1Copy {
+            order: 2;
+        }
+
+        #section2Image {
+            order: 4;
+        }
+
+        #section2Copy {
+            order: 3;
+        }
+
+        #section3Image {
+            order: 5;
+        }
+
+        #section3Copy {
+            order: 6;
+        }
+
+        .ARUKHub ul.mainSections li {
+            width: calc(100% / 2 - 15px);
+        }
+
+        .ARUKHub .footer {
+            background-position: initial;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #fullWidthArukRibbonOffer img {
+            display: block;
+            width: 120% !important;
+            margin-left: -10% !important;
+        }
+    }
+
+    /*desktop*/
+
+    @media (min-width: 1024px) {
+        main.wrap h1 {
+            font-size: 90px;
+        }
+
+        main.wrap h1 span {
+            margin-top: -50px;
+            font-size: 3rem;
+        }
+
+        .ARUKHub #logo {
+            width: 350px;
+            margin: 15px auto 30px;
+        }
+
+        /* Code for Safari 6.1 to 8.0 */
+        #section1Image {
+            -webkit-order: 1;
+        }
+
+        #section1Copy {
+            -webkit-order: 2;
+        }
+
+        #section2Image {
+            -webkit-order: 4;
+        }
+
+        #usCopy {
+            -webkit-order: 3;
+        }
+
+        #section3Image {
+            -webkit-order: 5;
+        }
+
+        #section3Copy {
+            -webkit-order: 6;
+        }
+
+        /* Standard syntax */
+        #section1Image {
+            order: 1;
+        }
+
+        #section1Copy {
+            order: 2;
+        }
+
+        #section2Image {
+            order: 4;
+        }
+
+        #section2Copy {
+            order: 3;
+        }
+
+        #section3Image {
+            order: 5;
+        }
+
+        #section3Copy {
+            order: 6;
+        }
+
+        .ARUKHub ul.mainSections li {
+            width: calc(100% / 2 - 15px);
+        }
+
+        .ARUKHub .footer {
+            background-position: initial;
+        }
+
+        .ARUKHub .footer h2 {
+            font: 30px/120% "DIN Condensed Bold", sans-serif;
+        }
+
+        .customCatBanner h1 {
+            font: 24px/140% "DIN Condensed Bold", sans-serif;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        #fullWidthArukRibbonOffer img {
+            display: block;
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+    }
+</style>
+
+<div class="ARUKHub">
+    <img
+        id="logo"
+        src="https://www.theperfumeshop.com/medias/sys_master/charities/charities/10581656862750/mARUK19-Logo.png"
+        alt="Logo"
+    />
+    <div class="customCatBanner">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/charities/charities/10581655388190/mARUK19-HeaderBackground.jpg"
+            alt="Thank You! Together we have raised over &pound;800,000!"
+        />
+    </div>
+    <p>
+        We&rsquo;re proud to support Alzheimer&rsquo;s Research UK for
+        another year running, after raising a staggering &pound;125,000 in
+        2021’
+    </p>
+    <ul class="mainSections">
+        <li id="section2Image">
+            <a href="/offers/lc/C104">
+                <img
+                    src="https://www.theperfumeshop.com/medias/sys_master/charities/charities/10581655060510/mARUK19-Donations.jpg"
+                    alt="Smell good, feel good."
+                />
+            </a>
+        </li>
+        <li id="section2Copy">
+            <h3>Smell good, feel good</h3>
+            <p>
+                Treat yourself (or someone special) to a new scent and add
+                <b>a £1 donation to Alzheimer&rsquo;s Research UK</b> at
+                the checkout.
+            </p>
+            <a href="/offers/lc/C104"><span>Shop Now</span></a>
+        </li>
+    </ul>
+
+    <!--   <div id="fullWidthArukRibbonOffer"><img src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11383146119198/full-width-aruk-ribbon-offer.jpg" alt="Personalised Ribbon Offer - 50p donation along with all orders with a Personalised Ribbon" title="Personalised Ribbon Offer - 50p donation along with all orders with a Personalised Ribbon" /></div> -->
+    <div class="footer">
+        <h2>Actions Speak Louder Than Words</h2>
+        <div class="CTAs">
+            <a
+                href="https://www.justgiving.com/campaign/TPS2022"
+                target="_blank"
+                alt="Donate Directly!"
+            >
+                <span>Donate Directly</span>
+            </a>
+            <a
+                href="https://www.alzheimersresearchuk.org/orange/"
+                target="_blank"
+                alt="Raise Awareness."
+            >
+                <span>Raise Awareness</span>
+            </a>
+        </div>
+    </div>
+    <iframe
+        width="100%"
+        height="350"
+        src="https://www.youtube.com/embed/L3AyD4RABOc?rel=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen=""
+    ></iframe>
+</div>
+<script>
+    waitFor$(function () {
+        $("main.wrap h1").prependTo(".customCatBanner");
+        document.getElementsByTagName("H1")[0].innerHTML =
+            "Thank You!<span>TOGETHER, WE HAVE RAISED OVER £800,000 SO FAR</span>";
+    });
+</script>

@@ -1,0 +1,237 @@
+<p style="display: none">
+    <style type="text/css">
+        .progress-container {
+            width: 50vw;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin: auto;
+        }
+
+        #staggered-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        #progress {
+            position: relative;
+            margin-bottom: 0.2rem;
+        }
+        #progress-bar {
+            position: absolute;
+            background: #e00034;
+            height: 8px;
+            width: 0%;
+            max-width: 100%;
+            top: 41%;
+            left: 0;
+            border-radius: 10px;
+            -webkit-transition: 400ms linear;
+            -moz-transition: 400ms linear;
+            -o-transition: 400ms linear;
+            -ms-transition: 400ms linear;
+            transition: 400ms linear;
+            z-index: 1;
+        }
+        #progress-num {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        #progress-num::before {
+            content: "";
+            background-color: lightgray !important;
+            position: absolute;
+            top: 41%;
+            left: 0;
+            height: 8px;
+            width: 100%;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        .step-start {
+            border: 3px solid lightgray;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin-top: 8px;
+            text-align: center;
+            background-color: #fff;
+            font-family: sans-serif;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        #progress-num .step {
+            color: black;
+            border: 3px solid lightgray;
+            border-radius: 100%;
+            width: 25px;
+            height: 25px;
+            line-height: 19px;
+            margin-top: 3px;
+            text-align: center;
+            background-color: #fff;
+            font-family: sans-serif;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        #progress-num .step.active,
+        .step-start.active {
+            border-color: #e00034;
+            background-color: #e00034;
+            color: #fff;
+        }
+
+        #step-3 {
+            margin-right: -1px;
+        }
+
+        @media screen and (max-width: 720px) {
+            .progress-container {
+                width: 75vw;
+                margin: auto;
+            }
+        }
+    </style>
+</p>
+<script type="text/javascript">
+    waitFor$(function () {
+        document.querySelector(".promo_banner__text").innerHTML =
+            "<div class='progress-container'> <div id='staggered-text'>&nbsp;</div> " +
+            "<div id='progress'> <div id='progress-bar'>&nbsp;</div>" +
+            "<ul id='progress-num'> <li class='step-start active'>&nbsp;</li>" +
+            "<li id='step-1' class='step'>1</li><li id='step-2' class='step'>" +
+            "2</li><li id='step-3' class='step'>3</li></ul></div>" +
+            "<span>Ends 9AM 30th MAY <u>Shop Now</u></span></div>";
+
+        const staggeredStepCost1 = 50;
+        const staggeredStepCost2 = 70;
+        const staggeredStepCost3 = 100;
+        function staggeredProgressBar() {
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2") + "e-2");
+            }
+            leftoverCost1 = roundToTwo(
+                staggeredStepCost1 -
+                    CartDataModule.attributes.subTotal.value
+            );
+            leftoverCost2 = roundToTwo(
+                staggeredStepCost2 -
+                    CartDataModule.attributes.subTotal.value
+            );
+            leftoverCost3 = roundToTwo(
+                staggeredStepCost3 -
+                    CartDataModule.attributes.subTotal.value
+            );
+            leftoverCost1 = leftoverCost1.toFixed(2);
+            leftoverCost2 = leftoverCost2.toFixed(2);
+            leftoverCost3 = leftoverCost3.toFixed(2);
+            function percentage(partialValue, totalValue) {
+                let num = roundToTwo((100 * partialValue) / totalValue);
+                let text = num.toString();
+                return text + "%";
+            }
+            function percentageTest(
+                partialValue,
+                totalValue,
+                percentageWidth
+            ) {
+                let num = roundToTwo(
+                    (percentageWidth * partialValue) / totalValue
+                );
+                let text = num.toString();
+                return text + "%";
+            }
+            if (
+                CartDataModule.attributes.subTotal.value >=
+                staggeredStepCost1
+            ) {
+                document.getElementById("staggered-text").innerHTML =
+                    "You've qualified for <b>10%</b> off <b>£60</b>." +
+                    "<br/>" +
+                    " Spend <b>£" +
+                    leftoverCost2 +
+                    "</b> more to get <b>15%</b> off <b>£70</b>.";
+                document.getElementById("progress-bar").style.maxWidth =
+                    "65%";
+                document.getElementById("progress-bar").style.width =
+                    percentageTest(
+                        CartDataModule.attributes.subTotal.value,
+                        staggeredStepCost2,
+                        65
+                    );
+                var element = document.getElementById("step-1");
+                element.classList.add("active");
+            }
+            if (
+                CartDataModule.attributes.subTotal.value >=
+                staggeredStepCost2
+            ) {
+                document.getElementById("staggered-text").innerHTML =
+                    "You've qualified for <b>15%</b> off <b>£75</b>." +
+                    "<br/>" +
+                    " Spend <b>£" +
+                    leftoverCost3 +
+                    "</b> more to get <b>20%</b> off <b>£100</b>.";
+                document.getElementById("progress-bar").style.maxWidth =
+                    "100%";
+                document.getElementById("progress-bar").style.width =
+                    percentageTest(
+                        CartDataModule.attributes.subTotal.value,
+                        staggeredStepCost3,
+                        100
+                    );
+                var element = document.getElementById("step-2");
+                element.classList.add("active");
+            }
+            if (
+                CartDataModule.attributes.subTotal.value >=
+                staggeredStepCost3
+            ) {
+                document.getElementById("staggered-text").innerHTML =
+                    "You've qualified for <b>20%</b> off <b>£100</b>.";
+                document.getElementById("progress-bar").style.maxWidth =
+                    "100%";
+                document.getElementById("progress-bar").style.width =
+                    percentageTest(
+                        CartDataModule.attributes.subTotal.value,
+                        staggeredStepCost3,
+                        100
+                    );
+                var element = document.getElementById("step-3");
+                element.classList.add("active");
+            }
+            if (
+                CartDataModule.attributes.subTotal.value <
+                staggeredStepCost1
+            ) {
+                document.getElementById("staggered-text").innerHTML =
+                    " Spend <b>£" +
+                    leftoverCost1 +
+                    "</b>" +
+                    " more to get <b>10%</b> off <b>£60</b>.";
+                document.getElementById("progress-bar").style.maxWidth =
+                    "35%";
+                document.getElementById("progress-bar").style.width =
+                    percentageTest(
+                        CartDataModule.attributes.subTotal.value,
+                        staggeredStepCost1,
+                        35
+                    );
+                var element1 = document.getElementById("step-1");
+                element1.classList.remove("active");
+                var element2 = document.getElementById("step-2");
+                element2.classList.remove("active");
+                var element3 = document.getElementById("step-3");
+                element3.classList.remove("active");
+            }
+        }
+        $(document).ajaxSuccess(function (event, xhr, settings, data) {
+            staggeredProgressBar();
+        });
+        staggeredProgressBar();
+    });
+</script>

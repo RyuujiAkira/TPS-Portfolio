@@ -1,0 +1,221 @@
+<script>
+  console.log("Loaded Clickable Titles");
+  if (window.location.href.indexOf("my-account") != -1) {
+    const nav = document.querySelector(".my_account_navigation");
+    const newAccountHTML = `<h1 class="my_account_navigation__title">My Account</h1>
+    <div class="my_account_navigation__category">
+      <a
+        id="account-header"
+        class="my_account_navigation__sub_title Account my_account_navigation__link"
+        href="/my-account"
+      >
+        <h2 class="my_account_navigation__sub_title">My Details</h2>
+      </a>
+      <a class="Account my_account_navigation__link" href="/my-account"
+        >Account Overview</a
+      >
+      <a
+        class="Contact_info my_account_navigation__link"
+        href="/my-account/profile"
+        >Contact Information</a
+      >
+      <a
+        class="Delivery_address my_account_navigation__link"
+        href="/my-account/delivery-address"
+        >Delivery Address</a
+      >
+      <a
+        class="Billing_address my_account_navigation__link"
+        href="/my-account/billing-address"
+        >Billing Address</a
+      >
+      <a
+        class="Payment_details my_account_navigation__link"
+        href="/my-account/payment-details"
+        >Payment Details</a
+      >
+      <a
+        class="Change_email my_account_navigation__link"
+        href="/my-account/change-password"
+        >Change Password</a
+      >
+      <a
+        class="Change_password my_account_navigation__link"
+        href="/my-account/change-email"
+        >Change Email</a
+      >
+    </div>
+    <div class="my_account_navigation__category">
+      <a
+        class="Prev_orders my_account_navigation__link"
+        href="/my-account/orders"
+        ><h2 id="orders-header" class="my_account_navigation__sub_title">
+          My Orders
+        </h2>
+      </a>
+      <a
+        class="Prev_orders my_account_navigation__link"
+        href="/my-account/orders"
+        >My Previous Orders</a
+      >
+    </div>
+    <div class="my_account_navigation__category">
+      <a
+        class="Wishlist my_account_navigation__link"
+        href="/my-account/shoppingList"
+        ><h2 id="favourites-header" class="my_account_navigation__sub_title">
+          My Favourites
+        </h2>
+      </a>
+      <a
+        class="Wishlist my_account_navigation__link"
+        href="/my-account/shoppingList"
+        >Wishlist</a
+      >
+    </div>
+    <div class="my_account_navigation__category">
+      <a
+        class="Rewards_card my_account_navigation__link"
+        href="/my-account/my-rewards/"
+        ><h2 id="rewards-header" class="my_account_navigation__sub_title">
+          My Rewards
+        </h2></a
+      >
+      <a
+        class="Rewards_card my_account_navigation__link"
+        href="/my-account/my-rewards/"
+      >
+        My VIP Rewards</a
+      >
+      <a class="my_account_navigation__link" href="/my-account/preferences"
+        >Favourite Brand</a
+      >
+    </div>
+    <div class="my_account_navigation__category">
+      <a
+        class="Gift_vouchers my_account_navigation__link"
+        href="/my-account/egiftcard"
+        ><h2 id="giftvouchers-header" class="my_account_navigation__sub_title">
+          My Gift vouchers
+        </h2></a
+      >
+      <a
+        class="Gift_vouchers my_account_navigation__link"
+        href="/my-account/egiftcard"
+        >My Gift vouchers</a
+      >
+    </div>
+    <div class="my_account_navigation__category">
+      <a
+        class="Marketing_pref my_account_navigation__link"
+        href="/my-account/marketing-notifications"
+        ><h2 id="marketing-header" class="my_account_navigation__sub_title">
+          Marketing Preferences
+        </h2></a
+      >
+      <a
+        class="Marketing_pref my_account_navigation__link"
+        href="/my-account/marketing-notifications"
+        >Marketing Preferences</a
+      >
+    </div>`;
+    nav.innerHTML = newAccountHTML;
+
+    switch (window.location.href) {
+      case "https://www.theperfumeshop.com/my-account":
+        var element = document.getElementsByClassName("Account");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/profile":
+        var element = document.getElementsByClassName("Contact_info");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/delivery-address":
+        var element = document.getElementsByClassName("Contact_info");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/billing-address":
+        var element = document.getElementsByClassName("Billing_address");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/payment-details":
+        var element = document.getElementsByClassName("Payment_details");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/change-password":
+        var element = document.getElementsByClassName("Change_password");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/change-email":
+        var element = document.getElementsByClassName("Change_email");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/change-email":
+        var element = document.getElementsByClassName("Change_email");
+        element.classList.add("my_account_navigation__link-active");
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+    }
+
+    switch (window.location.href) {
+      case "https://www.theperfumeshop.com/my-account":
+      case "https://www.theperfumeshop.com/my-account/profile":
+      case "https://www.theperfumeshop.com/my-account/delivery-address":
+      case "https://www.theperfumeshop.com/my-account/billing-address":
+      case "https://www.theperfumeshop.com/my-account/payment-details":
+      case "https://www.theperfumeshop.com/my-account/change-password":
+      case "https://www.theperfumeshop.com/my-account/change-email":
+        var header = document.getElementById("account-header");
+        header.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/orders":
+        var element = document.getElementById("orders-header");
+        element.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/shoppingList":
+        var element = document.getElementById("favourites-header");
+        element.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/my-rewards":
+      case "https://www.theperfumeshop.com/my-account/preferences":
+        var element = document.getElementById("rewards-header");
+        element.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/e-giftcard":
+        var element = document.getElementById("giftvouchers-header");
+        element.classList.add("my_account_navigation__link-active");
+        break;
+
+      case "https://www.theperfumeshop.com/my-account/marketing-notifications":
+        var element = document.getElementById("marketing-header");
+        element.classList.add("my_account_navigation__link-active");
+        break;
+    }
+  }
+</script>

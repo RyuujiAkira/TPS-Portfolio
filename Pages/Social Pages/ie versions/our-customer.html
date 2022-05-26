@@ -1,0 +1,451 @@
+<p>
+    <style type="text/css">
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .breadcrumbs,
+        #talkToUs {
+            display: none !important;
+        }
+
+        main.wrap {
+            padding: 0;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            max-width: none;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .csrCustomerArea {
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1140px;
+        }
+
+        .csrCustomerHeaderMobile {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0;
+        }
+
+        .csrCustomerHeaderDesktop {
+            display: none;
+        }
+
+        .csrCustomerHeaderMobile h1,
+        .csrCustomerHeaderDesktop h1 {
+            position: absolute;
+            margin: 0;
+            padding: 0 20vw;
+            font: 48px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            color: #000000;
+            text-shadow: 2px 2px 0px #ffffff;
+            text-align: center;
+            width: 100%;
+        }
+
+        .csrCustomerHeaderMobile img,
+        .csrCustomerHeaderDesktop img {
+            width: 100%;
+        }
+
+        .csrCustomerIntroArea {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin: 0;
+            padding: 30px 20px 0;
+            background-color: rgba(234, 130, 141, 0.2);
+        }
+
+        .csrCustomerIntroArea li {
+            margin: 0 0 30px;
+            padding: 0;
+            list-style: none;
+            font: 48px/100% "DIN Condensed Bold", sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000000;
+            width: calc(100% / 2 - 30px);
+        }
+
+        .csrCustomerIntroArea li span.introSmallCopy {
+            display: block;
+            margin: 10px 0 0;
+            padding: 0;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            text-transform: none;
+            color: #000000;
+        }
+
+        .csrCustomerIntroArea li img {
+            margin: 0;
+            width: 100%;
+        }
+
+        .csrCustomerIntroArea li img.heartGraphic {
+            width: 50%;
+        }
+
+        .csrCustomerIntroArea li img.rewardsGraphic {
+            width: 70%;
+        }
+
+        .csrCustomerSections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 0 10px;
+        }
+
+        .csrCustomerSections li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+        }
+
+        .csrCustomerSections li.sectionCopy {
+            padding: 0 20px;
+        }
+
+        .csrCustomerSections img {
+            width: 100%;
+        }
+
+        .csrCustomerSections h2 {
+            margin: 20px 0 10px;
+            padding: 0;
+            font: 28px/140% "Mark My Words Clean", sans-serif;
+        }
+
+        .csrCustomerSections a,
+        .csrCustomerSections a:hover,
+        .csrCustomerSections a:focus,
+        .csrCustomerSections a:active {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .backToSocialPurpose {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font: 28px/100% "DIN Condensed Bold", sans-serif;
+            color: #000000;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            text-shadow: 2px 2px 0px #ffffff;
+            width: 100%;
+        }
+
+        .backToSocialPurpose:hover {
+            color: #e00034;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .csrCustomerHeaderMobile {
+                display: none;
+            }
+
+            .csrCustomerHeaderDesktop {
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin: 0;
+            }
+
+            .csrCustomerIntroArea {
+                margin: 0 0 20px;
+            }
+
+            .csrCustomerIntroArea li {
+                width: calc(100% / 4 - 30px);
+            }
+
+            .csrCustomerIntroArea li {
+                font: 38px/100% "DIN Condensed Bold", sans-serif;
+            }
+
+            .csrCustomerIntroArea li span.introSmallCopy {
+                font: 11px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCustomerSections {
+                align-items: center;
+                margin: 0 0 20px;
+                padding: 0 20px;
+            }
+
+            .csrCustomerSections li {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+
+            .customerAwards,
+            .customerAtOurHeart,
+            .customerCovid {
+                align-items: normal;
+            }
+
+            .customerSmilesOnFaces li.sectionImage,
+            .customerCovid li.sectionImage {
+                order: 1;
+            }
+
+            .csrCustomerSections li.sectionCopy {
+                padding: 0;
+            }
+
+            .csrCustomerSections li.sectionCopy p:last-child {
+                margin: 0;
+            }
+
+            .csrCustomerSections h2 {
+                margin: 0 0 10px;
+            }
+
+            .backToSocialPurpose {
+                margin: 40px 0 20px;
+                font: 36px/100% "DIN Condensed Bold", sans-serif;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main.wrap {
+            }
+
+            .csrCustomerHeaderDesktop h1 {
+                font: 60px/100% "DIN Condensed Bold", sans-serif;
+                text-transform: uppercase;
+                text-align: center;
+                width: 100%;
+            }
+
+            .csrCustomerIntroArea {
+                justify-content: space-around;
+                margin: 0 0 40px;
+            }
+
+            .csrCustomerIntroArea li {
+                width: calc(100% / 5 - 20px);
+            }
+
+            .csrCustomerIntroArea li img {
+                margin: 0 0 10px;
+            }
+
+            .csrCustomerIntroArea li span.introSmallCopy {
+                font: 12px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCustomerSections {
+                margin: 0 0 40px;
+                padding: 0 20px;
+            }
+
+            .csrCustomerSections li {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+                width: calc(100% / 2 - 20px);
+            }
+
+            .customerAwards,
+            .customerAtOurHeart {
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .csrCustomerIntroArea li {
+                font: 42px/100% "DIN Condensed Bold", sans-serif;
+            }
+
+            .csrCustomerIntroArea li span.introSmallCopy {
+                font: 14px/140% "Muli", Arial, Helvetica, sans-serif;
+            }
+
+            .csrCustomerSections {
+                padding: 0;
+            }
+        }
+    </style>
+</p>
+<div class="csrCustomerArea">
+    <div class="csrCustomerHeaderMobile">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11270135250974/csr-customer-header-mobile.jpg"
+            title="Our Customers"
+            alt=""
+        />
+    </div>
+    <div class="csrCustomerHeaderDesktop">
+        <img
+            src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11269640060958/csr-customer-header-desktop.jpg"
+            title="Our Customers"
+            alt=""
+        />
+    </div>
+    <ul class="csrCustomerIntroArea">
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265226965022/csr-customer-ff.png"
+                title="The Fragrance Foundation"
+                alt=""
+            />
+            <span class="introSmallCopy"
+                >Online Retailer Of The Year 2022</span
+            >
+        </li>
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11585908867102/feefo-sq-trusted-service-2022-grey-yellow.png"
+                title="Feefo"
+                alt=""
+                style="height: 50%; width: 50%"
+            />
+            <span class="introSmallCopy"
+                >Platinum Trusted Service Award 2022</span
+            >
+        </li>
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265227620382/csr-customer-heart-graphic.png"
+                class="heartGraphic"
+                title="Customers at the heart of everything we do"
+                alt=""
+            />
+            <span class="introSmallCopy"
+                >Customers at the heart of everything we do</span
+            >
+        </li>
+        <li>
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11271542177822/csr-customer-rewards-graphic.png"
+                class="rewardsGraphic"
+                title="VIP Rewards"
+                alt=""
+            />
+            <span class="introSmallCopy"
+                >Over 4 million scent obsessed VIP Rewards Club
+                members</span
+            >
+        </li>
+    </ul>
+    <ul class="csrCustomerSections customerAwards">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265227915294/csr-customer-award.jpg"
+                alt="Customer Love"
+                title="Customer Love"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Customer Love</h2>
+            <p>
+                We, the award-winning Perfume People, are committed to
+                delivering all your perfume needs instore and online.
+                Talking of awards, we have consistently won top accolades
+                at industry events, including Retailer of the Year and
+                Online Retailer of the Year at the Fragrance Foundation
+                Awards. Plus our own product range, The Perfume Edit won at
+                the Real Beauty Awards and the Pure Beauty Awards 2020.
+                We’re committed to delivering excellence for you, thank you
+                for recognising this with Feefo’s Platinum Trusted Service
+                Award over the years.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCustomerSections customerSmilesOnFaces">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265228144670/csr-customer-smile-on-faces.jpg"
+                alt="Putting Smiles On Faces"
+                title="Putting Smiles On Faces"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Putting Smiles On Faces</h2>
+            <p>
+                We're customer obsessed and we love nothing more than
+                surprising and delighting you with competitions, events,
+                random acts of kindness and VIP Rewards. Make sure you’re
+                following our social pages to get involved.
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCustomerSections customerAtOurHeart">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11265235124254/csr-customer-at-our-heart.jpg"
+                alt="Customer At Our Heart"
+                title="Customer At Our Heart"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>Customer At Our Heart</h2>
+            <p>
+                Our customers are at the heart of everything we do. We want
+                to hear your thoughts, that's why we ask what matters most
+                to you on social media and in our regular Scentiments
+                surveys sent to VIP customers. Your opinion counts, please
+                tell us about your shopping experiences with us - instore
+                or online. You can leave us a review on TrustPilot after
+                you shop. We can't wait to hear from you!
+            </p>
+        </li>
+    </ul>
+    <ul class="csrCustomerSections customerCovid">
+        <li class="sectionImage">
+            <img
+                src="https://www.theperfumeshop.com/medias/sys_master/root/11585911980062/EdinburghStJames.jpg"
+                alt="Edinburgh St James"
+                title="Edinburgh St James"
+            />
+        </li>
+        <li class="sectionCopy">
+            <h2>We Care</h2>
+            <p>
+                We’re constantly evolving the customer experience to create
+                the perfect destination to indulge your perfume passion.
+                You can shop with us anywhere, at any time and we promise
+                to offer you the best brands at the best prices, including
+                our award-winning own brand ranges. Our services include
+                personalisation – making your gift extra special as well
+                our bottle recycling scheme and great delivery options.
+                Visit us online to find out the latest news in our world of
+                perfume, with hints and tips and lots of fun too!
+            </p>
+        </li>
+    </ul>
+    <a
+        href="/our-social-purpose"
+        title="Back To Our Social Purpose"
+        class="backToSocialPurpose"
+        >Back To Our Social Purpose</a
+    >
+</div>
+<script>
+    setTimeout(function () {
+        $("main.wrap h1").prependTo(
+            ".csrCustomerHeaderMobile, .csrCustomerHeaderDesktop"
+        );
+        document.getElementsByTagName("H1")[0].innerHTML = "OUR CUSTOMERS";
+    }, 1000);
+</script>
