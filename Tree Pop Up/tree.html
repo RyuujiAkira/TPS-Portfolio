@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style>
+      body {
+        overflow: hidden;
+      }
+
+      #container {
+        background-color: white;
+        height: 90vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      #container .icon {
+        position: absolute;
+        z-index: 2;
+      }
+
+      .icon {
+        max-width: 10rem;
+        max-height: 10rem;
+        min-width: 9rem;
+        min-height: 9rem;
+      }
+
+      #tree-popup {
+        height: 3.5rem;
+        width: 10rem;
+        font-size: 2rem;
+        margin: auto;
+      }
+
+      #after-tree-text {
+        display: none;
+        z-index: 100;
+        width: 500px;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="button-tree-text">
+        <h1>Tap the button to <br />see how many <br />trees we have planted!</h1>
+        <button id="tree-popup" onclick="spawnTrees()">Tap Me</button>
+      </div>
+      <div id="after-tree-text">
+        <h1>We have planted <br />over *Number* <br />trees!</h1>
+      </div>
+    </div>
+    <img src="#" class="icon" hidden="hidden" id="template" />
+  </body>
+
+  <script>
+    var spawnTrees = function () {
+      var canvas = document.querySelector("#container");
+      var text_tree = document.querySelector("#button-tree-text");
+      var after_text_tree = document.querySelector("#after-tree-text");
+      text_tree.style.display = "none";
+      var delete_tree = document.querySelectorAll(".icon");
+      var icon_template = document.querySelector("#template");
+      var icon_width = 10;
+      var icon_height = 10;
+      var the_images = ["https://www.theperfumeshop.com/medias/sys_master/root/11600521297950/Asset-1.svg"];
+      var pickRandomImage = function () {
+        var i = Math.floor(Math.random() * the_images.length);
+        return the_images[i];
+      };
+      var total_number_of_images = 2;
+      var max_height = canvas.offsetHeight - icon_height;
+      var max_width = canvas.offsetWidth - icon_width;
+      var randomCoordinate = function () {
+        var r = [];
+        var x = Math.floor(Math.random() * max_width);
+        var y = Math.floor(Math.random() * max_height);
+        r = [x, y];
+        return r;
+      };
+      var createImage = function () {
+        var node = icon_template.cloneNode(true);
+        var xy = randomCoordinate();
+        node.removeAttribute("id");
+        node.removeAttribute("hidden");
+        node.style.top = xy[1] + "px";
+        node.style.left = xy[0] + "px";
+        node.setAttribute("src", pickRandomImage());
+        canvas.appendChild(node);
+      };
+
+      var createTrees = setInterval(function () {
+        // for (var i = 0; i < total_number_of_images; i++) {
+        //   createImage();
+        // }
+        total_number_of_images = 1;
+        for (var i = 0; i < total_number_of_images; i++) {
+          createImage();
+        }
+      }, 20);
+
+      setTimeout(function () {
+        clearInterval(createTrees);
+        after_text_tree.style.display = "block";
+      }, 3000);
+
+      setTimeout(function () {
+        after_text_tree.style.display = "none";
+        document.getElementsByClassName("container").innerHTML = "";
+        const trees = document.querySelectorAll(".icon");
+        trees.forEach((icon) => {
+          icon.remove();
+        });
+        // $("#container").empty();
+      }, 7000);
+
+      setTimeout(function () {
+        text_tree.style.display = "block";
+        $(`<img src="#" class="icon" hidden="hidden" id="template" />`).appendTo("#container");
+      }, 7500);
+    };
+  </script>
+</html>

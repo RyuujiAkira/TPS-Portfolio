@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Mulish:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+      div,
+      p,
+      a,
+      li,
+      td {
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+      }
+
+      hr.solid {
+        border-top: 1px solid #d2d2d2;
+        width: 95%;
+        border-radius: 50%;
+      }
+
+      body {
+        width: 100%;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Outlook link fix */
+      #outlook a {
+        padding: 0;
+      }
+
+      /* Hotmail background & line height fixes */
+      .ExternalClass {
+        width: 100% !important;
+      }
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      table td {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      /* Image borders & formatting */
+      img {
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      a img {
+        border: none;
+      }
+
+      /* Re-style iPhone automatic links (eg. phone numbers) */
+      .applelinks a {
+        color: #000001;
+        text-decoration: none;
+      }
+      .appleBody a {
+        color: #000001;
+        text-decoration: none;
+      }
+      .appleFooter a {
+        color: #000001;
+        text-decoration: none;
+      }
+
+      /* Hotmail symbol fix for mobile devices */
+      .ExternalClass img[class^="Emoji"] {
+        width: 10px !important;
+        height: 10px !important;
+        display: inline !important;
+      }
+
+      .hideONdesktop {
+        display: none !important;
+        mso-hide: all; /* Outlook clients*/
+        font-size: 0;
+        max-height: 0;
+        line-height: 0;
+      }
+      .hideONmobile {
+        display: block !important;
+      }
+      .hideONmobileNav {
+        display: inline-table;
+      }
+
+      .mobileFooterlinks a {
+        color: #000000 !important;
+      }
+      .mobileFooterlinks {
+        color: #000000 !important;
+      }
+
+      /* ---------------- DARK MODE CODE ---------------- */
+      @media (prefers-color-scheme: dark) {
+        td[class="orderBar"] {
+          background-color: #f5f5f5 !important;
+        }
+      }
+
+      /* ---------------- MOBILE CODE ---------------- */
+      @media only screen and (max-width: 480px) {
+        table[id="wrapper"] .hide {
+          width: 0px !important;
+          display: none !important;
+        }
+
+        img[class="scale"] {
+          width: 100% !important;
+          height: auto !important;
+          display: block !important;
+        }
+
+        td[class="editorialGap"] {
+          height: 20px !important;
+        }
+
+        td[class="postContentGutters"] {
+          width: 5% !important;
+        }
+
+        td[class="slotGap"] {
+          height: 10px !important;
+        }
+
+        .hideONdesktop {
+          display: block !important;
+          mso-hide: all !important; /* Outlook clients*/
+          visibility: visible !important;
+          max-height: 100px !important;
+          width: 100% !important;
+          line-height: 16px !important;
+          overflow: visible !important;
+        }
+
+        .hideONmobile {
+          display: none !important;
+          mso-hide: all !important; /* Outlook clients*/
+        }
+        .hideONmobileNav {
+          display: none !important;
+          mso-hide: none; /* Outlook clients*/
+        }
+
+        .mobcenter {
+          text-align: center;
+        }
+        .mobcenter img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        .noborder {
+          border: none !important;
+        }
+        .lastproductof3 {
+          width: 180px !important;
+        }
+
+        table.deviceHalfWidth {
+          width: 47.5%;
+        }
+        table.deviceQuarterWidth {
+          width: 25%;
+        }
+        table.devicethirdWidth {
+          width: 33%;
+        }
+        table.deviceWidth3rowproduct3 {
+          width: 93%;
+        }
+
+        img.deviceWidth {
+          width: 300px !important;
+          /*THIS MAY BREAK SOMETHING*/
+        }
+
+        body[yahoo] .deviceWidth {
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        body[yahoo] table[class="hide"],
+        body[yahoo] img[class="hide"],
+        body[yahoo] td[class="hide"] {
+          display: none !important;
+        }
+        *[class].float {
+          float: left !important;
+        }
+        body[yahoo] td.repading {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        body[yahoo] td.doublerepading {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .mobileFooterlinks {
+          font-size: 8px;
+        }
+        .mobileFooteraddresstext {
+          font-size: 9px;
+        }
+
+        .mobcenter {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    yahoo="fix"
+    bgcolor="#ffffff"
+    topmargin="0"
+    leftmargin="0"
+    marginheight="0"
+    marginwidth="0"
+    style="
+      -webkit-font-smoothing: antialiased;
+      width: 100% !important;
+      background-color: #ffffff;
+      background-image: none;
+      background-repeat: repeat;
+      background-position: top left;
+      background-attachment: scroll;
+      -webkit-text-size-adjust: none;
+    "
+  >
+    <!-- Gmail hack -->
+    <div
+      style="
+        display: none;
+        white-space: nowrap;
+        font: 10px arial;
+        color: #ffffff;
+        line-height: 0;
+        width: 640px !important;
+        min-width: 640px !important;
+        max-width: 600px !important;
+      "
+    >
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </div>
+    <!-- /Gmail hack -->
+
+    <!--------------------------- MASTER WRAPPER ---------------------------->
+    <table id="wrapper" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td bgcolor="#ffffff">
+            <table
+              width="580"
+              border="0"
+              cellspacing="0"
+              cellpadding="0"
+              align="center"
+              class="deviceWidth"
+              bgcolor="#ffffff"
+            >
+              <!---------------------------Logo---------------------------->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" align="center">
+                  <table
+                    width="580"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                    align="center"
+                    class="deviceWidth"
+                    bgcolor="#000000"
+                  >
+                    <tbody>
+                      <tr>
+                        <td style="font-size: 1px; line-height: 1px" height="20">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="font-size: 12px; line-height: 16px">
+                          <a
+                            href="https://www.theperfumeshop.com/?utm_source=crm&utm_medium=email&utm_campaign=tagPlaceholder"
+                          >
+                            <img
+                              src="https://www.theperfumeshop.com/pws/client/images/Emails_20/ElabFooter/images/Logo_2.jpg"
+                              alt="The Perfume Shop"
+                              style="display: block"
+                              border="0"
+                              width="283"
+                            />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 1px; line-height: 1px" height="20">&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!---------------------------Logo Ends---------------------------->
+
+              <!---------------------------NAVIGATION ---------------------------->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px">
+                  <table
+                    width="580"
+                    height="48"
+                    bgcolor="#ea0a2a"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                    align="center"
+                    class="deviceWidth"
+                  >
+                    <tbody>
+                      <!-- DESTKTOP NAVIGATION -->
+                      <tr>
+                        <td style="font-size: 11px; line-height: 48px" align="left" height="48">
+                          <table
+                            class="deviceHalfWidth"
+                            align="left"
+                            border="0"
+                            cellspacing="0"
+                            cellpadding="0"
+                            width="48%"
+                            height="48"
+                          >
+                            <tbody>
+                              <tr>
+                                <td align="center" style="font-family: arial; color: #ffffff; font-size: 12px" height="48">
+                                  <a
+                                    href="https://www.theperfumeshop.com/offers?utm_source=crm&utm_medium=email&utm_campaign=tagPlaceholder"
+                                    style="color: #ffffff !important; text-decoration: none; text-transform: uppercase"
+                                  >
+                                    <span style="color: #ffffff; font-size: 12px; letter-spacing: 1px; line-height: 48px"
+                                      >SHOP NOW</span
+                                    >
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <table
+                            class="deviceHalfWidth"
+                            align="left"
+                            border="0"
+                            cellspacing="0"
+                            cellpadding="0"
+                            width="48%"
+                            height="48"
+                          >
+                            <tbody>
+                              <tr>
+                                <td
+                                  align="center"
+                                  style="font-family: arial; color: #ffffff; font-size: 12px; letter-spacing: 1px"
+                                  height="48"
+                                >
+                                  <a
+                                    href="https://www.theperfumeshop.com/delivery-information?utm_source=crm&utm_medium=email&utm_campaign=tagPlaceholder"
+                                    style="color: #ffffff !important; text-decoration: none; text-transform: uppercase"
+                                  >
+                                    <span style="color: #ffffff; font-size: 12px; letter-spacing: 1px; line-height: 48px"
+                                      >FREE DELIVERY</span
+                                    >
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!--------------------------- NAVIGATION ENDS ---------------------------->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="40"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- CONSIGNMENT TITLE SLOT STARTS -->
+              <tr>
+                <td width="600" bgcolor="#ffffff" style="text-align: center">
+                  <a
+                    href="${ctx.baseUrl}/?utm_source=crm&utm_medium=email&utm_campaign=orderConfirmation"
+                    title="Order Received. Thanks for shopping with us."
+                    name="Order Received. Thanks for shopping with us."
+                    target="_blank"
+                    style="text-decoration: none"
+                  >
+                    <font face="'Barlow Condensed', sans-serif" color="#000000" style="font-size: 40px; font-weight: bold">
+                      YOUR ORDER <br />
+                      <span style="color: #e00034; font-size: 30px">IS BEING PROCESSED</span>
+                    </font>
+                  </a>
+                </td>
+              </tr>
+              <!-- CONSIGNMENT TITLE SLOT ENDS -->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="40"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- ORDER TEXT BLOCK STARTS -->
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="540"
+                        align="left"
+                        style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        Dear #if( ${ctx.displayName} == "-" ) Customer! #else ${ctx.displayName}! #end
+                        <p>You are receiving this email as the following item(s) have been cancelled from your order.</p>
+                        <p>
+                          This is because either you have told us that you no longer want this item(s), or regrettably, it is
+                          out of stock.
+                        </p>
+                      </td>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- ORDER TEXT BLOCK ENDS -->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="20"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- ORDER BAR SLOT STARTS -->
+              <tr>
+                <td width="600" bgcolor="#ffffff"></td>
+              </tr>
+              <tr>
+                <td class="orderBar" bgcolor="#f5f5f5">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="600"
+                        align="left"
+                        style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; font-weight: bold; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        <h5 style="margin: 1rem">Cancellation</h5>
+                      </td>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- ORDER BAR SLOT ENDS -->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="20"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- ITEMS SLOT STARTS -->
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="40" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="600"
+                        align="left"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        #if( ${ctx.order.entries} != 1 ) ${ctx.order.entries} Items #else 1 Item #end
+                      </td>
+                      <td
+                        width="300"
+                        align="right"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        Quantity
+                      </td>
+                      <td
+                        width="300"
+                        align="right"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000; padding-right: 1rem"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        Price
+                      </td>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- SPACER & DIVIDER -->
+              <tr>
+                <td><hr class="solid" /></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="20"></td>
+              </tr>
+              <!-- SPACER & DIVIDER -->
+
+              #foreach($entry in ${ctx.cancelled}) #if($entry.product.code != '1243508')
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0" width="580" style="table-layout: fixed">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td width="75" valign="top">
+                        #foreach($image in $entry.product.images) #if($image.imageType == "PRIMARY" && $image.format ==
+                        "product" )
+                        <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                          ><img
+                            src="${ctx.mediaSecureBaseUrl}$image.url"
+                            alt="$entry.product.name"
+                            title="$entry.product.name"
+                            width="75"
+                            height="75"
+                            border="0"
+                            style="display: block" />
+                          <br
+                        /></font>
+                        #end #end
+                      </td>
+
+                      <td width="30" class="mobileProgrammeGutterWidth"></td>
+
+                      <!-- PRODUCT COPY STARTS -->
+
+                      <td width="150" class="mobileProgrammeTextWidth">
+                        <span
+                          style="
+                            font: 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                          "
+                        >
+                          #if($entry.product.igcBrandName == "") $entry.product.baseProduct.igcBrandName #elseif
+                          ($!entry.product.igcBrandName) ${entry.product.igcBrandName} #end </span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            letter-spacing: 1px;
+                          "
+                        >
+                          #if($entry.product.rangeName == "") && ($!entry.product.baseProduct.rangeName == "")
+                          $entry.product.baseProduct.rangeName #elseif ($!entry.product.rangeName) ${entry.product.rangeName}
+                          #else #end
+                        </span>
+                        <br />
+                        <span
+                          style="
+                            font: 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            letter-spacing: 1px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                          "
+                        >
+                          #if ($entry.product.name == "") && ($entry.product.baseProduct.name == "") A
+                          #elseif($entry.product.name == "") $entry.product.baseProduct.name #else ${entry.product.name} #end
+                          #foreach( $baseOption in $entry.product.baseOptions ) #if ($baseOption.selected.url ==
+                          $entry.product.url) #if ($!$baseOption.selected.igcVariantOptionQualifiers['variantSize'] &&
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] != "") -
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] #else #end #end #end </span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Code: $entry.product.code</span
+                        >
+                        <br />
+                        <br />
+                      </td>
+
+                      <!-- PRODUCT COPY ENDS -->
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="100"
+                        align="right"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        $entry.quantity
+                      </td>
+                      <td
+                        width="100"
+                        align="right"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        #if($ordNo.substring(0,7) != "S2D_199")
+                        <span
+                          style="
+                            font: 14px/180% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                        >
+                          #if ($entry.finalEntryPrice.value > 0) $entry.finalEntryPrice.formattedValue #else FREE #end
+                        </span>
+                        #end
+                      </td>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              #end
+              <!-- SPACER & DIVIDER -->
+              <tr>
+                <td><hr class="solid" /></td>
+              </tr>
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="20"></td>
+              </tr>
+              <!-- SPACER & DIVIDER -->
+              #end
+
+              <!-- ITEMS SLOT ENDS -->
+
+              <!-- REFUND COST SLOT STARTS -->
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="600"
+                        align="right"
+                        style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        <ul style="list-style: none; padding-right: 1rem">
+                          #if ($ctx.redeemedPointsToRefund > 0)
+                          <li style="padding-bottom: 0.2rem">Points Refunded: -${ctx.redeemedPointsToRefund}</li>
+                          #end
+                          <li style="padding-bottom: 0.2rem">Subtotal: -${ctx.subTotalToRefund.formattedValue}</li>
+                          <hr class="solid" style="width: 50%; margin: 1rem 0 1rem 0" />
+                          <li style="color: #e00034">
+                            Refund Total:
+                            <span style="font-size: 16px"><strong>${ctx.totalToRefund.formattedValue}</strong></span>
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- REFUND COST SLOT ENDS -->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="40"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- REFUND TEXT BLOCK STARTS -->
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                      <td
+                        width="580"
+                        align="left"
+                        style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        <p>
+                          Your refund has been processed by our returns team and funds will be reverted back to your original
+                          method of payment.
+                        </p>
+                        <p>Please allow 3-7 working days for the funds to appear.</p>
+                      </td>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- REFUND TEXT BLOCK ENDS -->
+
+              <!-- SPACER -->
+              <tr>
+                <td style="font-size: 1px; line-height: 1px" height="20"></td>
+              </tr>
+              <!-- SPACER -->
+
+              <!-- FOOTER STARTS -->
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+              <tr>
+                <td bgcolor="#000000">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="240"></td>
+                      <td width="40">
+                        <a
+                          href="https://www.facebook.com/theperfumeshoponline?utm_source=CRM&utm_medium=email&utm_campaign=orderConfirmation"
+                          title="Facebook"
+                          name="Facebook"
+                          target="_blank"
+                        >
+                          <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716801566/tps-email-footer-facebook-2019.jpg"
+                              alt="Facebook"
+                              title="Facebook"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale"
+                          /></font>
+                        </a>
+                      </td>
+                      <td width="40">
+                        <a
+                          href="https://twitter.com/theperfumeshop?utm_source=CRM&utm_medium=email&utm_campaign=orderConfirmation"
+                          title="Twitter"
+                          name="Twitter"
+                          target="_blank"
+                        >
+                          <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716342814/tps-email-footer-twitter-2019.jpg"
+                              alt="Twitter"
+                              title="Twitter"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale"
+                          /></font>
+                        </a>
+                      </td>
+                      <td width="40">
+                        <a
+                          href="https://www.instagram.com/theperfumeshop/?utm_source=CRM&utm_medium=email&utm_campaign=orderConfirmation"
+                          title="Instagram"
+                          name="Instagram"
+                          target="_blank"
+                        >
+                          <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716572190/tps-email-footer-instagram-2019.jpg"
+                              alt="Instagram"
+                              title="Instagram"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale"
+                          /></font>
+                        </a>
+                      </td>
+                      <td width="240"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+              <tr>
+                <td align="center" bgcolor="#000000">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="0" class="postContentGutters"></td>
+                      <td align="center" style="font: 11px/120% Arial, Helvetica, sans-serif; color: #fff">
+                        <a
+                          href="${ctx.baseUrl}/contact-us?utm_source=CRM&utm_medium=email&utm_campaign=orderConfirmation"
+                          title="Contact Us"
+                          name="Contact Us"
+                          style="color: #fff; text-decoration: underline"
+                          target="_blank"
+                          >Contact Us</a
+                        >
+                        &nbsp; | &nbsp;
+                        <a
+                          href="${ctx.baseUrl}/faqs-and-help?utm_source=CRM&utm_medium=email&utm_campaign=orderConfirmation"
+                          style="color: #fff; text-decoration: underline"
+                          title="FAQ's"
+                          name="FAQ's"
+                          target="_blank"
+                          >FAQ's</a
+                        >
+                      </td>
+                      <td width="0" class="postContentGutters"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+              <!-- FOOTER ENDS -->
+            </table>
+            <!--------------------------- MASTER WRAPPER ENDING---------------------------->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

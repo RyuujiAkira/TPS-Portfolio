@@ -1,0 +1,1845 @@
+#set ($string = ${ctx.trackingUrl}) #if($string.indexOf('ConsNumber') > 0) #set ($index = $string.indexOf('ConsNumber='))
+#set ($index = $index + 11) #else #set ($index = $string.indexOf('trackNumber=')) #set ($index = $index + 12) #end #set
+($becauseMarket = "theperfumeshop") #set ($trackID = $string.substring($index)) #if ($trackID.indexOf('&') > 0) #set
+($indexOfAmp = $trackID.indexOf('&')) #set ($trackID = $trackID.substring(0, $indexOfAmp)) #end #set ($trackPrefix =
+$trackID.substring(0,4)) ## carrier ** #set( $regex = "^\d*" ) #if ($trackPrefix == '1550') #set ($carrier = "dpduk") #elseif
+($trackPrefix == 'T01P') #set ($carrier = "hermes") #elseif($trackID.matches($regex)) #set ($carrier = "dxdelivery")
+#elseif($ctx.order.deliveryMode.code == "International Delivery") #set ($carrier = "hermesps") #else #set ($carrier =
+"royalmail") #end ## Service Codes DPD ** #if($carrier == "dpduk" && $ctx.order.deliveryMode.code == "Saturday Delivery") ##
+($serviceCode = "16") ** #set ($serviceCode = "dpduk17") #elseif($carrier == "dpduk" && $ctx.order.deliveryMode.code ==
+"Sunday Delivery") ## ($serviceCode = "01") ** #set ($serviceCode = "dpduk29") #elseif($carrier == "dpduk" &&
+$ctx.order.deliveryMode.code == "Named Day Delivery") ## ($serviceCode = "12") ** #set ($serviceCode = "E1") #elseif($carrier
+== "dpduk" && $ctx.order.deliveryMode.code == "Collect From Local DPD Collection Point") #set ($serviceCode = "E2")
+#elseif($carrier == "dpduk" && $ctx.order.deliveryMode.code == "Special Delivery") ## ($serviceCode = "13") ** #set
+($serviceCode = "E1") #elseif($carrier == "dxdelivery") ## ($serviceCode = "") ** #set ($serviceCode = "ST") #elseif($carrier
+== "hermesps") ## ($serviceCode = "HOME") ** #set ($serviceCode = "INT") #elseif($carrier == "hermes" &&
+$ctx.order.deliveryMode.code == "Next Day Delivery") ## ($serviceCode = "NDAY") ** #set ($serviceCode = "E1")
+#elseif($carrier == "hermes" && $ctx.order.deliveryMode.code == "Collect From Local Hermes Collection Point") ##
+($serviceCode = "PSD") ** #set ($serviceCode = "PS") #elseif($carrier == "hermes" && $ctx.order.deliveryMode.code == "Ireland
+Standard") #set ($serviceCode = "2DAY") #elseif($carrier == "hermes" && $ctx.order.deliveryMode.code == "Standard Delivery")
+#set ($serviceCode = "2DAY") #else #set ($serviceCode = "TPLN") #end #set ($orderNo = ${ctx.order.code}) #set ($shipDate =
+${ctx.date.get('yyyy-MM-dd')}) #set ($originCountry = "GB") #set ($destinationCounty =
+${ctx.order.deliveryAddress.country.isocode}) #if( $ctx.order.gfsOptionData.collectionPointAddress != $null ) #if(
+${ctx.order.gfsOptionData.collectionPointAddress.postalCode} ) #set ($postcode =
+${ctx.order.gfsOptionData.collectionPointAddress.postalCode}) #end #else #if( ${ctx.order.deliveryAddress.postalCode} ) #set
+($postcode = ${ctx.order.deliveryAddress.postalCode}) #end #end #set ($locale = "en_GB")
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <title>The Perfume Shop</title>
+
+    <style type="text/css">
+      #maintable {
+        width: 600px;
+      }
+
+      table td {
+        border-collapse: collapse;
+      }
+
+      @media screen and (max-width: 599px) {
+        body {
+          margin: 0 !important;
+        }
+
+        table[id="wrapper"] {
+          width: 100% !important;
+          padding: 0px 0px !important;
+        }
+
+        table[id="wrapper"] #maintable {
+          width: 100% !important;
+        }
+
+        table[id="wrapper"] .hide {
+          width: 0px !important;
+          display: none !important;
+        }
+
+        img[class="scale"] {
+          width: 100% !important;
+          height: auto !important;
+          display: block !important;
+        }
+
+        td span[class="rewardsCardTitle"] {
+          font: bold 20px/140% Muli, Arial, Helvetica, sans-serif;
+          color: #e00034;
+          text-transform: uppercase;
+        }
+
+        td p[class="rewardsCardParagraph"] {
+          font: 14px/140% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="brandName"] {
+          font: 12px/140% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="productName"] {
+          font: 18px/140% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="productType"],
+        td a[class="productType"] {
+          font: 12px/140% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="quantityText"] {
+          font: 12px/140% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="nowPrice"] {
+          font: 24px/180% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td[class="productSplitMobile"] {
+          height: 1px !important;
+        }
+
+        td span[class="deliveryCost"],
+        td span[class="pointsEarned"],
+        td span[class="pointsRedeemed"],
+        td span[class="subTotal"],
+        td span[class="discount"] {
+          font: 12px/160% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td span[class="grandTotal"] {
+          font: 18px/160% Muli, Arial, Helvetica, sans-serif !important;
+        }
+
+        td[class="slotGap"] {
+          height: 10px !important;
+        }
+
+        td[class="mobileProgrammeGutterWidth"] {
+          width: 10px !important;
+        }
+
+        td[class="mobileProgrammeTextWidth"] {
+          width: auto !important;
+        }
+
+        td[class="postContentGutters"] {
+          width: 5% !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    bgcolor="#e8e8e8"
+    bottommargin="0"
+    topmargin="0"
+    leftmargin="0"
+    rightmargin="0"
+    marginheight="0"
+    marginwidth="0"
+    style="
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -ms-interpolation-mode: bicubic;
+      margin: 0;
+      padding: 0;
+    "
+  >
+    <div style="background-color: #e8e8e8">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed" id="wrapper">
+        <tr>
+          <td align="center" bgcolor="#e8e8e8">
+            <table width="600" border="0" cellpadding="0" cellspacing="0" id="maintable">
+              <!-- PRE CONTENT TEXT STARTS -->
+
+              <tr class="hide">
+                <td
+                  width="600"
+                  height="10"
+                  align="center"
+                  style="font: 11px/120% Muli, Arial, Helvetica, sans-serif; color: #e8e8e8"
+                >
+                  Your order is on it's way
+                </td>
+              </tr>
+
+              <!-- PRE CONTENT TEXT ENDS -->
+
+              <!-- DESKTOP TOP NAVIGATION STARTS -->
+
+              <tr class="hide" bgcolor="#000000">
+                <td bgcolor="#000000">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="96"></td>
+
+                      <!-- TPS NORMAL LOGO -->
+
+                      <td width="408">
+                        <a
+                          href="${ctx.baseUrl}/?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="The Perfume Shop"
+                          name="The Perfume Shop"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863625764894/tps-email-header-logo-2020.jpg"
+                              alt="The Perfume Shop"
+                              title="The Perfume Shop"
+                              width="408"
+                              height="80"
+                              border="0"
+                              style="display: block" /></font
+                        ></a>
+                      </td>
+
+                      <td width="96"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr class="hide">
+                <td bgcolor="#e00034" align="center">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="96"></td>
+
+                      <td width="182">
+                        <a
+                          href="${ctx.baseUrl}/products/shop-all/c/SA2001?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Shop Now"
+                          name="Shop Now"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863626125342/tps-email-header-shopNow-2020.jpg"
+                              alt="Shop Now"
+                              title="Shop Now"
+                              width="182"
+                              height="36"
+                              border="0"
+                              style="display: block" /></font
+                        ></a>
+                      </td>
+
+                      <td width="226">
+                        <a
+                          href="${ctx.baseUrl}/friends?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Refer-A-Friend"
+                          name="Refer-A-Friend"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863630876702/tps-email-header-raf-2020.jpg"
+                              alt="Refer-A-Friend"
+                              title="Refer-A-Friend"
+                              width="226"
+                              height="36"
+                              border="0"
+                              style="display: block" /></font
+                        ></a>
+                      </td>
+
+                      <td width="96"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- DESKTOP TOP NAVIGATION ENDS -->
+
+              <!-- MOBILE TOP NAVIGATION STARTS -->
+
+              <!--[if !mso]><!-->
+
+              <!-- TPS LOGO -->
+
+              <tr>
+                <td height="0" bgcolor="#000000" style="line-height: 1px; font-size: 1px" align="center">
+                  <a
+                    href="${ctx.baseUrl}/?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                    title="The Perfume Shop"
+                    name="The Perfume Shop"
+                    target="_blank"
+                    ><font face="Muli, Arial, Helvetica, sans-serif" color="#ffffff" style="font-size: 16px"
+                      ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863625764894/tps-email-header-logo-2020.jpg"
+                        alt="The Perfume Shop"
+                        title="The Perfume Shop"
+                        width="0"
+                        height="0"
+                        border="0"
+                        style="display: none"
+                        class="scale" /></font
+                  ></a>
+                </td>
+              </tr>
+
+              <!--<![endif]-->
+
+              <tr>
+                <td height="0" bgcolor="#e00034" align="center">
+                  <table
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    height="0"
+                    align="center"
+                    width="100%"
+                    style="line-height: 1px; font-size: 1px"
+                  >
+                    <!--[if !mso]><!-->
+                    <tr>
+                      <td height="0" style="line-height: 1px; font-size: 1px" align="center">
+                        <a
+                          href="${ctx.baseUrl}/products/shop-all/c/SA2001?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          target="_blank"
+                          title="Shop Now"
+                          name="Shop Now"
+                          ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863626125342/tps-email-header-shopNow-2020.jpg"
+                              alt="Shop Now"
+                              title="Shop Now"
+                              width="0"
+                              height="0"
+                              border="0"
+                              style="display: none"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td height="0" style="line-height: 1px; font-size: 1px" align="center">
+                        <a
+                          href="${ctx.baseUrl}/friends?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          target="_blank"
+                          title="Refer-A-Friend"
+                          name="Refer-A-Friend"
+                          ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863630876702/tps-email-header-raf-2020.jpg"
+                              alt="Refer-A-Friend"
+                              title="Refer-A-Friend"
+                              width="0"
+                              height="0"
+                              border="0"
+                              style="display: none"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+                    </tr>
+                    <!--<![endif]-->
+                  </table>
+                </td>
+              </tr>
+
+              <!-- MOBILE TOP NAVIGATION ENDS -->
+
+              <!-- HERO SLOT STARTS -->
+
+              <tr>
+                <td width="600" bgcolor="#ffffff">
+                  <a
+                    href="${ctx.baseUrl}/?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                    title="Your Order Is On It's Way"
+                    name="Your Order Is On It's Way"
+                    target="_blank"
+                    ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                      ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11296380715038/tps-email-hero-orderShipped-2021.jpg"
+                        alt="Your Order Is On It's Way"
+                        title="Your Order Is On It's Way"
+                        width="600"
+                        height="170"
+                        border="0"
+                        style="display: block"
+                        class="scale" /></font
+                  ></a>
+                </td>
+              </tr>
+
+              <!-- HERO SLOT ENDS -->
+
+              <!-- INTRO TEXT STARTS -->
+
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <td
+                        width="560"
+                        align="left"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        Hi #if( ${ctx.displayName} == "-" ) Customer! #else ${ctx.displayName}! #end #set ($ordNo =
+                        ${ctx.order.code})
+                        <p>Your order <strong>${ctx.order.code}</strong> has been shipped.</p>
+
+                        <!-- IF STATEMENT FOR WHEN EGIFT CARD PURCHASED STARTS -->
+
+                        #if( ${ctx.order.EGiftCardOrderType} )
+                        <p>
+                          Your payment has been taken for your eGift Card(s) and will be sent to your recipient(s) on the
+                          date(s) &amp; time specified, please see the order summary below.
+                        </p>
+                        #end
+
+                        <!-- IF STATEMENT FOR WHEN EGIFT CARD PURCHASED ENDS -->
+
+                        <!-- UK STANDARD DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Standard Delivery" || $ctx.order.deliveryMode.code ==
+                        "standard-gross" )
+
+                        <p>
+                          We see you have requested <strong>UK Standard Delivery</strong> for your order. Your order should
+                          be with you within
+                          <strong>3-5 days</strong
+                          >.<!--, but please allow up to 7 working days before reaching out to Customer Services.-->
+                        </p>
+
+                        #end
+
+                        <!-- UK STANDARD DELIVERY NOTICE ENDS -->
+
+                        <!-- ROI STANDARD DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Ireland Standard" || $ctx.order.deliveryMode.code ==
+                        "ireland-standard" )
+
+                        <!-- <p>We see you have requested <strong>Ireland Standard Delivery</strong> for your order. Your order should be with you within <strong>11 days</strong>.</p> -->
+
+                        <p>
+                          Your order has been shipped locally from our store in Limerick. We will send you an email shortly
+                          that will include your tracking information so that you can follow its journey to you. Please allow
+                          24 hours for all tracking information to be updated. <br /><br />
+                          Due to the current Government advice our stores are currently closed. We hope you love your order,
+                          but should you wish to return any of the items purchased we will be offering an extended returns
+                          policy until stores are able to open.
+                          <br /><br />If you have any other questions please check our Frequently Asked Questions
+                          <a href="https://www.theperfumeshop.com/ie/faqs-and-help">Here</a>
+                        </p>
+
+                        #end
+
+                        <!-- ROI STANDARD DELIVERY NOTICE ENDS -->
+
+                        <!-- UK NEXT DAY DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Next Day Delivery" || $ctx.order.deliveryMode.code ==
+                        "premium-gross" )
+
+                        <p>
+                          We see you have requested <strong>UK Next Day Delivery</strong> for your order. Orders placed
+                          <strong>before 9pm between Monday to Friday</strong> will arrive next day.
+                        </p>
+
+                        #end
+
+                        <!-- UK NEXT DAY DELIVERY NOTICE ENDS -->
+
+                        <!-- UK SPECIAL DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Special Delivery" || $ctx.order.deliveryMode.code ==
+                        "special-delivery-gross" )
+
+                        <p>
+                          We see you have requested <strong>UK Special Delivery</strong> for your order. Orders placed
+                          <strong>before 1:30pm between Monday to Friday</strong> will arrive by 1pm next day.
+                        </p>
+
+                        #end
+
+                        <!-- UK SPECIAL DELIVERY NOTICE ENDS -->
+
+                        <!-- UK SATURDAY DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Saturday Delivery" || $ctx.order.deliveryMode.code ==
+                        "saturday-delivery" )
+
+                        <p>
+                          We see you have requested <strong>UK Saturday Delivery</strong> for your order. Orders placed
+                          <strong>before 8pm on Friday</strong> will arrive next day. Orders with engraved fragrances placed
+                          before 4pm on Thursday will arrive the following Saturday.
+                        </p>
+
+                        #end
+
+                        <!-- UK SATURDAY DELIVERY NOTICE ENDS -->
+
+                        <!-- UK SUNDAY DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "Sunday Delivery" || $ctx.order.deliveryMode.code ==
+                        "sunday-delivery" )
+
+                        <p>
+                          We see you have requested <strong>UK Sunday Delivery</strong> for your order. Orders placed
+                          <strong>before 12pm on Saturday</strong> will arrive next day. Orders with engraved fragrances
+                          placed before 4pm on Friday will arrive the following Sunday.
+                        </p>
+
+                        #end
+
+                        <!-- UK SUNDAY DELIVERY NOTICE ENDS -->
+
+                        <!-- INTERNATIONAL DELIVERY NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "International Delivery" || $ctx.order.deliveryMode.code ==
+                        "eu-delivery" )
+
+                        <p>
+                          We see you have requested <strong>International Delivery</strong> for your order. Please allow
+                          <strong>3-7 working days</strong> for your order to arrive in the following countries: Netherlands,
+                          Spain, Germany, France, Italy, Denmark, Portugal, Belgium, Austria and Luxembourg.
+                        </p>
+
+                        #end
+
+                        <!-- INTERNATIONAL DELIVERY NOTICE ENDS -->
+
+                        <!-- CLICK & COLLECT NOTICE STARTS -->
+
+                        #if( $ctx.order.deliveryMode.code == "collect_express" )
+
+                        <p>
+                          We see you have requested <strong>Click &amp; Collect</strong> for your order. Before going into
+                          store please wait for your collection email, which will follow shortly.
+                        </p>
+
+                        <!--<p>We see you have requested <strong>Click &amp; Collect</strong> for your order. The timeframe for Click &amp; Collect Standard orders is 5-7 days.  But if you've ordered for Click &amp; Collect Express you'll still be able to collect in 1 hour.  Before going into store please wait for your collection email, which will follow as soon as your order is ready to collect. If you're in Northern Ireland, you'll need to phone the store to make an appointment for collection, <strong>after</strong> you've received your collection email.</p>-->
+
+                        #end
+
+                        <!-- CLICK & COLLECT NOTICE ENDS -->
+
+                        <!-- PAYPAL NOTICE STARTS -->
+
+                        <p>
+                          #if( $ctx.order.paymentMode.name == "PayPal" ) Please note if you have paid by PayPal your payment
+                          will be taken up front<br /><br />
+                          #end
+                        </p>
+
+                        <!-- PAYPAL NOTICE ENDS -->
+
+                        <!-- IF STATEMENT FOR INSERTING TRACKING LINK STARTS -->
+                        #if(${ctx.trackingUrl} ) #if($trackID.substring(0,4) != '206_')
+                        <p>
+                          #if($carrier == "dpduk")
+                          <a
+                            href="https://tracking.narvar.com/$becauseMarket/tracking/$carrier?tracking_numbers=$trackID&order_number=$orderNo&service=$serviceCode&origin_country=$originCountry&destination_country=$destinationCounty&ozip=&dzip=$postcode&locale=$locale&order_date=&ship_date=$shipDate"
+                            style="color: #000000; text-decoration: underline"
+                            target="_blank"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11246397685790/tps-email-trackYourOrder-2021.gif"
+                              alt="Track Your order"
+                              title="Track Your Order"
+                              width="270"
+                              height="45"
+                          /></a>
+                          #elseif($carrier == "dxdelivery")
+                          <a
+                            href="https://tracking.narvar.com/$becauseMarket/tracking/$carrier?tracking_numbers=$trackID&order_number=$orderNo&service=$serviceCode&origin_country=$originCountry&destination_country=$destinationCounty&ozip=&dzip=$postcode&locale=$locale&order_date=&ship_date=$shipDate"
+                            style="color: #000000; text-decoration: underline"
+                            target="_blank"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11246397685790/tps-email-trackYourOrder-2021.gif"
+                              alt="Track Your Order"
+                              title="Track Your Order"
+                              width="270"
+                              height="45"
+                          /></a>
+                          #elseif($carrier == "hermesps")
+                          <a
+                            href="https://tracking.narvar.com/$becauseMarket/tracking/$carrier?tracking_numbers=$trackID&order_number=$orderNo&service=$serviceCode&origin_country=$originCountry&destination_country=$destinationCounty&ozip=&dzip=$postcode&locale=$locale&order_date=&ship_date=$shipDate"
+                            style="color: #000000; text-decoration: underline"
+                            target="_blank"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11246397685790/tps-email-trackYourOrder-2021.gif"
+                              alt="Track Your Order"
+                              title="Track Your Order"
+                              width="270"
+                              height="45"
+                          /></a>
+                          #elseif($carrier == "hermes")
+                          <a
+                            href="https://tracking.narvar.com/$becauseMarket/tracking/$carrier?tracking_numbers=$trackID&order_number=$orderNo&service=$serviceCode&origin_country=$originCountry&destination_country=$destinationCounty&ozip=&dzip=$postcode&locale=$locale&order_date=&ship_date=$shipDate"
+                            style="color: #000000; text-decoration: underline"
+                            target="_blank"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11246397685790/tps-email-trackYourOrder-2021.gif"
+                              alt="Track Your Order"
+                              title="Track Your Order"
+                              width="270"
+                              height="45"
+                          /></a>
+                          #else
+                          <a
+                            href="https://www.royalmail.com/track-your-item#/tracking-results/$trackID"
+                            style="color: #000000; text-decoration: underline"
+                            target="_blank"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11246397685790/tps-email-trackYourOrder-2021.gif"
+                              alt="Track Your Order"
+                              title="Track Your Order"
+                              width="270"
+                              height="45"
+                          /></a>
+                          <!--You can track the progress of your order <a href="${ctx.trackingUrl}" style="color:#000000; text-decoration:underline" target="_blank">here</a>-->
+                          #end
+                        </p>
+                        <p>
+                          <strong>Coronavirus Update:</strong> For up to date information from our couriers, click
+                          <a href="${ctx.baseUrl}/delivery-information" title="Delivery Information" target="_blank">here</a
+                          >.
+                        </p>
+                        #end #end
+                        <!-- IF STATEMENT FOR INSERTING TRACKING LINK ENDS -->
+                      </td>
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- INTRO TEXT ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- DELIVERY DETAILS TITLE STARTS -->
+
+              <tr>
+                <td width="600" bgcolor="#ffffff">
+                  <a
+                    href="${ctx.baseUrl}/?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                    title="Delivery Details"
+                    name="Delivery Details"
+                    target="_blank"
+                    ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                      ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10146511618078/tps-email-subtitle-deliveryDetails-2018.jpg"
+                        alt="Delivery Details"
+                        title="Delivery Details"
+                        width="600"
+                        height="58"
+                        border="0"
+                        style="display: block"
+                        class="scale" /></font
+                  ></a>
+                </td>
+              </tr>
+
+              <!-- DELIVERY DETAILS TITLE ENDS -->
+
+              <!-- DELIVERY DETAILS COPY STARTS -->
+
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <td
+                        width="560"
+                        align="center"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        #if( $ctx.order.gfsOptionData.collectionPointAddress != $null ) #if(
+                        ${ctx.order.gfsOptionData.collectionPointAddress.firstName} != "-")
+                        ${ctx.order.gfsOptionData.collectionPointAddress.firstName}
+                        ${ctx.order.gfsOptionData.collectionPointAddress.lastName}, #end
+                        ${ctx.order.gfsOptionData.collectionPointAddress.line1}, #if(
+                        ${ctx.order.gfsOptionData.collectionPointAddress.line2} )
+                        ${ctx.order.gfsOptionData.collectionPointAddress.line2}, #end #if(
+                        ${ctx.order.gfsOptionData.collectionPointAddress.line3} )
+                        ${ctx.order.gfsOptionData.collectionPointAddress.line3}, #end #if(
+                        ${ctx.order.gfsOptionData.collectionPointAddress.town} )
+                        ${ctx.order.gfsOptionData.collectionPointAddress.town}, #end #if(
+                        ${ctx.order.gfsOptionData.collectionPointAddress.postalCode} )
+                        ${ctx.order.gfsOptionData.collectionPointAddress.postalCode} #end #else #if(
+                        ${ctx.order.deliveryAddress.firstName} != "-") ${ctx.order.deliveryAddress.firstName}
+                        ${ctx.order.deliveryAddress.lastName}, #end ${ctx.order.deliveryAddress.line1}, #if(
+                        ${ctx.order.deliveryAddress.line2} ) ${ctx.order.deliveryAddress.line2}, #end #if(
+                        ${ctx.order.deliveryAddress.line3} ) ${ctx.order.deliveryAddress.line3}, #end #if(
+                        ${ctx.order.deliveryAddress.town} ) ${ctx.order.deliveryAddress.town}, #end #if(
+                        ${ctx.order.deliveryAddress.postalCode} ) ${ctx.order.deliveryAddress.postalCode} #end #end
+                      </td>
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- DELIVERY DETAILS COPY ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- YOUR ORDER SUMMARY TITLE STARTS -->
+
+              <tr>
+                <td width="600" bgcolor="#ffffff">
+                  <a
+                    href="${ctx.baseUrl}/?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                    title="Your Order Summary"
+                    name="Your Order Summary"
+                    target="_blank"
+                    ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                      ><img
+                        src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10146512863262/tps-email-subtitle-orderSummary-2018.jpg"
+                        alt="Your Order Summary"
+                        title="Your Order Summary"
+                        width="600"
+                        height="58"
+                        border="0"
+                        style="display: block"
+                        class="scale" /></font
+                  ></a>
+                </td>
+              </tr>
+
+              <!-- YOUR ORDER SUMMARY TITLE ENDS -->
+
+              #foreach($entry in ${ctx.order.entries}) #if($entry.product.code != '1243508')
+              <!-- DESKTOP PRODUCT 1 STARTS -->
+
+              <tr class="hide">
+                <td width="600" height="173" bgcolor="#ffffff" align="center">
+                  <table width="600" height="173" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <!-- PRODUCT IMAGE STARTS -->
+
+                      <td width="173" valign="top">
+                        #foreach($image in $entry.product.images) #if($image.imageType == "PRIMARY" && $image.format ==
+                        "product" )
+                        <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                          ><img
+                            src="${ctx.mediaSecureBaseUrl}$image.url"
+                            alt="$entry.product.name"
+                            title="$entry.product.name"
+                            width="173"
+                            height="173"
+                            border="0"
+                            style="display: block"
+                        /></font>
+                        #end #end
+                      </td>
+
+                      <!-- PRODUCT IMAGE ENDS -->
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <!-- PRODUCT COPY STARTS -->
+
+                      <td width="367" class="mobileProgrammeTextWidth">
+                        <span
+                          style="
+                            font: 16px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                          "
+                        >
+                          #if($entry.product.igcBrandName == "") $entry.product.baseProduct.igcBrandName #elseif
+                          ($!entry.product.igcBrandName) ${entry.product.igcBrandName} #end </span
+                        ><br />
+
+                        <span
+                          style="
+                            font: bold 20px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            letter-spacing: 1px;
+                          "
+                        >
+                          #if($entry.product.rangeName == "") && ($!entry.product.baseProduct.rangeName == "")
+                          $entry.product.baseProduct.rangeName #elseif ($!entry.product.rangeName) ${entry.product.rangeName}
+                          #else #end </span
+                        ><br />
+
+                        <span
+                          style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; color: #000000; letter-spacing: 1px"
+                        >
+                          #if ($entry.product.name == "") && ($entry.product.baseProduct.name == "") A
+                          #elseif($entry.product.name == "") $entry.product.baseProduct.name #else ${entry.product.name} #end
+                          #foreach( $baseOption in $entry.product.baseOptions ) #if ($baseOption.selected.url ==
+                          $entry.product.url) #if ($!$baseOption.selected.igcVariantOptionQualifiers['variantSize'] &&
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] != "") -
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] #else #end #end #end </span
+                        ><br />
+
+                        <!-- EGIFT CARD SECTION STARTS -->
+
+                        #if( ${entry.eGiftCardCustomization} != $null )
+
+                        <!--egift card recipientEmail -->
+                        <span
+                          style="
+                            font: bold 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Recipient Email:</span
+                        >
+                        <a
+                          href="mailto:${entry.eGiftCardCustomization.deliveryEmailAddress}"
+                          style="
+                            font: 12px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-decoration: underline;
+                            letter-spacing: 1px;
+                          "
+                          >$entry.eGiftCardCustomization.deliveryEmailAddress</a
+                        ><br />
+
+                        <!--egift card sendDate -->
+                        <span
+                          style="
+                            font: bold 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Send On:</span
+                        >
+                        <span style="font: 12px/100% Muli, Arial, Helvetica, sans-serif; color: #000000; letter-spacing: 1px"
+                          >$entry.eGiftCardCustomization.formattedDeliveryDate at
+                          $entry.eGiftCardCustomization.formattedDeliveryTime</span
+                        >
+
+                        <!--egift card message -->
+                        <span style="font: 12px/140% Muli, Arial, Helvetica, sans-serif; color: #000000; letter-spacing: 1px"
+                          >#if( ${entry.eGiftCardCustomization.greetingMessage} != $null ) <br /><span
+                            style="
+                              font: bold 12px/140% Muli, Arial, Helvetica, sans-serif;
+                              color: #000000;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                            "
+                            >Message:</span
+                          >
+                          <span style="font: 12px/100% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                            >${entry.eGiftCardCustomization.greetingMessage}</span
+                          >
+                          #end</span
+                        ><br /><br />
+
+                        #end
+
+                        <!-- EGIFT CARD SECTION ENDS -->
+
+                        <span
+                          style="
+                            font: bold 12px/140% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Quantity: $entry.quantity - SKU: $entry.product.code</span
+                        ><br /><br />
+                        #if($ordNo.substring(0,7) != "S2D_199")
+                        <span
+                          style="
+                            font: 24px/180% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                        >
+                          <strong>
+                            #if ($entry.finalEntryPrice.value > 0) $entry.finalEntryPrice.formattedValue #else FREE #end
+                          </strong>
+                        </span>
+                        #end
+                      </td>
+
+                      <!-- PRODUCT COPY ENDS -->
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr class="hide">
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <tr class="hide">
+                <td width="600px" bgcolor="#ffffff" align="center">
+                  <table width="600px" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <td height="1" bgcolor="#e8e8e8" align="center"></td>
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr class="hide">
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+              #end
+              <!-- DESKTOP PRODUCT 1 ENDS -->
+
+              <!-- MOBILE PRODUCT 1 STARTS -->
+
+              <!--[if !mso]><!-->
+              #if($entry.product.code != '1243508')
+              <tr>
+                <td height="0" bgcolor="#ffffff" style="line-height: 1px; font-size: 1px" align="center">
+                  <table
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    height="0"
+                    align="center"
+                    width="100%"
+                    style="line-height: 1px; font-size: 0px"
+                  >
+                    <tr>
+                      <td width="10"></td>
+
+                      <!-- PRODUCT IMAGE STARTS -->
+
+                      <td height="1" style="line-height: 1px; font-size: 0px" align="center" valign="top" width="40%">
+                        #foreach($image in $entry.product.images) #if($image.imageType == "PRIMARY" && $image.format ==
+                        "product" )
+                        <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                          ><img
+                            src="${ctx.mediaSecureBaseUrl}$image.url"
+                            alt="$entry.product.name"
+                            title="$entry.product.name"
+                            width="0"
+                            height="0"
+                            border="0"
+                            style="display: none"
+                            class="scale"
+                        /></font>
+                        #end #end
+                      </td>
+
+                      <!-- PRODUCT IMAGE ENDS -->
+
+                      <td width="10"></td>
+
+                      <!-- PRODUCT COPY STARTS -->
+
+                      <td height="1" bgcolor="#ffffff" style="line-height: 1px; font-size: 0px" align="left">
+                        <span
+                          style="
+                            font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                          "
+                          class="brandName"
+                        >
+                          #if($entry.product.igcBrandName == "") $entry.product.baseProduct.igcBrandName #elseif
+                          ($!entry.product.igcBrandName) ${entry.product.igcBrandName} #end </span
+                        ><br />
+
+                        <span
+                          style="font: bold 0px/100% Muli, Arial, Helvetica, sans-serif; color: #000000; letter-spacing: 1px"
+                          class="productName"
+                        >
+                          #if($entry.product.rangeName == "") && ($!entry.product.baseProduct.rangeName == "")
+                          $entry.product.baseProduct.rangeName #elseif ($!entry.product.rangeName) ${entry.product.rangeName}
+                          #else #end </span
+                        ><br />
+
+                        <span
+                          style="font: 0px/100% Muli, Arial, Helvetica, sans-serif; color: #000000; letter-spacing: 1px"
+                          class="productType"
+                        >
+                          #if ($entry.product.name == "") && ($entry.product.baseProduct.name == "") A
+                          #elseif($entry.product.name == "") $entry.product.baseProduct.name #else ${entry.product.name} #end
+                          #foreach( $baseOption in $entry.product.baseOptions ) #if ($baseOption.selected.url ==
+                          $entry.product.url) #if ($!$baseOption.selected.igcVariantOptionQualifiers['variantSize'] &&
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] != "") -
+                          $baseOption.selected.igcVariantOptionQualifiers['variantSize'] #else #end #end #end </span
+                        ><br />
+
+                        <!-- EGIFT CARD SECTION STARTS -->
+
+                        #if( ${entry.eGiftCardCustomization} != $null )
+                        <!--egift card recipientEmail -->
+                        <span
+                          style="
+                            font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="productType"
+                          >Recipient Email:</span
+                        >
+                        <a
+                          href="mailto:${entry.eGiftCardCustomization.deliveryEmailAddress}"
+                          style="
+                            font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #666666;
+                            text-decoration: underline;
+                            letter-spacing: 1px;
+                          "
+                          class="productType"
+                          >${entry.eGiftCardCustomization.deliveryEmailAddress}</a
+                        ><br />
+
+                        <!--egift card sendDate -->
+                        <span
+                          style="
+                            font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="productType"
+                          >Send On:</span
+                        >
+                        <span
+                          style="font: 0px/100% Muli, Arial, Helvetica, sans-serif; color: #666666; letter-spacing: 1px"
+                          class="productType"
+                          >$entry.eGiftCardCustomization.formattedDeliveryDate at
+                          $entry.eGiftCardCustomization.formattedDeliveryTime</span
+                        >
+
+                        <!--egift card message -->
+                        <span style="font: 0px/100% Muli, Arial, Helvetica, sans-serif; color: #000000" class="productType"
+                          >#if( ${entry.eGiftCardCustomization.greetingMessage} != $null ) <br /><span
+                            style="
+                              font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                              color: #000000;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                            "
+                            class="productType"
+                            >Message:</span
+                          >
+                          <span
+                            style="font: 0px/100% Muli, Arial, Helvetica, sans-serif; color: #666666; letter-spacing: 1px"
+                            class="productType"
+                            >${entry.eGiftCardCustomization.greetingMessage}</span
+                          >
+                          #end</span
+                        ><br />
+
+                        #end
+
+                        <!-- EGIFT CARD SECTION ENDS -->
+
+                        <span
+                          style="bold font:0px/100% Muli, Arial, Helvetica, sans-serif; color:#000000; text-transform:uppercase; letter-spacing:1px;"
+                          class="quantityText"
+                          >Quantity: $entry.quantity - SKU: $entry.product.code</span
+                        ><br />
+                        #if($ordNo.substring(0,7) != "S2D_199")
+                        <span
+                          style="
+                            font: 0px/100% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="nowPrice"
+                        >
+                          <strong>
+                            #if ($entry.finalEntryPrice.value > 0) $entry.finalEntryPrice.formattedValue #else FREE #end
+                          </strong>
+                        </span>
+                        #end
+                      </td>
+
+                      <!-- PRODUCT COPY ENDS -->
+
+                      <td width="10"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="0" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <tr>
+                <td width="100%" height="0" bgcolor="#ffffff" align="center">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="10" height="0" class="mobileProgrammeGutterWidth"></td>
+
+                      <td height="0" bgcolor="#e8e8e8" align="center" class="productSplitMobile"></td>
+
+                      <td width="10" height="0" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="0" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!--<![endif]-->
+
+              <!-- MOBILE PRODUCT 1 ENDS -->
+              #end
+              <!-- end statement for product code if resend sku -->
+              #end
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- DESKTOP TOTAL SECTION STARTS -->
+              #if($ordNo.substring(0,7) != "S2D_199")
+              <tr class="hide">
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="300"></td>
+
+                      <td width="200" align="right">
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Delivery Cost:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Spend Balance Earned:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Spend Balance Redeemed:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Gift Card Redeemed:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Subtotal:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Discount:</span
+                        ><br /><br />
+
+                        <span
+                          style="
+                            font: 20px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          >Total:</span
+                        >
+                      </td>
+
+                      <td width="100" align="right">
+                        <span
+                          style="
+                            font: 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                          "
+                        >
+                          <strong>
+                            #if ($ctx.order.deliveryCost.value > 0) $ctx.order.deliveryCost.formattedValue #else FREE #end
+                          </strong> </span
+                        ><br />
+
+                        <span
+                          style="
+                            font: bold 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.totalEarnedPoints.intValue()}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.totalRedeemedPoints.intValue()}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.totalGiftCard.formattedValue}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.subTotal.formattedValue}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 12px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.totalDiscounts.formattedValue}</strong></span
+                        ><br /><br />
+
+                        <span
+                          style="
+                            font: bold 20px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          ><strong>${ctx.order.totalPrice.formattedValue}</strong></span
+                        ><br />
+                      </td>
+
+                      <td width="20"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <tr class="hide">
+                <td width="600px" bgcolor="#ffffff" align="center">
+                  <table width="600px" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <td height="1" bgcolor="#e8e8e8" align="center"></td>
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr class="hide">
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- DESKTOP TOTAL SECTION ENDS -->
+
+              <!-- MOBILE TOTAL SECTION STARTS -->
+
+              <tr>
+                <!--[if !mso]><!-->
+
+                <td bgcolor="#ffffff">
+                  <table
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    height="0"
+                    align="center"
+                    width="100%"
+                    style="line-height: 1px; font-size: 0px"
+                  >
+                    <tr>
+                      <td width="10"></td>
+
+                      <td width="75%" height="0" bgcolor="#ffffff" style="line-height: 1px; font-size: 0px" align="right">
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="deliveryCost"
+                          >Delivery Cost:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsEarned"
+                          >Spend Balance Earned:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsRedeemed"
+                          >Spend Balance Redeemed:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsRedeemed"
+                          >Gift Card Redeemed:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="subTotal"
+                          >Subtotal:</span
+                        ><br />
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="discount"
+                          >Discount:</span
+                        ><br /><br />
+
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="grandTotal"
+                          >Total:</span
+                        >
+                      </td>
+
+                      <td width="25%" height="0" bgcolor="#ffffff" style="line-height: 1px; font-size: 0px" align="right">
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                          "
+                          class="deliveryCost"
+                        >
+                          <strong>
+                            #if ($ctx.order.deliveryCost.value > 0) $ctx.order.deliveryCost.formattedValue #else FREE #end
+                          </strong> </span
+                        ><br />
+
+                        <span
+                          style="
+                            font: bold 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsEarned"
+                          ><strong>${ctx.order.totalEarnedPoints.intValue()}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsRedeemed"
+                          ><strong>${ctx.order.totalRedeemedPoints.intValue()}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="pointsRedeemed"
+                          ><strong>${ctx.order.totalGiftCard.formattedValue}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="subTotal"
+                          ><strong>${ctx.order.subTotal.formattedValue}</strong></span
+                        ><br />
+                        <span
+                          style="
+                            font: bold 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="discount"
+                          ><strong>${ctx.order.totalDiscounts.formattedValue}</strong></span
+                        ><br /><br />
+
+                        <span
+                          style="
+                            font: 0px/160% Muli, Arial, Helvetica, sans-serif;
+                            color: #e00034;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                          "
+                          class="grandTotal"
+                          ><strong>${ctx.order.totalPrice.formattedValue}</strong></span
+                        ><br />
+                      </td>
+
+                      <td width="10"></td>
+                    </tr>
+                  </table>
+                </td>
+
+                <!--<![endif]-->
+              </tr>
+
+              <tr>
+                <td height="0" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <tr>
+                <td width="100%" height="0" bgcolor="#ffffff" align="center">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="10" height="0" class="mobileProgrammeGutterWidth"></td>
+
+                      <td height="0" bgcolor="#e8e8e8" align="center" class="productSplitMobile"></td>
+
+                      <td width="10" height="0" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="0" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- MOBILE TOTAL SECTION ENDS -->
+
+              <!-- END COPY STARTS -->
+
+              <tr>
+                <td bgcolor="#ffffff">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+
+                      <td
+                        width="560"
+                        align="left"
+                        style="font: 14px/140% Muli, Arial, Helvetica, sans-serif; color: #000000"
+                        class="mobileProgrammeTextWidth"
+                      >
+                        We hope you are happy with your purchases, but if you change your mind, returns are simple and free.
+
+                        <p>
+                          If you have any queries about your order, please check our
+                          <a
+                            href="${ctx.baseUrl}/faqs-and-help"
+                            target="_blank"
+                            style="
+                              font: 14px/140% Muli, Arial, Helvetica, sans-serif;
+                              color: #000000;
+                              text-decoration: underline;
+                            "
+                            >Frequently Asked Questions</a
+                          >.
+                        </p>
+
+                        <!--<p>We're always keen to hear feedback from our customers - good or bad, it helps us to keep delivering the best experience we can! Please leave us a Trustpilot review <a href="https://uk.trustpilot.com/review/theperfumeshop.com" target="_blank" style="font:14px/140% Muli, Arial, Helvetica, sans-serif; color:#000000; text-decoration:underline">here</a>.</p>-->
+
+                        <p>Thanks again,</p>
+
+                        <font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                          ><img
+                            src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10596292657182/tps-email-signature-tpsTeam-2019.jpg"
+                            alt="The Perfume Shop Team"
+                            title="The Perfume Shop Team"
+                            width="295"
+                            height="40"
+                            border="0"
+                            style="display: block"
+                        /></font>
+                      </td>
+
+                      <td width="20" class="mobileProgrammeGutterWidth"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              #end
+              <!-- END COPY ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- SERVICE TILES STARTS -->
+
+              <tr>
+                <td bgcolor="#ffffff" align="center">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20"></td>
+
+                      <td width="270" valign="top">
+                        <a
+                          href="${ctx.baseUrl}/blog?utm_source=crm&utm_medium=email&utm_campaign=orderShipped"
+                          title="Scents Blog"
+                          name="Scents Blog"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863664332830/tps-email-blog-2020.jpg"
+                              alt="Scents Blog"
+                              title="Scents Blog"
+                              width="270"
+                              height="195"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="20"></td>
+
+                      <td width="270" valign="top">
+                        <a
+                          href="${ctx.baseUrl}/the-app?utm_source=crm&utm_medium=email&utm_campaign=orderShipped"
+                          title="Introducing Our App"
+                          name="Introducing Our App"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10863664103454/tps-email-app-2020.jpg"
+                              alt="Introducing Our App"
+                              title="Introducing Our App"
+                              width="270"
+                              height="195"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="20"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- SERVICE TILES ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- AWARDS TILES STARTS -->
+
+              <tr>
+                <td bgcolor="#ffffff" align="center">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="20"></td>
+
+                      <td width="270" valign="top">
+                        <a
+                          href="${ctx.baseUrl}/about-us?utm_source=crm&utm_medium=email&utm_campaign=orderShipped"
+                          title="The Fragrance Foundation Awards Winner"
+                          name="The Fragrance Foundation Awards Winner"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11413645197342/FFHybris.jpg"
+                              alt="The Fragrance Foundation Awards Winner"
+                              title="The Fragrance Foundation Awards Winner"
+                              width="270"
+                              height="227"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="20"></td>
+
+                      <td width="270" valign="top">
+                        <a
+                          href="${ctx.baseUrl}/about-us?utm_source=crm&utm_medium=email&utm_campaign=orderShipped"
+                          title="Feefo Platinum Service Awards Winner"
+                          name="Feefo Platinum Service Awards Winner"
+                          target="_blank"
+                          ><font face="Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/11226427588638/tps-email-feefoAward-2021.jpg"
+                              alt="Feefo Platinum Service Awards Winner"
+                              title="Feefo Platinum Service Awards Winner"
+                              width="270"
+                              height="227"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="20"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- AWARDS TILES ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#ffffff" align="center" class="slotGap"></td>
+              </tr>
+
+              <!-- FOOTER STARTS -->
+
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+
+              <tr>
+                <td bgcolor="#000000">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="240"></td>
+
+                      <td width="40">
+                        <a
+                          href="https://www.facebook.com/theperfumeshoponline?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Facebook"
+                          name="Facebook"
+                          target="_blank"
+                          ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716801566/tps-email-footer-facebook-2019.jpg"
+                              alt="Facebook"
+                              title="Facebook"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="40">
+                        <a
+                          href="https://twitter.com/theperfumeshop?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Twitter"
+                          name="Twitter"
+                          target="_blank"
+                          ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716342814/tps-email-footer-twitter-2019.jpg"
+                              alt="Twitter"
+                              title="Twitter"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="40">
+                        <a
+                          href="https://www.instagram.com/theperfumeshop/?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Instagram"
+                          name="Instagram"
+                          target="_blank"
+                          ><font face="Muli, Arial, Helvetica, sans-serif" color="#000000" style="font-size: 16px"
+                            ><img
+                              src="https://www.theperfumeshop.com/medias/sys_master/email-media/email-media/10553716572190/tps-email-footer-instagram-2019.jpg"
+                              alt="Instagram"
+                              title="Instagram"
+                              width="40"
+                              height="30"
+                              border="0"
+                              style="display: block"
+                              class="scale" /></font
+                        ></a>
+                      </td>
+
+                      <td width="240"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+
+              <tr>
+                <td align="center" bgcolor="#000000">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="0" class="postContentGutters"></td>
+
+                      <td align="center" style="font: 11px/120% Arial, Helvetica, sans-serif; color: #fff">
+                        <a
+                          href="${ctx.baseUrl}/contact-us?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          title="Contact Us"
+                          name="Contact Us"
+                          style="color: #fff; text-decoration: underline"
+                          target="_blank"
+                          >Contact Us</a
+                        >
+                        &nbsp; | &nbsp;
+                        <a
+                          href="${ctx.baseUrl}/faqs-and-help?utm_source=CRM&utm_medium=email&utm_campaign=orderShipped"
+                          style="color: #fff; text-decoration: underline"
+                          title="FAQ's"
+                          name="FAQ's"
+                          target="_blank"
+                          >FAQ's</a
+                        >
+                      </td>
+
+                      <td width="0" class="postContentGutters"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td height="20" bgcolor="#000000" align="center"></td>
+              </tr>
+
+              <!-- FOOTER ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#e8e8e8"></td>
+              </tr>
+
+              <!-- TERMS & CONDITIONS STARTS -->
+
+              <tr>
+                <td align="center" bgcolor="#e8e8e8">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="0" class="postContentGutters"></td>
+
+                      <td align="left" style="font: 11px/120% Muli, Arial, Helvetica, sans-serif; color: #000">
+                        For Terms and Conditions please
+                        <a
+                          style="color: #000000"
+                          href="${ctx.baseUrl}/terms-and-conditions?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                          >click here</a
+                        >.<br /><br />
+
+                        Note that we have updated our
+                        <a
+                          href="${ctx.baseUrl}/privacy-policy?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                          style="color: #000000; text-decoration: underline"
+                          >Privacy Policy</a
+                        >
+                        to align with the new requirements of the data privacy law. Please review the
+                        <a
+                          href="${ctx.baseUrl}/privacy-policy?utm_source=CRM&utm_medium=Email&utm_campaign=orderShipped"
+                          style="color: #000000; text-decoration: underline"
+                          >Privacy Policy</a
+                        >
+                        to ensure you understand how we collect and process your personal data.<br /><br />
+
+                        Shop Limited. Registered in England and Wales No. 2699577.<br />
+                        Registered office: Hutchison House, 5 Hester Road, Battersea, London SW11 4AN.
+                      </td>
+
+                      <td width="0" class="postContentGutters"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- TERMS & CONDITIONS ENDS -->
+
+              <tr>
+                <td height="20" bgcolor="#e8e8e8">
+                  <a
+                    style="font: 11px/120% Muli, Arial, Helvetica, sans-serif; color: #e8e8e8"
+                    href="https://tracking.narvar.com/$becauseMarket/tracking/$carrier?tracking_numbers=$trackID&order_number=$orderNo&service=$serviceCode&origin_country=$originCountry&destination_country=$destinationCounty&ozip=&dzip=$postcode&locale=$locale&order_date=&ship_date=$shipDate"
+                    >Tracking</a
+                  >
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

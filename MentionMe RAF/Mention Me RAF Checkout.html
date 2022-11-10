@@ -1,0 +1,23 @@
+<style>
+  #mmLink {
+    text-decoration: underline !important;
+  }
+</style>
+
+<!-- Begin Mention Me referee integration -->
+<script id="mentionme-checkout-script" type="text/javascript"></script>
+<!-- End Mention Me referee integration -->
+
+<script>
+  waitFor$(function () {
+    if (
+      window.location.href ===
+      "https://www-uat-perfumeshop.uk.aswatson.net/cart"
+    ) {
+      $("<div id='mmWrapper'></div>").insertBefore(".j-promo_code");
+
+      document.getElementById("mentionme-checkout-script").src =
+        "https://tag-demo.mention-me.com/api/v2/refereefind/mm98de7f73?situation=checkout&locale=en_GB";
+    }
+  });
+</script>

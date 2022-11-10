@@ -1,0 +1,21 @@
+<!-- Begin Mention Me referrer integration -->
+<script id="mentionme-script" type="text/javascript"></script>
+<!-- End Mention Me referrer integration -->
+<script>
+  waitFor$(function () {
+    document.getElementById("mentionme-script").src =
+      "https://tag-demo.mention-me.com/api/v2/referreroffer/mm98de7f73?firstname=" +
+      TPS.user.firstName +
+      "&surname=" +
+      TPS.user.lastName +
+      "&email=" +
+      TPS.user.emailAddress +
+      "&order_number=" +
+      dataLayer[2].transactionId +
+      "&order_subtotal=" +
+      dataLayer[2].transactionTotal +
+      "&order_currency=" +
+      dataLayer[2].currency +
+      "&situation=postpurchase&locale=en_GB";
+  });
+</script>

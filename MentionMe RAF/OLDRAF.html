@@ -1,0 +1,68 @@
+<p><style type="text/css">
+	button[class^="bp-"][class$="closer"] {
+		width: 20px;
+		height: 20px;
+		min-width: unset;
+		min-height: unset;
+		color: #000000;
+		background: none;
+	}
+
+	.raf-mobile {
+		width: 100%;
+		height: 40px;
+		background: #e00034;
+		margin: -15px 0 15px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.raf-mobile h2 {
+		color: #ffffff;
+		font-family: 'Muli';
+		text-align: center;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	.raf-mobile h2 span {
+		text-decoration: underline;
+	}
+
+	img.raf-visual-desktop {
+		display: block;
+		width: 100%;
+		cursor: pointer;
+	}
+</style>  <script type="text/javascript" src="https://cdn.co-buying.com/uxtoolkit.min.js"></script> <script type="text/javascript">
+	// function buyapowerPopover() {
+		var buyapowaUX = new BuyapowaUX({
+			url: 'https://bp.theperfumeshop.com',
+			market: 'theperfumeshop',
+		});
+		buyapowaUX.referrerPopover({
+			campaign: 'theperfumeshop_raf1',
+			first_name: TPS.user.firstName,
+			last_name: TPS.user.lastName,
+			email: TPS.user.email,
+			custom_field_value: TPS.user.phoneNumber,
+			locale: 'en_GB',
+		});
+	// }
+
+	// waitFor$(function () {
+	// 	if (window.matchMedia('(max-width: 991px)').matches) {
+	// 		$(
+	// 			"<div onclick='buyapowerPopover()' class='raf-mobile'><h2>Want £10 Off? <span>Refer a Friend</span></h2></div>"
+	// 		).insertAfter('.details_block.order_info__general');
+	// 	} else {
+	// 		$(
+	// 			"<img onclick='buyapowerPopover()' class='raf-visual-desktop' src='/medias/sys_master/root/11595991842846/desktop-visual.png' alt='Refer a Friend'>"
+	// 		).appendTo('.details_block.order_info__thanks');
+	// 	}
+	// });
+</script></p>

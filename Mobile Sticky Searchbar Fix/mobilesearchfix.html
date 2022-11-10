@@ -1,0 +1,12 @@
+<script>
+  var B = document.body; //IE 'quirks'
+  var D = document.documentElement; //IE with doctype
+  const el = document.querySelector(".j-search_wrapper_mobile");
+
+  window.onscroll = function () {
+    D = D.clientHeight ? D : B;
+    if (D.scrollTop == 0) {
+      el.classList.remove("search_wrapper_mobile--fixed");
+    }
+  };
+</script>

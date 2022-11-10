@@ -1,0 +1,1213 @@
+<p>
+  <style type="text/css">
+    body > main {
+      padding: 0 !important;
+    }
+
+    .our_brands {
+      margin-top: 40px;
+    }
+
+    .component_titles_group {
+      display: none;
+    }
+
+    aside {
+      display: none;
+    }
+
+    article {
+      width: 100% !important;
+    }
+
+    ul#mainSection h1 {
+      margin: 20px auto 40px auto;
+      font: 5rem/120% "DIN Condensed Bold", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .advanced-product-reference h2 {
+      display: none;
+    }
+
+    h2.product_carousel__title {
+      font-size: 0.1px;
+      color: #ffffff;
+    }
+
+    ol.breadcrumbs {
+      display: none;
+    }
+
+    .discoveryShopLanding {
+      margin: 0;
+      padding: 0;
+    }
+
+    .introSection {
+      text-align: center;
+      width: 100%;
+      height: calc(100vh - 240px);
+      background: url(https://www.theperfumeshop.com/medias/sys_master/FathersDay/FathersDay/10580232110110/mFathersDay19LP-Header-Mobile.jpg)
+        no-repeat center center;
+      background-size: cover;
+    }
+
+    .introSection h1 {
+      margin: 0;
+      padding: 4vw 0 0;
+      font: 12vw/100% DIN Condensed Bold, sans-serif;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .introSection h1 span {
+      margin: 5px 0 0;
+      font: 9vw/100% Mark My Words Clean, sans-serif;
+      color: #e26eb2;
+      text-transform: lowercase;
+    }
+
+    .introSection a {
+      cursor: pointer;
+      font: 5vw/100% DIN Condensed Bold;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .introSection a img {
+      position: relative;
+      top: 1.2vw;
+      left: 0.8vw;
+      width: 7vw;
+      filter: invert(100%);
+    }
+
+    #mainSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 20px 0;
+      padding: 0;
+    }
+
+    #mainSection li {
+      position: relative;
+      margin: 0 0 20px;
+      list-style: none;
+      width: 100%;
+    }
+
+    #mainSection li img.graphicalBg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CATEGORY BUTTONS */
+
+    #mainSection ul.categoryButton {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 0 20px 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    #mainSection ul.categoryButton li {
+      margin: 0 0 20px;
+      width: calc(100% / 2 - 10px);
+    }
+
+    #mainSection ul.categoryButton li:hover {
+      opacity: 1;
+    }
+
+    /*#mainSection ul.categoryButton li:first-child {width: 100%;}*/
+
+    #mainSection ul.categoryButton li a {
+      display: inline-block;
+      margin: 0;
+      padding: 12px 30px;
+      font-family: "Muli", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      background-color: #000000;
+      color: #ffffff;
+      transition: background 0.2s ease;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    #mainSection ul.categoryButton li a:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    /* BRAND LOGO CAROUSEL SECTION */
+
+    #mainSection li.brandCarousel {
+      margin: 0 0 30px;
+      width: 100%;
+    }
+
+    #mainSection li.brandCarousel:hover {
+      opacity: 1;
+    }
+
+    #mainSection li .brandHeader {
+      margin: -28px auto 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #mainSection li .brandHeader h2 {
+      display: inline-block;
+      font: 8vw/100% "DIN Condensed Bold", sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+      letter-spacing: 0;
+      position: relative;
+      top: 10vw;
+      padding: 0 3vw;
+      width: auto;
+      background: #ffffff;
+    }
+
+    h2.carouselHeader {
+      font: 8vw/100% "DIN Condensed Bold", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000000;
+      letter-spacing: 0;
+    }
+
+    p.carouselCopy {
+      color: #000000;
+      font: 16px/140% Muli, sans-serif;
+      text-align: center;
+    }
+
+    section.brand-logo-carousel {
+      margin: 0;
+      background: none;
+    }
+
+    .brand-logo-carousel .brand-logo:hover,
+    .brand-logo-carousel .brand-logo:focus {
+      box-shadow: 0 0 0;
+    }
+
+    .brand-logo-carousel a {
+      padding: 4% 0;
+      border: 0;
+      background-color: transparent;
+    }
+
+    .brand-logo-carousel a:hover,
+    .brand-logo-carousel a:focus {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+      cursor: pointer;
+    }
+
+    .brand-logo-carousel .items {
+      padding: 0 3em !important;
+    }
+
+    .brand-logo-carousel .brand-logo {
+      border: solid 1px #000000;
+    }
+
+    /* BRANDS WE LOVE */
+
+    #mainSection ul.brandsWeLove {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    #mainSection ul.brandsWeLove li {
+      text-align: center;
+      width: 100%;
+    }
+
+    /*#mainSection ul.brandsWeLove li:hover {
+  opacity: 0.5;
+  transition: opacity .25s ease-in-out;
+}*/
+
+    #mainSection ul.brandsWeLove h2 {
+      margin: 0;
+      font: 30px/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+    }
+
+    #mainSection ul.brandsWeLove h2 span {
+      color: #e26eb2;
+      font: 24px/100% Mark My Words Clean, sans-serif;
+      text-transform: lowercase;
+    }
+
+    .prodCarouselContainer {
+      padding: 0 30px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    #mainSection ul.brandsWeLove li img {
+      width: 50%;
+    }
+
+    #mainSection ul.brandsWeLove h3 {
+      margin: 20px 0 10px;
+      font: Bold 16px/100% Muli, sans-serif;
+      text-transform: uppercase;
+    }
+
+    #mainSection ul.brandsWeLove p {
+      color: #000000;
+      font: 16px/140% Muli, sans-serif;
+    }
+
+    #mainSection ul.brandsWeLove span.shopNowCTA {
+      padding: 12px 30px;
+      display: inline-block;
+      font: 14px/100% "Muli", sans-serif;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #000000;
+      transition: 0.2s ease;
+      border: 1px solid #000000;
+    }
+
+    #mainSection ul.brandsWeLove span.shopNowCTA:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* CATEGORY TILES */
+
+    #mainSection li.thirds {
+      width: calc(100% / 2 - 10px);
+      border: solid 1px #cecece;
+    }
+
+    #mainSection li.thirds:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection li.thirds h2 {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    #mainSection li.thirds a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    #mainSection li.thirds h2 div {
+      position: absolute;
+      margin: 0;
+      top: 6%;
+      left: 6%;
+      text-align: left;
+      width: 100%;
+      display: block;
+      margin-bottom: 2vw;
+      font: 4.6vw/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    #mainSection li.halfs {
+      width: 100%;
+      border: solid 1px #cecece;
+    }
+
+    #mainSection li.halfs:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection li.halfs h2 {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    #mainSection li.halfs a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    #mainSection li.halfs h2 div {
+      position: absolute;
+      margin: 0;
+      top: 6%;
+      left: 6%;
+      text-align: left;
+      width: 100%;
+      display: block;
+      margin-bottom: 2vw;
+      font: 4.6vw/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    #mainSection li.fullWidth {
+      border: solid 1px #cecece;
+    }
+
+    #mainSection li.fullWidth img {
+      display: block;
+      width: 193% !important;
+      margin-left: -46% !important;
+    }
+
+    /* VIDEO SECTIONS */
+
+    #mainSection li.vidSection {
+      text-align: center;
+    }
+
+    #mainSection li.vidSection h2 {
+      margin: 0 0 10px;
+      font: 30px/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    #mainSection li.vidSection h2 span {
+      display: block;
+      margin: 10px 0 0;
+      color: #e26eb2;
+      font: 24px/100% Mark My Words Clean, sans-serif;
+      text-transform: lowercase;
+    }
+
+    #mainSection li.vidSection p {
+      color: #000000;
+      font: 16px/140% Muli, sans-serif;
+    }
+
+    #mainSection li.vidSection p a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    #mainSection li.vidSection iframe {
+      margin: 20px 0 0;
+      height: 60vw;
+    }
+
+    /* LEFT HAND FILTERS */
+
+    aside {
+      margin: 0 20px;
+    }
+
+    nav.left-hand-nav,
+    .tps-left-hand-nav-img {
+      display: none !important;
+    }
+
+    .category_menu .category_menu__item_header {
+      color: #ffffff;
+      border-bottom: solid 2px #e26eb2;
+    }
+
+    .category_menu .category_menu__item_header:after,
+    .category_menu .category_menu__item_header-collapsed:after {
+      border-top: 7.5px solid #ffffff;
+    }
+
+    .category_menu .category_menu__item_content {
+      background: #000000;
+    }
+
+    .category_menu .category_menu__item_content a {
+      color: #ffffff;
+    }
+
+    .facets__mobile_title {
+      color: #ffffff !important;
+      background: #e26eb2;
+    }
+
+    .facets__mobile_title:after {
+      border-top: 7.5px solid #ffffff;
+    }
+
+    .facets__desktop_title {
+      margin: 0 !important;
+    }
+
+    .facets__group {
+      margin-top: 20px !important;
+      border: solid 1px #000000;
+    }
+
+    .chosen_facets {
+      margin: 1em 0;
+      padding: 1em 0 0;
+      color: #000000;
+      border: solid 1px #000000;
+      background: #ffe3da;
+    }
+
+    .chosen_facets__header {
+      padding: 2em 1em 10px;
+      background: #ffe3da;
+    }
+
+    .chosen_facets__list {
+      background: #ffe3da;
+    }
+
+    .chosen_facets__remove_item,
+    .chosen_facets__remove_item:focus,
+    .chosen_facets__remove_item:hover {
+      color: #000000;
+    }
+
+    /* PRODUCT LIST */
+
+    .results {
+      padding: 0 20px 10px;
+    }
+
+    .pagination {
+      padding: 20px 0 !important;
+    }
+
+    .pagination-sort {
+      margin: 0;
+    }
+
+    .pagination-sort label {
+      font-size: 1.2rem;
+    }
+
+    .pagination-sort .view-amount {
+      padding-top: 20px;
+    }
+
+    .product-list {
+      padding: 0 15px;
+      background: #ffffff;
+    }
+
+    .product-list .product-tile div.badges {
+      height: 30px;
+    }
+
+    /*Fragrance Foundation*/
+
+    .fragranceFoundation {
+      width: calc(100% - 40px);
+      max-width: 1120px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: solid 1px #cecece;
+    }
+
+    .fragranceFoundation:hover {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .fragranceFoundation img {
+      display: block;
+      width: 162%;
+      margin-left: -30%;
+    }
+
+    @media (min-width: 768px) {
+      ul#mainSection h1 {
+        margin: 20px auto 40px auto;
+        font: 7rem/120% "DIN Condensed Bold", sans-serif;
+      }
+
+      .introSection {
+        height: calc(100vh - 200px);
+        background: url(https://www.theperfumeshop.com/medias/sys_master/FathersDay/FathersDay/10580232110110/mFathersDay19LP-Header-Mobile.jpg)
+          no-repeat center center;
+        background-size: cover;
+      }
+
+      .introSection h1 {
+        font: 90px/120% DIN Condensed Bold, sans-serif;
+      }
+
+      .introSection h1 span {
+        font: 70px/100% Mark My Words Clean, sans-serif;
+      }
+
+      .introSection a {
+        font: 38px/100% DIN Condensed Bold;
+      }
+
+      .introSection a img {
+        top: 10px;
+        left: 10px;
+        width: 50px;
+      }
+
+      #mainSection {
+        margin: 30px auto 0;
+        padding: 0 30px;
+        max-width: 1120px;
+      }
+
+      #mainSection li {
+        margin: 0 0 40px;
+      }
+
+      /* CATEGORY BUTTONS */
+
+      #mainSection ul.categoryButton li,
+      #mainSection ul.categoryButton li:first-child {
+        width: calc(100% / 4 - 10px);
+      }
+
+      #mainSection ul.categoryButton li a {
+        font: 14px/100% "Muli", sans-serif;
+      }
+
+      /* BRAND LOGO CAROUSEL SECTION */
+
+      #mainSection li .brandHeader {
+        margin: -36px auto 20px;
+      }
+
+      #mainSection li .brandHeader h2 {
+        font: 5vw/100% "DIN Condensed Bold", sans-serif;
+        top: 6vw;
+        padding: 0 2vw;
+      }
+
+      h2.carouselHeader {
+        font: 5vw/100% "DIN Condensed Bold", sans-serif;
+      }
+
+      /* BRANDS WE LOVE */
+
+      #mainSection ul.brandsWeLove {
+        margin-bottom: 20px;
+        justify-content: space-around;
+      }
+
+      #mainSection ul.brandsWeLove li {
+        width: 70%;
+      }
+
+      #mainSection ul.brandsWeLove li:first-child {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove li:first-child:hover {
+        opacity: 1;
+      }
+
+      #mainSection ul.brandsWeLove h2 {
+        font: 40px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove h2 span {
+        font: 34px/100% Mark My Words Clean, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove li a {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #mainSection ul.brandsWeLove li div {
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection ul.brandsWeLove li:nth-of-type(odd) div:last-child {
+        order: -1;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove li div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+
+      #mainSection ul.brandsWeLove h3 {
+        text-align: left;
+        margin: 0 0 10px;
+      }
+
+      #mainSection ul.brandsWeLove p {
+        text-align: left;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      /* CATEGORY TILES */
+
+      #mainSection li.thirds {
+        margin: 0 0 20px;
+        width: calc(100% / 3 - 15px);
+      }
+
+      #mainSection li.thirds h2 div {
+        font: 3.4vw/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.thirds h2 div:after {
+        border: 1vw solid #000000;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      #mainSection li.halfs {
+        margin: 0 0 20px;
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection li.halfs h2 div {
+        font: 3.4vw/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs h2 div:after {
+        border: 1vw solid #000000;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      #mainSection li.fullWidth img {
+        display: block;
+        width: 100% !important;
+        margin-left: 0% !important;
+      }
+
+      /* VIDEO SECTIONS */
+
+      #mainSection li.vidSection {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #mainSection li.vidSection div {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        width: calc(100% / 2 - 10px);
+      }
+
+      #mainSection li.valentinesPicks {
+        margin: 20px 0;
+      }
+
+      #mainSection li.engravingVid div:last-child {
+        order: -1;
+      }
+
+      #mainSection li.vidSection iframe {
+        margin: 0;
+        height: 34vw;
+      }
+
+      /* LEFT HAND FILTERS */
+
+      .facets label {
+        color: #000000;
+      }
+
+      .chosen_facets {
+        padding: 1em;
+      }
+
+      .chosen_facets__header {
+        padding: 0.5em 0 10px;
+      }
+
+      .pagination-sort {
+        background: #e6e2e7;
+      }
+
+      .pagination-sort label {
+        font-size: 1.2rem;
+        color: #000000;
+      }
+
+      /* PRODUCT LIST */
+
+      .listing {
+        margin: 0 40px 30px;
+        width: calc(100% - 80px);
+      }
+
+      .product-list {
+        padding: 20px;
+      }
+
+      .product-list .product-tile div.badges {
+        height: auto;
+      }
+
+      .fragranceFoundation {
+        width: calc(100% - 62px);
+        margin: 20px auto 30px;
+      }
+
+      .fragranceFoundation img {
+        width: 100%;
+        margin-left: 0%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      ul#mainSection h1 {
+        margin: 20px auto 40px auto;
+        font: 9rem/120% "DIN Condensed Bold", sans-serif;
+      }
+
+      body.hide-cookie > header {
+        min-height: 220px !important;
+      }
+
+      .introSection {
+        height: calc(100vh - 200px);
+        background: url(https://www.theperfumeshop.com/medias/sys_master/FathersDay/FathersDay/10580105691166/mFathersDay19LP-Header.jpg)
+          no-repeat center center;
+        background-size: cover;
+      }
+
+      /* CATEGORY BUTTONS */
+
+      #mainSection ul.categoryButton li a {
+        font: 14px/100% "Muli", sans-serif;
+      }
+
+      /* BRAND LOGO CAROUSEL SECTION */
+
+      #mainSection li .brandHeader h2 {
+        font: 40px/100% "DIN Condensed Bold", sans-serif;
+        top: 50px;
+        padding: 0 20px;
+      }
+
+      h2.carouselHeader {
+        font: 40px/100% "DIN Condensed Bold", sans-serif;
+      }
+
+      /* BRANDS WE LOVE */
+
+      #mainSection ul.brandsWeLove {
+        justify-content: space-between;
+      }
+
+      #mainSection ul.brandsWeLove li {
+        width: calc(100% / 2 - 20px);
+      }
+
+      #mainSection ul.brandsWeLove li:first-child {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove h2 {
+        font: 50px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove h2 span {
+        font: 40px/100% Mark My Words Clean, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove li div {
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection ul.brandsWeLove li:nth-of-type(odd) div:last-child {
+        order: 0;
+      }
+
+      #mainSection ul.brandsWeLove li:nth-child(4) div:last-child,
+      #mainSection ul.brandsWeLove li:nth-child(5) div:last-child {
+        order: -1;
+      }
+
+      #mainSection ul.brandsWeLove li div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+
+      #mainSection ul.brandsWeLove h3 {
+        margin: 0 0 10px;
+      }
+
+      #mainSection ul.brandsWeLove p {
+        text-align: left;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      /* CATEGORY TILES */
+
+      #mainSection li.thirds {
+        margin: 0 0 40px;
+        width: calc(100% / 3 - 20px);
+      }
+
+      #mainSection li.thirds h2 div {
+        font: 30px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.thirds h2 div:after {
+        border: 10px solid #000000;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      #mainSection li.halfs {
+        margin: 0 0 40px;
+        width: calc(100% / 2 - 20px);
+      }
+
+      #mainSection li.halfs h2 div {
+        font: 30px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs h2 div:after {
+        border: 10px solid #000000;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      /* VIDEO SECTIONS */
+
+      #mainSection li.vidSection iframe {
+        height: 264px;
+      }
+
+      main.wrap {
+        padding: 0 20px !important;
+      }
+
+      aside {
+        margin: 18px 20px 0;
+      }
+
+      article {
+        width: calc(74.25% - 30px);
+      }
+
+      .listing {
+        margin: 0 0 40px;
+        width: 100%;
+      }
+
+      .results {
+        padding: 0;
+      }
+
+      .fragranceFoundation {
+      }
+
+      .fragranceFoundation img {
+        width: 100%;
+        margin-left: 0%;
+      }
+    }
+  </style>
+</p>
+<div class="discoveryShopLanding">
+  <ul id="mainSection">
+    <!-- CATEGORY BUTTONS -->
+    <ul class="categoryButton">
+      <li>
+        <a
+          class="grid-link-a"
+          href="/products/discovery-shop/vegan-fragrances/c/DS30004"
+          title="Vegan"
+          >Vegan</a
+        >
+      </li>
+      <li>
+        <a
+          class="grid-link-a"
+          href="/products/discovery-shop/niche-fragrances/c/DS30005"
+          title="Niche"
+          >Niche</a
+        >
+      </li>
+      <li>
+        <a
+          class="grid-link-a"
+          href="/products/discovery-shop/just-arrived/c/DS30002"
+          title="Just Arrived"
+          >Just Arrived</a
+        >
+      </li>
+      <li>
+        <a
+          class="grid-link-a"
+          href="/products/discovery-shop/unisex-fragrances/c/DS30003"
+          title="Unisex"
+          >Unisex</a
+        >
+      </li>
+    </ul>
+    <!-- BRAND LOGO CAROUSEL -->
+    <!--         <li class="brandCarousel">
+          <div class="brandHeader"><a href="/brands">
+                  <h2>View Brands</h2>
+              </a></div>
+      </li> -->
+    <!-- BRANDS WE LOVE -->
+    <ul class="brandsWeLove">
+      <li>
+        <h2>Unique Products <span>We Can't Wait To Share</span></h2>
+      </li>
+      <li>
+        <a
+          href="https://www.theperfumeshop.com/maison-margiela/b/495"
+          title="Maison Margiela"
+        >
+          <div>
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/11498235101214/Maison-Margiela.jpg"
+              alt="Maison Margiela"
+              title="Maison Margiela"
+            />
+          </div>
+          <div>
+            <h3>Margiela</h3>
+            <p>
+              Unique, unisex fragrances inspired by memories.<br />
+              <br />
+              Fragrances for you and your home, inspired by familiar moments and
+              precious memories. From a Lazy Sunday Morning to a Jazz Club:
+              which memory will you choose?
+            </p>
+            <span class="shopNowCTA">Shop Now</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.theperfumeshop.com/issey-miyake/b/38"
+          title="ISSEY MIYAKE"
+        >
+          <div>
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11616976601118/isseymiyake.jpg"
+              alt="ISSEY MIYAKE"
+              title="ISSEY MIYAKE"
+            />
+          </div>
+          <div>
+            <h3>ISSEY MIYAKE</h3>
+            <p>
+              In true Japanese style, Issey Miyake is modern and innovative with
+              an extensive beauty product range. Issey studied graphic design
+              and has dedicated his brand to artistic and cultural elements, his
+              first scent being launched in 1992.
+            </p>
+            <span class="shopNowCTA">Shop Now</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.theperfumeshop.com/avant-skincare/b/499"
+          title="Avant Skincare"
+        >
+          <div>
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11616976699422/avantskincare.jpg"
+              alt="Avant Skincare"
+              title="Avant Skincare"
+            />
+          </div>
+          <div>
+            <h3>Avant Skincare</h3>
+            <p>
+              Through harbouring a wealth of industry knowledge and experience,
+              we recognised a lack of brands uniting the benefits of both the
+              natural skincare routine and effective scientific formulations.
+            </p>
+            <span class="shopNowCTA">Shop Now</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.theperfumeshop.com/nipfab/b/203" title="Nip + Fab">
+          <div>
+            <img
+              src="https://www.theperfumeshop.com/medias/sys_master/root/11616976797726/nipfab.jpg"
+              alt="Nip + Fab"
+              title="Nip + Fab"
+            />
+          </div>
+          <div>
+            <h3>Nip + Fab</h3>
+            <p>
+              NIP + FAB believes in a fix for every skin concern, and it’s this
+              philosophy that has inspired their ingredient lead skincare. The
+              NIP + FAB skincare range has us introducing ingredients such as
+              glycolic, retinol, vitamin C and salicylic acid into our daily
+              skincare routines, making them feel much more accessible.
+            </p>
+            <span class="shopNowCTA">Shop Now</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </ul>
+  <div class="prodCarouselContainer" id="vegan">
+    <h2 class="carouselHeader">Vegan Fragrances</h2>
+    <p class="carouselCopy" id="veganCopy">
+      If you&rsquo;re looking for vegan fragrance that&rsquo;s not tested on
+      animals, look no further. Enjoy cruelty free, organic, plant-based
+      perfumes at The Perfume Shop so you can smell great without the guilt.
+    </p>
+  </div>
+  <div class="prodCarouselContainer" id="niche">
+    <h2 class="carouselHeader">Niche Fragrances</h2>
+    <p class="carouselCopy" id="nicheCopy">
+      Niche perfumes are boutique, independent, original fragrances. These
+      distinctive and prestigious fragrances are from some of the finest
+      perfumery brands in the world. Treat yourself or a loved one to a unique
+      and unusual niche perfume or aftershave at The Perfume Shop.
+    </p>
+  </div>
+  <div class="prodCarouselContainer" id="justArrived">
+    <h2 class="carouselHeader">Just Arrived</h2>
+    <p class="carouselCopy" id="justArrivedCopy">
+      Fall in love with the latest, just landed scents. With beautiful new
+      perfumes from the likes of Tom Ford, Marc Jacobs and Armani, there's
+      guaranteed to be something for everyone (and every budget).From fresh
+      florals to sultry orientals, discover the best new perfumes for 2021 and
+      find your signature scent today.
+    </p>
+  </div>
+  <div class="prodCarouselContainer" id="unisex">
+    <h2 class="carouselHeader">Unisex Fragrances</h2>
+    <p class="carouselCopy" id="unisexCopy">
+      Check out our top choices of the best unisex perfume and scents that smell
+      incredible on everyone. These androgynous perfumes ignore gender binaries,
+      making them the perfect treat for yourself or a partner (so you can steal
+      a spritz..)
+    </p>
+  </div>
+</div>
+<script>
+  waitFor$(function () {
+    // MOVE INTRO AREA
+
+    $("main.wrap h1").prependTo("#mainSection");
+
+    // ADD SPAN TO TITLE TEXT
+
+    // $("main.wrap h1").html("Father's Day");
+
+    // BRAND LOGO CAROUSEL PLACEMENT
+
+    $(".brand-logo-carousel").insertAfter(".brandHeader");
+
+    $(".product_carousel__wrapper:contains(Vegan Fragrances)").insertAfter(
+      "#vegan #veganCopy"
+    );
+
+    $(".product_carousel__wrapper:contains(Niche Fragrances)").insertAfter(
+      "#niche #nicheCopy"
+    );
+
+    $(".product_carousel__wrapper:contains(Just Arrived)").insertAfter(
+      "#justArrived #justArrivedCopy"
+    );
+
+    $(".product_carousel__wrapper:contains(Unisex Fragrances)").insertAfter(
+      "#unisex #unisexCopy"
+    );
+
+    $(".product_carousel__wrapper:contains(Online Exclusives)").insertAfter(
+      "#onlineExclusives #onlineExclusivesCopy"
+    );
+
+    setTimeout(function () {
+      $(
+        ".product_carousel__wrapper:contains(Vegan Fragrances) .product-items, .product_carousel__wrapper:contains(Niche Fragrances) .product-items, .product_carousel__wrapper:contains(Just Arrived) .product-items, .product_carousel__wrapper:contains(Unisex Fragrances) .product-items, .product_carousel__wrapper:contains(Online Exclusives) .product-items"
+      ).owlCarousel({
+        autoPlay: 5000,
+        items: 4,
+        itemsDesktop: [1023, 1],
+        itemsDesktopSmall: [979, 1],
+        itemsMobile: [767, 1],
+        navigation: true,
+        stopOnHover: true,
+        navigationText: false,
+      });
+    }, 2000);
+
+    // MOVE DESKTOP LEFT NAV BEFORE PRODUCT LISTING
+
+    $(".discoveryShopLanding").insertBefore("main.wrap");
+
+    $(function () {
+      $('a[href^="#"]').click(function () {
+        if (
+          location.pathname.replace(/^\//, "") ==
+            this.pathname.replace(/^\//, "") &&
+          location.hostname == this.hostname
+        ) {
+          var $target = $(this.hash);
+          $target =
+            ($target.length && $target) ||
+            $("[name=" + this.hash.slice(1) + "]");
+          if ($target.length) {
+            var targetOffset = $target.offset().top - 100;
+            $("html,body").animate({ scrollTop: targetOffset }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+  });
+</script>

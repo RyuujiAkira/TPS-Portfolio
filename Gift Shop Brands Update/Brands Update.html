@@ -1,0 +1,1202 @@
+<p>
+  <style type="text/css">
+    body > main {
+      padding: 0 !important;
+    }
+
+    main h1 {
+      margin: 0;
+    }
+
+    body > main.wrap {
+      max-width: 100% !important;
+    }
+
+    .component_titles_group {
+      display: none !important;
+    }
+
+    .category_title {
+      display: none !important;
+    }
+
+    p.customDescription {
+      font: 14px/140% "Muli", sans-serif;
+      padding: 0px 20px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    body > main > section {
+      padding: 0px !important;
+    }
+
+    .breadcrumbs {
+      display: none;
+    }
+
+    h2.our_services__heading.sub_heading,
+    h2.our_brands__title,
+    h2.new_to_us__heading {
+      display: none !important;
+    }
+
+    h3.brands__sub_heading {
+      display: none !important;
+    }
+
+    .our_brands__container {
+      margin-top: 25px;
+    }
+
+    .giftShopLanding {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    .introSection h1 {
+      margin: 0;
+      padding: 4vw 0 0;
+      font: 12vw/100% DIN Condensed Bold, sans-serif;
+      text-align: center;
+      color: #ffffff;
+      background: none;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .introSection a {
+      cursor: pointer;
+      font: 5vw/100% DIN Condensed Bold;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-top: 50px;
+    }
+
+    .introSection a img {
+      position: relative;
+      top: -0.5vh;
+      left: 0.8vw;
+      width: 7vw;
+    }
+
+    #mainSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 20px 0;
+      padding: 0;
+    }
+
+    #mainSection li {
+      position: relative;
+      margin: 0 0 20px;
+      list-style: none;
+      width: 100%;
+    }
+
+    #mainSection li img.graphicalBg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CATEGORY BUTTONS */
+
+    #mainSection ul.categoryButton {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    #mainSection ul.categoryButton li {
+      margin: 0 0 20px;
+      width: calc(100% / 2 - 10px);
+    }
+
+    #mainSection ul.categoryButton li:hover {
+      opacity: 1;
+    }
+
+    /*#mainSection ul.categoryButton li:first-child {width: 100%;}*/
+
+    #mainSection ul.categoryButton li a {
+      display: block;
+      margin: 0;
+      padding: 15px 0;
+      font: 16px/100% "Muli", sans-serif;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+      height: auto;
+      background: #000000;
+      border: solid 1px #000000;
+      box-sizing: border-box;
+      transition: 0.25s;
+    }
+
+    #mainSection ul.categoryButton li a:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* BRAND LOGO CAROUSEL SECTION */
+
+    #mainSection li.brandCarousel {
+      margin: 30px 0 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    #mainSection li.brandCarousel:hover {
+      opacity: 1;
+    }
+
+    #mainSection li .brandHeader {
+      width: 100%;
+      text-align: center;
+    }
+
+    #mainSection li .brandHeader h2 {
+      display: inline-block;
+      font: 8vw/100% "DIN Condensed Bold", sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+      letter-spacing: 0;
+      position: relative;
+      top: 10vw;
+      padding: 0 3vw;
+      width: auto;
+      background: #000000;
+    }
+
+    section.brand-logo-carousel {
+      margin: 0;
+      background: none;
+    }
+
+    .brand-logo-carousel .brand-logo:hover,
+    .brand-logo-carousel .brand-logo:focus {
+      box-shadow: 0 0 0;
+    }
+
+    .brand-logo-carousel a {
+      padding: 4% 0;
+      border: 0;
+      background-color: transparent;
+    }
+
+    .brand-logo-carousel a:hover,
+    .brand-logo-carousel a:focus {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+      cursor: pointer;
+    }
+
+    .brand-logo-carousel .items {
+      padding: 0 3em !important;
+    }
+
+    .brand-logo-carousel .brand-logo {
+      border: solid 1px #000000;
+    }
+
+    /* BLOG SECTIONS */
+
+    #mainSection li.blogSection {
+      text-align: center;
+    }
+
+    #mainSection li.blogSection:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection li.blogSection h2 {
+      margin: 0 0 10px;
+      font: 30px/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    #mainSection li.blogSection h2 span {
+      display: block;
+      margin: 10px 0 0;
+      color: #c4be7a;
+      font: 24px/100% Mark My Words Clean, sans-serif;
+      text-transform: lowercase;
+    }
+
+    #mainSection li.blogSection p {
+      color: #000000;
+      font: 14px/140% Muli, sans-serif;
+    }
+
+    #mainSection li.blogSection p a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    #mainSection li.blogSection span.blogButton {
+      display: inline-block;
+      margin: 10px auto;
+      padding: 12px 30px;
+      font-family: "Muli", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      background-color: #000000;
+      color: #ffffff;
+      transition: background 0.2s ease;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    #mainSection li.blogSection:hover span.blogButton {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    #mainSection li.blogSection img {
+      width: 100%;
+    }
+
+    /* BRANDS WE LOVE */
+
+    #mainSection ul.brandsWeLove {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      margin-top: 100px;
+      margin-bottom: 25px;
+    }
+
+    #mainSection ul.brandsWeLove li {
+      text-align: center;
+      width: 100%;
+    }
+
+    #mainSection ul.brandsWeLove li:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection ul.brandsWeLove h2,
+    #mainSection li.brandCarousel h2 {
+      margin: 0;
+      font: 30px/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    #mainSection ul.brandsWeLove h2 span,
+    #mainSection li.brandCarousel h2 span {
+      color: #c4be7a;
+      font: 24px/100% Mark My Words Clean, sans-serif;
+      text-transform: lowercase;
+    }
+
+    #mainSection ul.brandsWeLove li img {
+      width: 50%;
+    }
+
+    #mainSection ul.brandsWeLove h3 {
+      margin: 20px 0 10px;
+      font: normal 16px/100% Muli, sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+      letter-spacing: 0.2em;
+    }
+
+    #mainSection ul.brandsWeLove h4 {
+      margin: 0px 0 10px;
+      font: bold 16px/100% Muli, sans-serif;
+      text-transform: initial;
+      color: #000000;
+      text-align: center;
+      width: 100%;
+    }
+
+    #mainSection ul.brandsWeLove p {
+      color: #000000;
+      font: 14px/140% Muli, sans-serif;
+    }
+
+    #mainSection ul.brandsWeLove span.shopNowCTA {
+      padding: 8px 25px 8px;
+      display: inline-block;
+      font: 16px/100% "DIN Condensed Bold", sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+      background-color: #ffffff;
+      text-indent: -10px;
+      transition: 0.25s ease-in-out;
+    }
+
+    #mainSection ul.brandsWeLove span.shopNowCTA:after {
+      content: "";
+      position: absolute;
+      margin-left: 6px;
+      margin-top: 3px;
+      border: solid 6px #000000;
+      border-color: transparent transparent transparent #000000;
+      width: 0px;
+      height: 0px;
+    }
+
+    /* CATEGORY TILES */
+
+    #mainSection li.thirds {
+      width: calc(100% / 2 - 10px);
+    }
+
+    #mainSection li.thirds:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection li.thirds h2 {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    #mainSection li.thirds a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    #mainSection li.thirds h2 div {
+      position: absolute;
+      margin: 0;
+      top: 6%;
+      left: 6%;
+      text-align: left;
+      width: 100%;
+      display: block;
+      margin-bottom: 2vw;
+      font: 4.6vw/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    #mainSection li.halfs {
+      width: 100%;
+      border: solid 1px #cecece;
+    }
+
+    #mainSection li.halfs:hover {
+      opacity: 0.5;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    #mainSection li.halfs h2 {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    #mainSection li.halfs a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    #mainSection li.halfs h2 div {
+      position: absolute;
+      margin: 0;
+      top: 6%;
+      left: 6%;
+      text-align: left;
+      width: 100%;
+      display: block;
+      margin-bottom: 2vw;
+      font: 4.6vw/100% DIN Condensed Bold, sans-serif;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    #mainSection li.halfs h2 div:after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      border: 1.4vw solid #000000;
+      border-color: transparent transparent transparent #000000;
+      margin-top: 1vw;
+      margin-left: 1.4vw;
+    }
+
+    #mainSection li.fullWidth {
+      border: solid 1px #cecece;
+    }
+
+    #mainSection li.fullWidth img {
+      display: block;
+      width: 193% !important;
+      margin-left: -46% !important;
+    }
+
+    /* LEFT HAND FILTERS */
+
+    aside {
+      margin: 0 20px;
+    }
+
+    nav.left-hand-nav,
+    .tps-left-hand-nav-img {
+      display: none !important;
+    }
+
+    .category_menu .category_menu__item_header {
+      color: #ffffff;
+      border-bottom: solid 2px #e00034;
+    }
+
+    .category_menu .category_menu__item_header:after,
+    .category_menu .category_menu__item_header-collapsed:after {
+      border-top: 7.5px solid #ffffff;
+    }
+
+    .category_menu .category_menu__item_content {
+      background: #000000;
+    }
+
+    .category_menu .category_menu__item_content a {
+      color: #ffffff;
+    }
+
+    .facets__mobile_title {
+      color: #ffffff !important;
+      background: #e00034;
+    }
+
+    .facets__mobile_title:after {
+      border-top: 7.5px solid #ffffff;
+    }
+
+    .facets__desktop_title {
+      margin: 0 !important;
+    }
+
+    .facets__group {
+      margin-top: 20px !important;
+      border: solid 1px #000000;
+    }
+
+    .chosen_facets {
+      margin: 1em 0;
+      padding: 1em 0 0;
+      color: #000000;
+      border: solid 1px #000000;
+      background: #ffe3da;
+    }
+
+    .chosen_facets__header {
+      padding: 2em 1em 10px;
+      background: #ffe3da;
+    }
+
+    .chosen_facets__list {
+      background: #ffe3da;
+    }
+
+    .chosen_facets__remove_item,
+    .chosen_facets__remove_item:focus,
+    .chosen_facets__remove_item:hover {
+      color: #000000;
+    }
+
+    /* PRODUCT LIST */
+
+    .results {
+      padding: 0 20px 10px;
+    }
+
+    .pagination {
+      padding: 20px 0 !important;
+    }
+
+    .pagination-sort {
+      margin: 0;
+    }
+
+    .pagination-sort label {
+      font-size: 1.2rem;
+    }
+
+    .pagination-sort .view-amount {
+      padding-top: 20px;
+    }
+
+    .product-list {
+      padding: 0 15px;
+      background: #ffffff;
+    }
+
+    .product-list .product-tile div.badges {
+      height: 30px;
+    }
+
+    /*Fragrance Foundation*/
+
+    .fragranceFoundation {
+      width: calc(100% - 40px);
+      max-width: 1120px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: solid 1px #cecece;
+    }
+
+    .fragranceFoundation:hover {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .fragranceFoundation img {
+      display: block;
+      width: 162%;
+      margin-left: -30%;
+    }
+
+    @media (min-width: 768px) {
+      .introSection h1 {
+        font: 90px/120% DIN Condensed Bold, sans-serif;
+      }
+
+      .introSection h1 span {
+        font: 85px/100% Mark My Words Clean, sans-serif;
+        margin-left: 17px;
+      }
+
+      .introSection a {
+        font: 38px/100% DIN Condensed Bold;
+      }
+
+      .introSection a img {
+        top: -2px;
+        left: 10px;
+        width: 50px;
+      }
+
+      #mainSection {
+        margin: 30px auto 0px;
+        padding: 0 30px;
+        max-width: 1120px;
+      }
+
+      #mainSection li {
+        margin: 0 0 40px;
+      }
+
+      #mainSection ul.brandsWeLove h4 {
+        text-align: left;
+      }
+
+      /* CATEGORY BUTTONS */
+
+      #mainSection ul.categoryButton li,
+      #mainSection ul.categoryButton li:first-child {
+        width: calc(100% / 4 - 10px);
+      }
+
+      /*#mainSection ul.categoryButton li a {
+        font: 1.8rem/100% 'Muli', sans-serif;
+    }*/
+
+      /* BLOG SECTIONS */
+
+      #mainSection li.blogSection a {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+      }
+
+      #mainSection li.blogSection a:hover {
+        color: #000000;
+      }
+
+      #mainSection li.blogSection a div {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        width: calc(100% / 2 - 10px);
+      }
+
+      #mainSection li.postTwo div:last-child {
+        order: -1;
+      }
+
+      /* BRAND LOGO CAROUSEL SECTION */
+
+      #mainSection li .brandHeader {
+        margin: -36px auto 20px;
+      }
+
+      #mainSection li .brandHeader h2 {
+        font: 5vw/100% "DIN Condensed Bold", sans-serif;
+        top: 6vw;
+        padding: 0 2vw;
+      }
+
+      /* BRANDS WE LOVE */
+
+      #mainSection ul.brandsWeLove {
+        margin-bottom: 20px;
+        justify-content: space-around;
+      }
+
+      #mainSection ul.brandsWeLove li {
+        width: 70%;
+      }
+
+      #mainSection ul.brandsWeLove li:first-child {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove li:first-child:hover {
+        opacity: 1;
+      }
+
+      #mainSection ul.brandsWeLove h2,
+      #mainSection li.brandCarousel h2 {
+        font: 40px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove h2 span,
+      #mainSection li.brandCarousel h2 span {
+        font: 34px/100% Mark My Words Clean, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove li a {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #mainSection ul.brandsWeLove li div {
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection ul.brandsWeLove li:nth-of-type(odd) div:last-child {
+        order: -1;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove li div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+
+      #mainSection ul.brandsWeLove h3 {
+        text-align: left;
+        margin: 0 0 10px;
+      }
+
+      #mainSection ul.brandsWeLove p {
+        text-align: left;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      /* CATEGORY TILES */
+
+      #mainSection li.thirds {
+        margin: 0 0 20px;
+        width: calc(100% / 3 - 15px);
+      }
+
+      #mainSection li.thirds h2 div {
+        font: 3.4vw/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs {
+        margin: 0 0 20px;
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection li.halfs h2 div {
+        font: 3.4vw/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs h2 div:after {
+        border: 1vw solid #000000;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      #mainSection li.fullWidth img {
+        display: block;
+        width: 100% !important;
+        margin-left: 0% !important;
+      }
+
+      /* LEFT HAND FILTERS */
+
+      .facets label {
+        color: #000000;
+      }
+
+      .chosen_facets {
+        padding: 1em;
+      }
+
+      .chosen_facets__header {
+        padding: 0.5em 0 10px;
+      }
+
+      .pagination-sort {
+        background: #e6e2e7;
+      }
+
+      .pagination-sort label {
+        font-size: 1.2rem;
+        color: #000000;
+      }
+
+      /* PRODUCT LIST */
+
+      .listing {
+        margin: 0 40px 30px;
+        width: calc(100% - 80px);
+      }
+
+      .product-list {
+        padding: 20px;
+      }
+
+      .product-list .product-tile div.badges {
+        height: auto;
+      }
+
+      .fragranceFoundation {
+        width: calc(100% - 62px);
+        margin: 20px auto 30px;
+      }
+
+      .fragranceFoundation img {
+        width: 100%;
+        margin-left: 0%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      /* BRAND LOGO CAROUSEL SECTION */
+
+      #mainSection li .brandHeader h2 {
+        font: 40px/100% "DIN Condensed Bold", sans-serif;
+        top: 50px;
+        padding: 0 20px;
+      }
+
+      /* BRANDS WE LOVE */
+
+      #mainSection ul.brandsWeLove {
+        justify-content: space-between;
+      }
+
+      #mainSection ul.brandsWeLove li {
+        width: calc(100% / 2 - 20px);
+      }
+
+      #mainSection ul.brandsWeLove li:first-child {
+        width: 100%;
+      }
+
+      #mainSection ul.brandsWeLove h2,
+      #mainSection li.brandCarousel h2 {
+        font: 50px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove h2 span,
+      #mainSection li.brandCarousel h2 span {
+        font: 40px/100% Mark My Words Clean, sans-serif;
+      }
+
+      #mainSection ul.brandsWeLove li div {
+        width: calc(100% / 2 - 15px);
+      }
+
+      #mainSection ul.brandsWeLove li:nth-of-type(odd) div:last-child {
+        order: 0;
+      }
+
+      #mainSection ul.brandsWeLove li:nth-child(4) div:last-child,
+      #mainSection ul.brandsWeLove li:nth-child(5) div:last-child {
+        order: -1;
+      }
+
+      #mainSection ul.brandsWeLove li div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+
+      #mainSection ul.brandsWeLove h3 {
+        margin: 0 0 10px;
+      }
+
+      #mainSection ul.brandsWeLove p {
+        text-align: left;
+      }
+
+      #mainSection ul.brandsWeLove li img {
+        width: 100%;
+      }
+
+      /* CATEGORY TILES */
+
+      #mainSection li.thirds {
+        margin: 0 0 40px;
+        width: calc(100% / 3 - 20px);
+      }
+
+      #mainSection li.thirds h2 div {
+        font: 30px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs {
+        margin: 0 0 40px;
+        width: calc(100% / 2 - 20px);
+      }
+
+      #mainSection li.halfs h2 div {
+        font: 30px/100% DIN Condensed Bold, sans-serif;
+      }
+
+      #mainSection li.halfs h2 div:after {
+        border: 10px solid #000000;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-color: transparent transparent transparent #000000;
+      }
+
+      /* VIDEO SECTIONS */
+
+      #mainSection li.blogSection iframe {
+        height: 264px;
+      }
+
+      main.wrap {
+        padding: 0 !important;
+      }
+
+      aside {
+        margin: 18px 20px 0;
+      }
+
+      article {
+        width: calc(74.25% - 30px);
+      }
+
+      .listing {
+        margin: 0 0 40px;
+        width: 100%;
+      }
+
+      .results {
+        padding: 0;
+      }
+
+      .fragranceFoundation img {
+        width: 100%;
+        margin-left: 0%;
+      }
+    }
+  </style>
+  <!--
+<div class="giftShopLanding">
+    <div class="introSection">
+        <h1 class="categoryTitle">GIFT SHOP</h1>
+        <p><a href="#mainSection" title="Scroll Down">Scroll down to discover more <img data-async-image-src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10456955715614/loreal-scrollDownButton.png" alt="Scroll Down" title="Scroll Down" /> </a></p>
+    </div>
+-->
+  <!-- <p class="customDescription">Want to add a finishing touch to your thoughtful gift to make it extra special? Here at The Perfume Shop, you can fill your basket with our range of pop up Gifting for Him for a personalised touch, adorable teddies and delicious Gifting for Her to make it the perfect occasion for the person you are buying your gift for. At The Perfume Shop, we love helping you with your gift purchasing ideas so see our additional items to complete your gift order below.</p> -->
+</p>
+<ul id="mainSection">
+  <!-- BRAND LOGO CAROUSEL -->
+  <li class="brandCarousel">
+    <h2>Our <span>Brands</span></h2>
+  </li>
+  <!-- BLOG POST 1 -->
+  <li class="blogSection postOne">
+    <a
+      href="/blog/lifestyle/how-to-pamper-yourself-scented-body-oil/"
+      title="Blog"
+    >
+      <div>
+        <h2>How to pamper yourself with<span>scented body oil</span></h2>
+        <p>
+          Scented body oil is a luxurious way to give your skin and hair a
+          little TLC. From quenching parched skin to treating split ends, body
+          oil can be used in numerous pampering ways...
+        </p>
+        <span class="blogButton">Read blog post</span>
+      </div>
+      <div>
+        <img
+          src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10857611690014/blog-1.jpg"
+          alt="5 Perfect Perfumes For Mother's Day"
+          title="5 Perfect Perfumes For Mother's Day"
+          height="200px"
+        />
+      </div>
+    </a>
+  </li>
+  <!-- BLOG POST 2 -->
+  <li class="blogSection postTwo">
+    <a href="/blog/lifestyle/relaxing-scents-for-your-home/" title="Blog">
+      <div>
+        <h2>
+          The best scents to relax you after<span>working from home</span>
+        </h2>
+        <p>
+          Finding that all-important work-life balance is hard enough at the
+          best of times. But tuning out thoughts of an overflowing email inbox
+          at the end of the day can be made even more difficult when...
+        </p>
+        <span class="blogButton">Read blog post</span>
+      </div>
+      <div>
+        <img
+          src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10857612312606/blog-2.png"
+          alt="Perfumes Mums Need For Mother's Day"
+          title="Perfumes Mums Need For Mother's Day"
+          height="200px"
+        />
+      </div>
+    </a>
+  </li>
+  <!-- FREE GIFTS TILE  -->
+  <li class="freeGifts thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/gifts/gift-shop/self-care/c/FT30007"
+        title="Self Care"
+      >
+        <div>Self Care</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861093978142/6.png"
+      class="graphicalBg"
+      alt="Self Care"
+      title="Self Care"
+    />
+  </li>
+  <!-- Fragrance Finder -->
+  <li class="giftGuide thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/gifts/gift-shop/c/FT2001?q=%3A%3Acategory%3AW30011"
+        title="Gifting for Her"
+      >
+        <div>Gifting for Her</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861090766878/4.png"
+      class="graphicalBg"
+      alt="Gifting for Her"
+      title="Gifting for Her"
+    />
+  </li>
+  <!-- ENGRAVING  -->
+  <li class="eGiftCards thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/gifts/gift-shop/bundles/c/bundlesRootCategory"
+        title="Bundles"
+      >
+        <div>Bundles</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861089292318/1.png"
+      class="graphicalBg"
+      alt="Bundles"
+      title="Bundles"
+    />
+  </li>
+  <!-- FINISHING TOUCHES -->
+  <li class="finishingTouches thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/gifts/gift-shop/egift-cards/c/FT30004"
+        title="e-Gift Cards"
+      >
+        <div>E-Gift Cards</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861089914910/2.png"
+      class="graphicalBg"
+      alt="e-Gift Cards"
+      title="e-Gift Cards"
+    />
+  </li>
+  <!-- FACE &amp; BODY -->
+  <li class="engraving thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/gifts/gift-shop/c/FT2001?q=%3A%3Acategory%3AM30008"
+        title="Gifting for Him"
+      >
+        <div>Gifting for Him</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861093879838/5.png"
+      class="graphicalBg"
+      alt="Gifting for Him"
+      title="Gifting for Him"
+    />
+  </li>
+  <!-- Gifting for Him -->
+  <li class="inspriation thirds">
+    <h2>
+      <a
+        class="grid-link-a"
+        href="/mens/gift-sets-for-him/c/M2003"
+        title="Gifting for Him"
+      >
+        <div>Finishing Touches</div>
+      </a>
+    </h2>
+    <img
+      src="https://www.theperfumeshop.com/medias/sys_master/generic-categories-media/generic-categories/10861090078750/3.png"
+      class="graphicalBg"
+      alt="Gifting for Him"
+      title="Gifting for Him"
+    />
+  </li>
+  <!-- BRANDS WE LOVE -->
+  <ul class="brandsWeLove">
+    <li>
+      <h2>Brands <span>We Love</span></h2>
+    </li>
+    <li>
+      <a href="https://www.theperfumeshop.com/noughty/b/489" title="Noughty">
+        <div>
+          <img
+            src="https://www.theperfumeshop.com/medias/sys_master/root/11617042300958/noughty.jpg"
+            alt="Noughty"
+            title="Noughty"
+            style="margin-bottom: 20px"
+          />
+        </div>
+        <div>
+          <h4>Noughty</h4>
+          <p>
+            Noughty is a brand on a mission to create 97% natural haircare and
+            bodycare products that are affordable, but do not compromise on
+            results, ever. All Noughty products contain only the best quality
+            natural ingredients, carefully chosen and curated to meet the needs
+            of specific hair and skin concerns.
+          </p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.theperfumeshop.com/philosophy/b/229"
+        title="philosophy"
+      >
+        <div>
+          <img
+            src="https://www.theperfumeshop.com/medias/sys_master/root/11617042595870/philosophy.png"
+            alt="philosophy"
+            title="philosophy"
+            style="margin-bottom: 20px"
+          />
+        </div>
+        <div>
+          <h4>Philosophy</h4>
+          <p>
+            Philosophy inspires you to live a better life by being better to
+            yourself. With a unique head-to-toe product range that encourages
+            you to feel good and live joyously, Philosophy is the perfect blend
+            of science and inspiration.
+          </p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</ul>
+<div id="scrollToProducts">&nbsp;</div>
+<script type="text/javascript">
+  waitFor$(function () {
+    // MOVE INTRO AREA
+
+    $("h1.category_title").prependTo(".introSection");
+
+    // ADD SPAN TO TITLE TEXT
+
+    //$("h1.category_title").html("Mother's Day <span>Shop</span>");
+
+    // BRAND LOGO CAROUSEL PLACEMENT
+
+    $(".our_brands").appendTo(".brandCarousel");
+
+    // topBrandsComponentHomepage
+
+    // MOVE DESKTOP LEFT NAV BEFORE PRODUCT LISTING
+
+    $(".giftShopLanding").insertBefore("main.wrap");
+
+    $(function () {
+      $('a[href^="#"]').click(function () {
+        if (
+          location.pathname.replace(/^\//, "") ==
+            this.pathname.replace(/^\//, "") &&
+          location.hostname == this.hostname
+        ) {
+          var $target = $(this.hash);
+          $target =
+            ($target.length && $target) ||
+            $("[name=" + this.hash.slice(1) + "]");
+          if ($target.length) {
+            var targetOffset = $target.offset().top - 100;
+            $("html,body").animate({ scrollTop: targetOffset }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+  });
+</script>
